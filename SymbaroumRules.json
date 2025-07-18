@@ -50,9 +50,9 @@
 		"en_31":{
 			"source":"This Website",
 			"description":"The character is schooled in the mysteries of alchemy. They spend their time cooking together strange elixirs and mystical concoctions to help themselves and their allies brave the dangers of Davokar. The character is constantly brewing and crafting in the background, filling their satchel with a plethora of concoctions.<br/>In problem-solving situations, Alchemy can be used to identify drugs and poisons or chemical ingredients, and to gain clues as to where they come from. Alchemists are not expected to track their ingredients for common recipes. Some recipes require rare ingredients and cannot be prepared during a scene and must be crafted with dedicated preparation.",
-			"novice":"Action. With a successful [Cunning] test the Alchemist pulls a Novice common Alchemy item from their bag. This item must be from the character's list of known recipes. However, elixirs obtained in this manner have a short shelf life, and they become non-functional at the end of the scene. When the Alchemist devotes an entire day to crafting and a successful [Cunning] test, the Alchmist may craft a single Novice potion of any type (Common or Secret) that can be used as a normal potion.<br>When taking this ability, the player immediately learns three Novice level recipes.",
-			"adepte":"Action. As Novice, except the Alchemist may create a single Adept level potion, or 1d4 Novice potions.<br>When taking this ability, the player immediately learns three Adept level recipes.",
-			"maitre":"Action. As Adept, except the Alchemist may craft a single Master level potion, 1d4 Adept potions, or 2d4 Novice potions.<br>When taking this ability, the player immediately learns three Master level recipes.",
+			"novice":"Action. With a successful [Cunning] test the Alchemist pulls a Novice common Alchemy item from their bag. This item must be from the character's list of known recipes. However, elixirs obtained in this manner have a short shelf life, and they become non-functional at the end of the scene. When the Alchemist devotes an entire day to crafting and a successful [Cunning] test, the Alchmist may craft a single Novice potion of any type that can be used as a normal potion.<br>When taking this ability, the player immediately learns three Novice level recipes.",
+			"adepte":"Action. As Novice, except the Alchemist may take a single Adept level potion from their pouch. When devoting and entire day to crafting, the Alchemist may craft a single Adept level potion, or 1d4 Novice potions.<br>When taking this ability, the player immediately learns three Adept level recipes.",
+			"maitre":"Action. As Adept, except the Alchemist may craft a single Master level potion from their pouch. When devoting and entire day to crafting, the Alchemist may craft a single Master level potion, or 1d4 Adept potions, or 1d8 Novice potions.<br>When taking this ability, the player immediately learns three Master level recipes.",
 			"nom":"Just In Time Alchemy"
 		}
 	},
@@ -8593,7 +8593,7 @@
 		"en": {
 			"tradition": "1 Th.",
 			"nom": "Alchemical Grenade",
-			"adepte": "The thrower aims at one target and may also roll to hit anyone within melee range from the targeted creature. With a successful attack roll, those who are hit suffer 1D10 Damage, ignoring 2 points of armor. Should the attack test instead fail, all who manage to defend themselves suffer only half damage. Anyone can use an alchemical grenade, but an untrained user (i.e. who has not learned Alchemy, Siege Expert or Pyrotechnics) are at risk of triggering a catastrophic failure."
+			"adepte": "The thrower aims at one target and may also roll to hit anyone within melee range from the targeted creature. With a successful attack roll, those who are hit suffer 1D10 Damage, ignoring 2 points of armor. Should the attack test instead fail, all who manage to defend themselves suffer only half damage. Anyone can use an alchemical grenade, but an untrained user (i.e. who has not learned Alchemy, Siege Expert or Grenadier) are at risk of triggering a catastrophic failure."
 		}
 	},
 	{
@@ -8676,7 +8676,7 @@
 		"en": {
 			"tradition": "6 Th.",
 			"nom": "Elixir of Life",
-			"adepte": "Consuming an Elixir of Life gives the drinker regenerative powers that heal 1D6 points of Toughness during 1D6 turns, on the character's initiative. Sadly the character also suffers 1 temporary corruption for each turn the elixir is in effect."
+			"master": "Consuming an Elixir of Life gives the drinker regenerative powers that heal 1D6 points of Toughness during 1D6 turns, on the character's initiative. Sadly the character also suffers 1 temporary corruption for each turn the elixir is in effect. Just in Time alchemy cannot be used with this elixer due to the rare ingredients required."
 		}
 	},
 	{
@@ -8746,7 +8746,7 @@
 		"en": {
 			"tradition": "4 Th.",
 			"nom": "Homunculus",
-			"adepte": "A seed is planted and one day later a miniature servant sprouts from the ground. The homunculus is small as a child, has no abilities and all attribute values are 5 (+5). It serves its maker loyally then withers away after a month; all it leaves behind is a pile of dirt. Creating a homunculus is a true violation of the natural order, meaning that the one using the seed suffers 1d6 temporary corruption."
+			"adepte": "A seed is planted and one day later a miniature servant sprouts from the ground. The homunculus is small as a child, has no abilities and all attribute values are 5 (+5). It serves its maker loyally then withers away after a month; all it leaves behind is a pile of dirt. Creating a homunculus is a true violation of the natural order, meaning that the one using the seed suffers 1d6 temporary corruption. Just in Time alchemy cannot be used with this elixer due to the rare ingredients required."
 		}
 	},
 	{
@@ -8789,7 +8789,7 @@
 		"en": {
 			"tradition": "4 Th.,8 Th.,12 Th.",
 			"nom": "Purple Sap",
-			"novice": "The Purple Sap is made from a decoction of a purple Lily of the Valley, a flower whose cleansing properties and resistance to corruption were discovered by the witches of Davokar long ago. Purchasing the elixir is expensive, because the ingredient is so rare and few alchemists are skilled enough to brew it. The elixir has no effect on permanent corruption or on blight-marks which have already appeared on the user. Weak: A novice alchemist can brew a potion which immediately removes 1d4 temporary corruption from the user’s soul. Just in Time alchemy cannot be used with this elixer due to he rare ingredients required.",
+			"novice": "The Purple Sap is made from a decoction of a purple Lily of the Valley, a flower whose cleansing properties and resistance to corruption were discovered by the witches of Davokar long ago. Purchasing the elixir is expensive, because the ingredient is so rare and few alchemists are skilled enough to brew it. The elixir has no effect on permanent corruption or on blight-marks which have already appeared on the user. Weak: A novice alchemist can brew a potion which immediately removes 1d4 temporary corruption from the user’s soul. Just in Time alchemy cannot be used with this elixer due to the rare ingredients required.",
 			"adepte": "Moderate: When made by an adept, the elixir immediately removes 1d6 temporary corruption.",
 			"maitre": "Strong: The master’s version removes 1d8 temporary corruption."
 		}
@@ -8841,7 +8841,8 @@
 		"en": {
 			"tradition": "1 Th.",
 			"nom": "Stun Bolt",
-			"novice": "The alchemist covers a crossbow bolt in a fast acting muscle relaxant; anyone hit by the bolt must pass a [Strong –Damage] test or fall to the ground. The monstrous trait Robust gives +2 in Strong per level when rolling this test."
+			"novice": "The alchemist creates a crossbow bolt (or arrow) in a fast acting muscle relaxant; anyone hit by the bolt must pass a [Strong –Damage] test or fall to the ground. The monstrous trait Robust gives +2 in Strong per level when rolling this test.",
+			"adepte": "As Novice, except the target does the [Strong-Damage] test with a -2 penality. Robust no longer provides any bonus to this test.",
 		}
 	},
 	{
@@ -8881,8 +8882,7 @@
 		"en": {
 			"tradition": "4 Th.,6 Th.",
 			"nom": "Transforming Draught",
-			"adepte": "This is a powerful mutagen which transforms the body of the user in a monstrous way. During a scene the user is twisted into a bestial half-creature and has a second chance to fail all Persuasive tests until the effect wears off. The draught gives the user a monstrous trait for the rest of the scene; the level of the trait is decided by the strength of the elixir. In addition, each dose consumed deals temporary corruption, also determined by the strength of the elixir. The following monstrous traits can be acquired, decided by the alchemist when brewing the elixir: Armored, Amphibian, Natural Weapon, Night Perception, Robust, Swift, and Wings. Weak: The draught gives the selected trait at level I, to the cost of 1d4 temporary corruption. Moderate: The draught gives the selected trait at level II, to the cost of 1d6 temporary corruption.",
-			"maitre": "Strong: The draught gives the selected trait at level III, to the cost of 1d8 temporary corruption."
+			"maitre": "This is a powerful mutagen which transforms the body of the user in a monstrous way. During a scene the user is twisted into a bestial half-creature and has a second chance to fail all Persuasive tests until the effect wears off. The draught gives the user a monstrous trait for the rest of the scene; the level of the trait is decided by the strength of the elixir. In addition, each dose consumed deals temporary corruption, also determined by the strength of the elixir. The following monstrous traits can be acquired, decided by the alchemist when brewing the elixir: Armored, Amphibian, Natural Weapon, Night Perception, Robust, Swift, and Wings. <br>Weak: The draught gives the selected trait at level I, to the cost of 1d4 temporary corruption. <br>Moderate: The draught gives the selected trait at level II, to the cost of 1d6 temporary corruption. Strong: The draught gives the selected trait at level III, to the cost of 1d8 temporary corruption."
 		}
 	},
 	{

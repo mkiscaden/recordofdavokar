@@ -1,0 +1,373 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbaroum Rules Compendium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+         @font-face {
+            font-family: 'Adlibitum';
+            src: url('adlibitum.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #1a1a1a, #2a2a2a);
+            color: #e5e7eb;
+            font-family: 'Georgia', serif;
+        }
+        .card {
+            background: rgba(40, 40, 40, 0.95);
+            border: 1px solid #4a2c2a;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.02);
+        }
+        .search-bar, .sort-select, .filter-select {
+            background: #2d2d2d;
+            border: 1px solid #4a2c2a;
+            color: #e5e7eb;
+        }
+        h1, h2, h3 {
+             font-family: 'Adlibitum';
+             letter-spacing: 3px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5em !important;
+            letter-spacing: 3px;
+            border-bottom: 2px solid #ffbf00;
+        }
+
+        h2 {
+            font-size: 1.8em  !important;;
+            letter-spacing: 2px;
+        }
+
+        h3 {
+            font-size: 1.4em  !important;;
+            letter-spacing: 2px;
+        }
+
+        .text-success {
+             color: #33cc33;
+        }
+
+         .text-info {
+             color: #0099ff;
+        }
+
+         .text-danger {
+             color: #ff6600;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen">
+    <header class="header py-12 text-center">
+        <h1 class="text-4xl font-bold text-amber-200">Symbaroum Rules Compendium</h1>
+        <p class="text-lg text-gray-300 mt-2">A Tome of Abilities, Talents, and Powers for Characters and Monsters alike</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row justify-between mb-6 gap-4">
+            <input
+                type="text"
+                id="search"
+                placeholder="Search by name or description..."
+                class="search-bar p-2 rounded w-full md:w-1/3"
+            >
+            <select id="sort" class="sort-select p-2 rounded w-full md:w-1/6">
+                <option value="name-asc">Sort by Name (A-Z)</option>
+                <option value="name-desc">Sort by Name (Z-A)</option>
+                <option value="attribute-asc">Sort by Attribute (A-Z)</option>
+                <option value="attribute-desc">Sort by Attribute (Z-A)</option>
+                <option value="tradition-asc">Sort by Tradition (A-Z)</option>
+                <option value="tradition-desc">Sort by Tradition (Z-A)</option>
+            </select>
+            <select id="filter-type" class="filter-select p-2 rounded w-full md:w-1/6">
+                <option value="">Filter by Type (All)</option>
+                <option value="talent">Ability</option>
+                <option value="trait monstrueux">Monstrous Trait</option>
+                <option value="atout">Boon</option>
+                <option value="fardeau">Burden</option>
+                <option value="pouvoir mystique">Mystical Power</option>
+                <option value="arme">Weapon</option>
+                <option value="armure">Armor</option>
+                <option value="qualite">Quality</option>
+                <option value="elixir">Potion</option>
+                <option value="rituel">Ritual</option>
+                <option value="trait">Trait</option>
+
+            </select>
+            <select id="filter-tradition" class="filter-select p-2 rounded w-full md:w-1/6">
+                <option value="">Filter by Tradition (All)</option>
+                <option value="Warrior">Warrior</option>
+                <option value="Mystic">Mystic</option>
+                <option value="Rogue">Rogue</option>
+                <option value="Wizardry">Wizardry</option>
+                <option value="Witchcraft">Witchcraft</option>
+                <option value="Sorcery">Sorcery</option>
+                <option value="Troll Singing">Troll Singing</option>
+                <option value="Staff Magic">Staff Magic</option>
+                <option value="Symbolism">Symbolism</option>
+            </select>
+            <select id="filter-source" class="filter-select p-2 rounded w-full md:w-1/6">
+                <option value="">Filter by Source (All)</option>
+                <option value="ldb">Core Rulebook (ldb)</option>
+                <option value="cdx">Codex (cdx)</option>
+                <option value="adv">Advanced Player's Guide (adv)</option>
+                <option value="gdj">Adventure Books</option>
+                <option value="fanmade">Fanmade</option>
+            </select>
+            <select id="filter-rules" class="filter-select p-2 rounded w-full md:w-1/6">
+                <option value="official">Official Rules (en)</option>
+                <option value="house">House Rules (en_31)</option>
+            </select>
+        </div>
+
+        <div id="item-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </main>
+
+    <script>
+        async function loadData() {
+            try {
+                const response = await fetch('SymbaroumRules.json');
+                if (!response.ok) throw new Error('Failed to fetch JSON data');
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('item-list').innerHTML = '<p class="text-red-400">Error loading data from the ancient tomes...</p>';
+                return [];
+            }
+        }
+
+        function displayItems(items, rulesFilter) {
+            const itemList = document.getElementById('item-list');
+            itemList.innerHTML = items.map(item => {
+                const rules = rulesFilter === 'house' && item.en_31 ? item.en_31 : item.en || {};
+                let source
+                switch (item.livre) {
+                    case "ldb":
+                        source = "Core Rulebook";
+                        break;
+                    case "cdx":
+                        source = "Codex";
+                        break;
+                    case "adv":
+                        source = "Advanced Player's Guide";
+                        break;
+                    case "fanmade":
+                        source = "Fan Made";
+                        break;
+                     case "gdj":
+                        source = "Adventure Books";
+                        break;
+                    default:
+                        source = item.livre;
+                }
+
+                let type
+                switch (item.type) {
+                    case "talent":
+                        type = "Ability";
+                        break;
+                    case "trait monstrueux":
+                        type = "Monstrous Trait";
+                        break;
+                    case "trait":
+                        type = "Trait";
+                        break;
+                    case "atout":
+                        type = "Boon";
+                        break;
+                    case "fardeau":
+                        type = "Burden";
+                        break;
+                    case "pouvoir mystique":
+                        type = "Mystical Power";
+                        break;
+                    case "arme":
+                        type = "Weapon";
+                        break;
+                    case "qualite":
+                        type = "Quality";
+                        break;
+                    case "elixir":
+                        type = "Potion";
+                        break;
+                    case "armure":
+                        type = "Armor";
+                        break;
+                    case "rituel":
+                        type = "Ritual";
+                        break;
+                    case "trait/atout":
+                        type = "Trait/Boon";
+                        break;
+                    case "trait/fardeau":
+                        type = "Trait/Burden";
+                        break;
+                    default:
+                        type = item.type;
+                }
+
+                let tradition
+                if (item.type == "elixir") {
+                    tradition = "Cost";
+                } else {
+                    tradition = "Tradition";
+                }
+
+                return `
+                    <div class="card p-4 rounded">
+                        <h2 class="font-bold text-amber-200">${rules.nom || item.en.nom || item.en_31?.nom || 'Unknown Ability'}</h2>
+                        <p class="text-sm text-gray-400">Type: ${type}</p>
+                        <p class="text-sm text-gray-400">Attribute: ${item.attribut || 'None'}</p>
+                        <p class="text-sm text-gray-400">${tradition}: ${rules.tradition || item.en?.tradition || item.en_31?.tradition || 'None'}</p>
+                        <p class="text-sm text-gray-400">Source: ${source}</p>
+                        <p class="text-sm text-gray-300 mt-2">${rules.description || item.en?.description || item.en_31?.description || 'No description available.'}</p>
+                        <div class="mt-2">
+                            <p><span class='text-success'>Novice</span> ${rules.novice || item.en?.novice || item.en_31?.novice  || ""}</p>
+                            <p><span class='text-info'>Adept</span> ${rules.adepte || item.en?.adepte || item.en_31?.adepte  || ""}</p>
+                            <p><span class='text-danger'>Master</span> ${rules.maitre || item.en?.maitre || item.en_31?.maitre  || ""}</p>
+                        </div>
+                        ${rules.materiel ? `<p class="text-sm text-gray-400 mt-2">Material: ${rules.materiel || item.en?.materiel || item.en_31?.materiel}</p>` : ''}
+                        ${rules.source ? `<p class="text-sm text-gray-400 mt-2">Source: ${rules.source || item.en?.source || item.en_31?.source}</p>` : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function sortItems(items, sortBy) {
+            const [key, direction] = sortBy.split('-');
+            return [...items].sort((a, b) => {
+                let valA, valB;
+                if (key === 'name') {
+                    valA = (a.en?.nom || a.en_31?.nom || '').toLowerCase();
+                    valB = (b.en?.nom || b.en_31?.nom || '').toLowerCase();
+                } else if (key === 'attribute') {
+                    valA = (a.attribut || '').toLowerCase();
+                    valB = (b.attribut || '').toLowerCase();
+                } else if (key === 'tradition') {
+                    valA = (a.en?.tradition || a.fr?.tradition || '').toLowerCase();
+                    valB = (b.en?.tradition || b.fr?.tradition || '').toLowerCase();
+                }
+                return direction === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+            });
+        }
+
+        function filterItems(items, filters) {
+            return items.filter(item => {
+                const typeMatch = !filters.type || item.type.includes(filters.type);
+                const traditionMatch = !filters.tradition || 
+                    (item.en?.tradition && item.en.tradition.includes(filters.tradition)) || 
+                    (item.fr?.tradition && item.fr.tradition.includes(filters.tradition)) ||
+                    (item.en?.tradition === 'Witchcraft' && filters.tradition === 'Witchcraft');
+                const sourceMatch = !filters.source || item.livre === filters.source;
+                const searchMatch = !filters.search || 
+                    (item.en?.nom || '').toLowerCase().includes(filters.search) ||
+                    (item.en_31?.nom || '').toLowerCase().includes(filters.search) ||
+                    (item.fr?.nom || '').toLowerCase().includes(filters.search) ||
+                    (item.en?.description || '').toLowerCase().includes(filters.search) ||
+                    (item.en_31?.description || '').toLowerCase().includes(filters.search);
+                return typeMatch && traditionMatch && sourceMatch && searchMatch;
+            });
+        }
+
+        async function init() {
+            let items = await loadData();
+            let currentFilters = {
+                type: '',
+                tradition: '',
+                source: '',
+                search: '',
+                rules: 'official'
+            };
+
+            function updateDisplay() {
+                let filteredItems = filterItems(items, currentFilters);
+                filteredItems = sortItems(filteredItems, document.getElementById('sort').value);
+                displayItems(filteredItems, currentFilters.rules);
+            }
+
+            document.getElementById('search').addEventListener('input', (e) => {
+                currentFilters.search = e.target.value.toLowerCase();
+                updateDisplay();
+            });
+
+            document.getElementById('sort').addEventListener('change', updateDisplay);
+
+            document.getElementById('filter-type').addEventListener('change', (e) => {
+                currentFilters.type = e.target.value;
+                updateDisplay();
+            });
+
+            document.getElementById('filter-tradition').addEventListener('change', (e) => {
+                currentFilters.tradition = e.target.value;
+                updateDisplay();
+            });
+
+            document.getElementById('filter-source').addEventListener('change', (e) => {
+                currentFilters.source = e.target.value;
+                updateDisplay();
+            });
+
+            document.getElementById('filter-rules').addEventListener('change', (e) => {
+                currentFilters.rules = e.target.value;
+                updateDisplay();
+            });
+
+            displayItems(items, currentFilters.rules);
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>

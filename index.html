@@ -1,0 +1,438 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbaroum House Rules and Notes</title>
+    <style>
+        @font-face {
+            font-family: 'Adlibitum';
+            src: url('adlibitum.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+             font-family: 'Adlibitum';
+             letter-spacing: 3px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ffbf00;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-top: 30px;
+        }
+        h3 {
+        color: #ffbf00;
+            font-size: 1.4em;
+            margin-top: 20px;
+            margin-bottom: 0px;
+        }
+        h4 {
+             margin-top: 10px;
+            margin-bottom: 0px;
+        }
+        p, ul {
+            margin-bottom:5px;
+            margin-top:5px;
+            font-size: 1.1em;
+        }
+        li {
+            font-size: 1.0em;
+            padding-top: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        ul li::before {
+            content: "✦ ";
+            color: #ffbf00;
+        }
+        .section {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+        .intro {
+            font-style: italic;
+            color: #b0b0b0;
+        }
+        .highlight {
+            color: #ffbf00;
+            font-weight: bold;
+        }
+        .nav-links {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .nav-links a {
+            color: #ffbf00;
+            text-decoration: none;
+            margin: 0 10px;
+           font-family: 'Georgia';
+        }
+         a {
+            color: #ffbf00;
+            text-decoration: none;
+           font-family: 'Georgia';
+        }
+        p {
+            text-indent: 2em;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Record Of Davokar</h1>
+        <div class="nav-links">
+            <a href="#introduction">Introduction</a> |
+            <a href="characters">New Characters</a> |
+            <a href="#gm-advice">Game Master Advice</a> |
+            <a href="#fortuna-mechanic">Fortuna Mechanic</a> |
+            <a href="#house-rules">House Rules</a> |
+            <a href="#ability-changes">Ability Changes</a> |
+            <a href="#new-abilities">New Abilities</a> |
+            <a href="#new-mystical-powers">New Mystical Powers</a> |
+            <a href="#new-rituals">New Rituals</a> |
+            <a href="rulesIndex.html">Rules Quick Reference</a>
+        </div>
+        <div class="section intro" id="introduction">
+            <h2>Introduction</h2>
+
+            <p>Record Of Davokar is built for the administration of my <a href="https://freeleaguepublishing.com/games/symbaroum/">Symbaroum</a> campaign. If you have wandered onto this page and are a fan of the setting, feel free to borrow any ideas you find. There are no spoilers to the campaign source books here.</p>
+
+            <p>This selection of house rules are intended to smooth out the glaringly broken aspects of the game while keeping with the overall theme of the setting and keeping as close to the original rules as possible. The goal is not perfect game balance; instead these house rules are intended to be easy to remember while fixing the most broken aspects of the game. Ultimately, we are going to embrace the chaos and accept certain abilities and powers are going to wipe the floor with players and NPCs alike. </p>
+
+            <p>
+                The counterpoint to this will be the DM won’t be pulling any punches. If the players start relying too heavily on the most broken aspects of the game, the DM will both introduce new powers that counter the player’s abilities, and use those same abilities against the players.
+            </p>
+            <p>
+                Players are encouraged to not think like a Computer RPG, where they play within a walled garden of predetermined outcomes. Instead players should actively come up with creative and possibly game breaking ideas (preferably while in character). You are superheroes with capabilities far beyond that of normal people. But like superheroes, there are super-villains who can match or even exceeds your powers. To quote Dark Souls: "Prepare to Die".</p>
+
+            <p>
+                I have created a <a href="rulesIndex.html">complete compendium of house rules</a> combined with the rules as written (Just select "House Rules" from the dropdown). This is a merge of my own house rules and the house rules found on <a herf="http://symbaroum.fr">symbaroum.fr</a> Players should use the rules compendium here as the primary reference when creating their characters.
+            </p>
+        </div>
+
+        <div class="section" id="characters">
+            <h2>Campaign Restart with New Characters</h2>
+            <p>
+                The Campaign will pick up half way though Book 4 of Throne of Thrones. The previous adventure party is missing and presumed dead. The game world will continue from the point the previous campaign went on hiatus. World altering decisions made by the previous party stay in effect and won't be retconned.
+            </p>
+            <p>
+                New Characters will start with 230 XP using the 5, 7, 9, 10, 10, 11, 13, 15 attribute distribution. Players must spend at least 200 XP before the first session.
+                <br>Characters may start with any non-magical equipment they wish. Players can select one set of armor and two weapons with non-magical Qualities (See <a href="rulesIndex.html">Rules Quick Reference</a>). Along with any five Alchemy substances.
+                <br>The party is assumed to have had a lot of resources at this point, but not necessarily cash on hand. Owning their own longboat, tavern, or similar major purchase is within the realm of possibility if the player desires.
+                <br><br>
+                Each character must have a backstory and their motivations for why they wish to venture into Davokar. Because players are expected to play in character as much as possible, this motivation may be the driving point of your backstory. No matter your motivation; the DM will tie it into the campaign. Here are a few examples that might inspire you:
+                <ul>
+            <li>Love. A close friend of relative has already gone into Davokar and you wish to find them.</li>
+            <li>Greed. Few things motivate more than the desire to get rich. You are interested in the rumored treasures found within the ruins of Davokar</li>
+            <li>Nightmares. You have recurring dreams, and sometimes nightmares about the forest. You don't understand why, but the voices in your head tell you to find Symbar.</li>
+            <li>Knowledge. Symbar may have wealth, but the true value is knowledge. Your adventures have given you clues about the origins of the world, any Symbar will ahve more answers.</li>
+            <li>Power. Legend says the Throne of Thorns offers the greatest magical power in the world. You want this power for your own reasons. Perhaps those reasons are selfish? Perhaps it is altruism? You decide.</li>
+            <li>Loyalty. You are loyal to one of the competing factions searching for the throne. You wish to see the Throne of Thorns in the hands of people who can be trusted with its power: Your people.</li>
+            <li>Vengeance. You don't care about the throne as much as you want payback. Perhaps you want find the source of corruption in the world so you can stop it once and for all? Perhaps you have a vendetta against one of the other factions? </li>
+        </ul>
+
+            <br><br>
+                Players are again reminded to be well-rounded and not solely combat focused. Skills (Abilities, Powers, Boons, etc) that assist in investigation and discovery are mandatory for a successful party.
+            <br><br>
+                The DM will be distributing a select number of minor artifacts and other magical equipment on the first session. These items will be based around what the previous adventuring party missed from the campaign, and not tailored to Min/Max your character's power. The remaining 30 XP (see above) may be spent to take advantage of these items.
+            <br><br>
+                The hand wave explanation for the new party's backstory is that they kept being hired to clean up the mess the previous player's adventuring party left behind. It has given the party a reputation for being "problem solvers", although their clients are not always perfectly pleased with the results.
+            </p>
+            <br><br>
+            <h4>As one story ends, a new one begins...</h4>
+            <p>
+                The game beings in Thistle Hold, the party has been hired by Ordo Magica to travel deep into Davokar to find the missing expedition lead by the leader of the Ordo's Thistle Hold chapter: Kullinan Furio.
+                <br><br>
+                The player's party has just returned from Karvosi, having dealt with a massive spider infestation that had infiltrated the tunnels beneath the seat of the Barbarian Tribes' power. Having missed the initial rush of adventurers seeking the Throne of Thorns, the party is more than eager to get involved.
+                <br><br>
+                A complete recap of the story so far will be presented at the first session.
+            </p>
+        </div>
+
+        <div class="section" id="gm-advice">
+            <h2>Game Master Advice and Clarifications</h2>
+            <ul>
+                <li><span class="highlight">Action Types:</span> Pay close attention to ability Action types. If an ability says “Active”, it cannot be combined with another ability that says “Active”. This is an easy trap to fall into as players may think they can combine certain abilities. Similarly, Free Attacks and Reactions can only use Passive abilities, not Active ones.</li>
+                <li><span class="highlight">Skill Checks:</span> When performing a skill check, players should indicate the number by which they succeed or fail to allow the Game Master to keep NPC statistics secret.</li>
+                <li><span class="highlight">Skill Knowledge:</span> Players are expected to know their skills and are encouraged to keep a printed copy of their skills at hand. Using quick reference cards is not considered a rulebook check for Fortuna coin purposes.</li>
+                <li><span class="highlight">Non-Tactical Gameplay:</span> This is not a tactical miniature game. Miniatures may be used to help players understand relative positions and visualize the scene, but meticulous counting of squares, measuring line of sight, or micromanaging area of effect is discouraged.</li>
+                <li><span class="highlight">Roleplaying:</span> Players are encouraged to stay in character as much as possible and avoid metagaming. The Game Master may penalize excessive out-of-character talk with Fortuna coin deductions. See <a href="#fortuna-mechanic">Fortuna Mechanic</a> for more information. </li>
+                <li><span class="highlight">More than Just Combat:</span> Players are encouraged to remember to have skills, rituals, and abilities that are useful outside of combat, a big part of the game is investigation. Hours of tracking down a clue can by skipped with a well placed use of <i>Tale of Ashes</i></li>
+                <li><span class="highlight">Defend yourselves against magic:</span> Rituals are incredibly powerful and often overlooked in both their offensive and defensive capabilities. It is important to remember that the players will be facing powerful enemies with access to the same powers the players do. Without taking any precautions players can find themselves spied upon and ambushed with relative ease by their opponents.</li>
+                <li><span class="highlight">Character Survival:</span> Players who wish to avoid their characters suffering horrible deaths are encouraged to take the “Tough” Boon, as it significantly increases survival chances.</li>
+                <li><span class="highlight">Corruption Reset:</span> Temporary Corruption resets at the end of a scene, as determined by the Game Master. A single dungeon crawl may encompass multiple scenes or be one scene. The Game Master will keep this secretive to prevent anticipation of Corruption resets. Generally, Temporary Corruption resets after a long rest when players are not facing serious challenges.</li>
+                <li><span class="highlight">Learning New Powers:</span> After character creation, players can only learn mystical powers, abilities, or rituals by finding a suitable tutor, skill tome, or similar knowledge source, in addition to spending experience points. Players cannot arbitrarily add skills by spending experience points alone. Players should inform the Game Master of desired skills so the DM may incorporate them into the game. Players in good standing with a guild associated with the desired knowledge will typically find training easily. For example, a player seeking a new Wizardry mystical power and in good standing with the Ordo Magica will find a teacher without difficulty, but if they become enemies of the Ordo Magica, the order is unlikely to share its secrets.</li>
+                <li><span class="highlight">Morally Grey:</span>There are no truly "Evil" factions in the game. Every faction believes they are working for the greater good; just some factions have a more distorted concept of "Good" than others. Players don't need to pick a faction and may remain neutral. However, making enemies of every faction will be your downfall.</li>
+            </ul>
+        </div>
+
+        <div class="section" id="fortuna-mechanic">
+            <h2>Fortuna Gameplay Mechanic</h2>
+            <p>At the start of each game session, every player receives two Fortuna coins. Rolling a critical hit (natural 1) grants one additional Fortuna coin, while a critical miss (natural 20) results in the loss of one coin. Critical hits and misses are always considered successes or failures, respectively, but have no other in-game effects.</p>
+            <h3>Gaining and Spending Fortuna Coins</h3>
+            <ul>
+                <li>Players may spend one or more Fortuna coins to assist another player’s Ability check (which includes Attack/Defense rolls) granting a 1d6 bonus to the roll for each coin spent. Players must offer the Fortuna coin before the roll is made. Players cannot use Fortuna coins on themselves in this manner.</li>
+                <li>Players may spend one Fortuna coin to open a rulebook and seek rule clarification. Otherwise, only the Game Master may have the rulebook open.</li>
+                <li>The Game Master may reward players with a Fortuna coin for exceptional role-playing or creative problem-solving.</li>
+                <li>The Game Master may penalize players with Fortuna coin deductions for excessive out-of-character behavior or meta-gaming.</li>
+                <li>All Fortuna coins reset at the end of the game session. Unspent coins are lost and do not convert to gold, experience points, or any other game benefit.</li>
+            </ul>
+        </div>
+
+        <div class="section" id="house-rules">
+            <h2>House Rules</h2>
+            <h3>Initiative</h3>
+            <p>Instead of each player using their Quickness attribute for Initiative, a single roll is made at the start of combat. The player with the highest Quickness attribute performs a Quickness check. If successful, the players collectively act first in any order they choose. If the check fails, the non-player characters act first.</p>
+
+            <h4>Reasoning</h4>
+            <p> Tracking initiative is a massive chore for the DM. It slows down combat and players are easily missed.</p>
+
+            <h3>Corruption</h3>
+            <p>When a player’s total Corruption (temporary plus permanent) reaches their Corruption Threshold, they must roll a Resolute check. If they fail, 1d4 temporary Corruption transforms into permanent Corruption, and they gain a stigma. If they succeed, no transformation occurs, but they must roll again upon gaining additional Corruption. When permanent Corruption equals the Corruption Threshold, the character gains the Dark Blood and Bestial traits.</p>
+
+            <h4>Reasoning</h4>
+            <p>This makes Corruption Threshold less of a hard wall. Players now might be more willing to risk pushing past it. While still offering penalties that match the theme of the game.</p>
+
+            <h3>Concentration</h3>
+            <p>Concentration is handled in a confusion fashion in Symbaroum. This is further confounded with other RPG systems that have "Concentration" with slightly different rules. Rules as written, Concentration is just the roll you make to maintain the spell when the mystic takes damage. With many spells dropping the "concentration" requirement at higher levels, but still having a failure condition.<br>We are going to consolidate and clarify the rules as follows:
+                <ul>
+                <li>All mystical powers with ongoing effects are assumed to require concentration unless the description states otherwise. Concentration remains to be the [Resolute-Damage] check when the mystic takes damage to maintain the spell.</li>
+                <li>A mystic can only maintain one spell that produces an ongoing effect at a time, even if the text states that it does not require concentration. </li>
+        </ul>
+
+              </p>
+
+            <h4>Reasoning</h4>
+            <p> We need to scale back the power of some ongoing effects, also this helps with consistency across the many types of mystical powers whose description isn’t clear.</p>
+
+
+            <h3>Incremental Mystical Traditions</h3>
+            <p>
+                All mystical traditions (Such as Wizardry, Witchcraft, etc) are an Incremental Ability. You do not buy the tradition directly with Experience. Instead, you advance the level of your Mystical Tradition ability by learning mystical powers of that tradition. Once characters have learned Novice level of a mystical tradition, they no longer gain permanent corruption for learning mystical powers of any skill level. Further, characters do not receive permanent corruption at character creation for learning two novice powers in order to qualify for Novice rank in that tradition. A power that is available to multiple traditions can only be applied to learning a single mystical tradition.
+            </p>
+            <p>Troll Singing, Symbolism, and Staff Magic have been added to a select group of Core Rulebook powers, and have new powers created for them to assist in making Incremental Mystical Traditions more viable for these groups as their spell selection is very short.</p>
+
+            <p>The Incremental Ritualist rule replaces the standard Ritualist ability, allowing players to learn rituals at a cost of 10 experience points each. Provided the character finds a source of knowledge to learn the ritual.</p>
+
+            <h3>Alchemy</h3>
+            <p>Players may use their Alchemy skill as an action during a scene, rather than once per adventure, representing an alchemist rummaging through their bag looking for a forgotten elixir. These potions expire at the end of the scene. Alchemists are not required to track ingredients, similar to how archers do not track ammunition. Permanent potions can still be crafted with one Alchemy roll per day wholly dedicated to gathering ingredients and brewing. </p>
+            <p>Some potions are so rare they can only be crafted through dedicated crafting and cannot be retrieved ad-hoc during a scene. Those have been noted in their rules description in the compendium.</p>
+
+            <p>The Transforming Draught includes Night Perception, Swift, and Amphibious effects. </p>
+
+
+            <h4>Reasoning</h4>
+            <p>This turns Alchemy into a skill that is always applicable during a scene; and thus justifying its XP cost. Players can now build an entire character around the "Alchemist" archetype opening a fourth play style beyond "Fighter", "Rogue", and "Mystic"./p>
+
+            <h3>Poison</h3>
+            <p>Multiple poison applications extend the duration rather than applying the effect twice. If a new poison’s damage value is higher, use the new value.</p>
+
+            <p>Poison generally rolls against Strong to resist being poisoned. However there are some forms of poison that attack against a character's other attributes.</p>
+
+            <h3>Flaming</h3>
+            <p>Mystical abilities, alchemical substances, or magic items do not cause ongoing fire damage. Instead, fire damage negates 2 points of armor when calculating damage, provided fire is the sole damage type. When combined with other damage types, such as Flaming Effect or Elemental Essence applied to a weapon, the armor negation does not apply. In this case it is just bonus damage.</p>
+
+            <h3>Acid</h3>
+            <p>Acid damages armor (Natural or Constructed) rather than hit points. Once armor is destroyed, acid has no further effect. Items damaged by acid must be repaired before the wearer can benefit from the armor again. </p>
+
+            <h3>Lightning/Electricity</h3>
+            <p>Creatures damaged by Lightning have a second chance to fail their next [Resolute] check.</p>
+
+            <h3>Cold</h3>
+            <p>Creatures damaged by cold lose half their movement on their next turn. Multiple strikes of cold weapons have no additional effect.</p>
+
+            <h4>Reasoning</h4>
+            <p> Elemental damage types should be unique and meaningful. Further, micromanaging damage over time detracts from the flow of the game.</p>
+
+        </div>
+
+        <div class="section" id="ability-changes">
+            <h2>Changes to Abilities and Mystical Powers</h2>
+
+            <h4>Note</h4><p>
+            The <a href="rulesIndex.html">Rules Quick Reference</a> has a more up to date version of new and changed abilities than what is listed here.
+        </p>
+
+
+            <h3>Medicus</h3>
+            <p>The Medicus ability is limited to once per patient per scene, rather than once per day.</p>
+            <h3>Bend Will</h3>
+            <p>Bend Will has no effect on Abominations and cannot force a target to harm an ally or act against their moral code. Cultured beings have varied ethical guidelines, which the caster must consider. For example, a thief may steal, but a mother would not harm her child. <br>Attempting to force a moral violation causes the mystic a second chance to fail all subsequent Resolute checks to maintain control. If control is lost, Bend Will cannot be used on that target for the remainder of the scene. The victim recalls events as a surreal dream.</p>
+            <h4>Reasoning</h4>
+            <p> Bend Will is now more akin to the "Jedi Mind Trick" than the classic “Dominate” D&D spell. Players may use Confusion if they wish to have a power that forces enemies to attack each other.
+            </p>
+
+            <h3>Maltransformation</h3>
+            <p>Maltransformation has no effect on Abominations. The Resolute check to break the transformation is adjusted by the target’s total Corruption. If a transformed target takes hit point damage, the mystic has a second chance to fail all subsequent [Resolute] checks to maintain the transformation. Once a target breaks free, the target has a second chance to succeed against subsequent Maltransformation attempts for the scene.</p>
+            <h4>Reasoning</h4>
+            <p> It doesn’t match the theme of the game as Abominations are already transmuted creatures by magic.  Also Abominations are intended to be major enemies and they lose their fear factor when the player can turn them into a sheep and beat on it with impunity. Thus, the more corrupted a target is, the less susceptible they are to mind and body altering effects.
+            </p>
+
+            <h3>Holy Aura</h3>
+            <p>The mystic cannot exclude friendly abominations and undead from the spell effect. At Adept the spell heals 1d4 HP initially (1d6 at Master) on the first round the spell is cast. While the aura is active, all subsequent healing (from magical or mundane sources) heals an additional 1d4 at Adept and 1d6 at Master.
+            </p>
+            <h4>Reasoning</h4>
+            <p>The healing/damage effect of the aura is too powerful. This transforms the spell from being a “kill everything in the room” spell to “Assist the party do what they do best” spell.</p>
+
+            <h3>Mind Throw</h3>
+            <p>At Novice, objects thrown or used to block do not automatically break and can be reused. The mystic can throw objects in any direction, including off ledges, or pull unattended objects toward themselves with a successful Accurate check to catch them. At Adept, the mystic can propel themselves one movement with a successful Quick check to land safely.</p>
+
+            <h4>Reasoning</h4>
+            <p>Mind throw rules as written is fairly useless and uninteresting. This clarifies it as more of a situationally powerful telekinesis spell.</p>
+
+            <h3>Sanctifying Rite, Sanctum, and Witch Circle</h3>
+            <p>These rituals protect against mystical powers with ongoing effects, such as Unnoticeable or Transformation, requiring a Resolute check each turn within the area to maintain the effect. Rituals with ongoing effects are exempt unless specified.</p>
+
+            <h4>Reasoning</h4>
+            <p>Characters (and NPCs) need a way to reliably ward an area against magic beyond just eavesdropping.</p>
+
+            <h3>Strangler</h3>
+            <p>Characters with Strangler can create Choking Spores and Spore Bombs as if they have the Alchemy skill.</p>
+
+            <h3>Heroic Hymn</h3>
+            <p>Heroic Hymn grants a second chance to succeed instead of a +1 bonus.</p>
+        </div>
+
+
+
+        <div class="section" id="new-abilities">
+            <h2>New Abilities</h2>
+
+            <h3>Avarice</h3>
+            <p><i></i></p>
+            <p>Novice (Active): Throw 2d4 shillings into the air and make a Persuasive versus Vigilant check against cultured beings in melee range. Success allows free movement without triggering Free Attacks or movement-related Reactions.
+                <br>Adept (Active): Grants Advantage alongside free movement. <br> Master (Passive): Offer a sack of 2d8 shillings with a Persuasive versus Resolute check to make a cultured being leave the scene. Cost increases by 2d8 per attempt. Pivotal non-player characters cannot be bribed.</p>
+
+
+            <h3>Riddle of Steel</h3>
+            <p><i>Lone swordsman with poise,<br>Strikes fall yet never connect,<br>Riddle of Steel abides.</i></p>
+            <p>Novice (Passive): Use Accurate for melee Defense while holding a melee weapon, shield, or with Natural Warrior.
+                <br>Adept (Reaction): Make a free attack after a successful melee Defense.
+                <br>Master (Passive): The master can perform a series of ripostes and gains a Free Attack against the opponent with each successful Defense test, with no limitation on the number of Free Attacks per turn. Further, the character may use Accurate for Defense even against ranged attacks, as long as they are holding a melee weapon. If the character also has the Natural Warrior ability, a successful Defense means that they catch the projectile in the air.</p>
+
+            <h3>Grenadier</h3>
+            <p><i></i></p>
+            <p>Novice: Active. The character may use Cunning instead of Accurate when attacking with Alchemical substances.  Character can use thrown alchemical bombs and similar substances without risk to himself.
+                <Br>Adept: Active. The character can throw two bombs or potions as a single action. This can be at the same target or different targets. Additionally, the character may draw two potions as a free action.
+                <br>Master: Active. When rolling damage from a bomb or other alchemical substance, the Master Grenadier deals an additional 1d6 damage. When paired with the Just in Time Alchemy Ability, the player may make a Cunning test to draw a single potion from their bag and throw it at a target in a single action.</p>
+        </div>
+
+        <div class="section" id="new-mystical-powers">
+            <h2>New Mystical Powers</h2>
+            <h3>Wind Gust (Wizardry, Symbolism)</h3>
+            <p><i>The mystic summons the wind itself to push his opponents back, knocking them off their feet or even into tumbling to their death.</i></p>
+            <p>Novice (Active): With a successful Resolute versus Strong check, push an enemy in melee range back one movement and deal 2d4 damage. The target must pass a Quick check or be knocked prone.
+                <br>Adept (Active): As Novice, but now affects a chain of enemies until a check fails.
+                <br> Master (Reaction):The Mystic may use Wind Gust as a reaction when an enemy enters Melee range.
+            </p>
+
+            <h3>Song of Silence (Troll Singing)</h3>
+            Contrary to the name, the song is not silent. It is instead a deep guttural grunt performed at a steady rhythm. The beat permeates the air around the singer and has the power to cancel other magical effects. Song of Silence does not affect rituals – their mystical bonds are too thoroughly woven and can only be dispelled by other rituals.
+            <br> <p>Novice: Active. By making a successful roll against [Resolute←Resolute] the Mystic can disperse an ongoing power or concentration effects on a creature or on himself. It is the Resolute of the mystic who has unleashed the power that is used as resistance when making the test. So long as the singing continues, the Troll Singer can make a new test against resolute each round on their turn.</p>
+            <br><p>Adept: Active. While singing the Song of Silence, when a new mystical power is cast, the singer may force the caster to do a [Resolute<-Resolute] test. If successful, the spell is cancelled. The caster of the cancelled spell does not gain corruption (if applicable).</p>
+            <br><p>Master: Active. The Songs power is so great that it can cancel the power of mystical items. These item's become mundane and non-magical for as long as the song continues.
+            </p>
+        </div>
+
+        <div class="section" id="new-rituals">
+            <h2>New Rituals</h2>
+            <h3>Wall of Stone (Wizardry)</h3>
+            <p>By performing this ritual the mystic creates a wall made of solid stone up to three movements in length and half a Movement high. The Mystic must trace the path of the wall on the ground using a piece of stone. The wall does not need to be a straight line and may be built over uneven terrain so long as the path of the wall is a continuous line. If the wall is drawn in a manner that is unstable or over terrain that could not support its weight, the spell fails. When the ritual completes, the stone of the same type used to trace the path springs forth from the ground at the rate of one foot per minute until it reaches its full height of half a Movement.
+                <br>
+                Multiple mystics who each know this ritual working together may create larger objects.
+            </p>
+
+            <h3>Dark Contract (Sorcery)</h3>
+            <p>
+                The character forges a pact with a powerful demon from the Yonderworld or a corrupted entity tied to the dark forces of Davokar. This pact grants unique abilities at the cost of the character’s humanity, autonomy, and connection to the world’s natural order. The contract is designed to be inescapable, weaving a narrative of temptation, corruption, and struggle that will haunt the character until their death.<br>The contract cannot be broken by mortal rituals (e.g. Exorcism or Break Link) due to the demon’s overwhelming power.<br>The character is constantly aware of the demon's presence, receiving visions, whispers, or commands that influence their decisions.<br>While every contract is unique, the following is a rough guideline about what the character performing this ritual can expect: <Br>The demon grants the character 60 XP worth of Abilities,Mystical Powers, or Monstrous Traits without the needs to find a tutor. Even the most secret teachings of any organization can be obtained in this manner.<br>In exchange the demon demands regular living sacrifices of cultured beings, the demon may also instruct the character to do its bidding or otherwise pressure the character's decisions. Refusal to adhere to the contract, attempting to escape the contract, or informing others of the existence of the contract invokes horrible consequences in the form of Burdens and Monstrous Traits.
+            </p>
+        </div>
+
+        <div  class="section" id="new-boons">
+        <h2>New Boons and Burdens</h2>
+
+        <p>See the <a href="rulesIndex.html">Rules Quick Reference</a> for a complete list of all new boons and burdens. Many have been created to help facilitate more "Origin" stories for characters.</p>
+        </div>
+
+    </div>
+</body>
+</html>

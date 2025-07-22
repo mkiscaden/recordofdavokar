@@ -37,6 +37,8 @@
         }
         return gk_fileData[filename] || "";
         }
+
+
         </script><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,6 +52,10 @@
             src: url('adlibitum.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
+        }
+
+        .checkbox {
+            margin-right:5px;
         }
 
         body {
@@ -106,6 +112,16 @@
              color: #ff6600;
         }
 
+        #flexContainer {
+            display: flex;
+            flex-direction: row; /* Columns side by side */
+            gap: 10px; /* Space between columns */
+        }
+        .column {
+            padding: 10px;
+            flex: 0 0 auto;
+        }
+
     </style>
 </head>
 <body class="min-h-screen">
@@ -115,63 +131,74 @@
     </header>
 
     <main class="container mx-auto px-4 py-8">
-        <div class="flex flex-col md:flex-row justify-between mb-6 gap-4">
-            <input
-                type="text"
-                id="search"
-                placeholder="Search by name or description..."
-                class="search-bar p-2 rounded w-full md:w-1/3"
-            >
-            <select id="sort" class="sort-select p-2 rounded w-full md:w-1/6">
-                <option value="name-asc">Sort by Name (A-Z)</option>
-                <option value="name-desc">Sort by Name (Z-A)</option>
-                <option value="attribute-asc">Sort by Attribute (A-Z)</option>
-                <option value="attribute-desc">Sort by Attribute (Z-A)</option>
-                <option value="tradition-asc">Sort by Tradition (A-Z)</option>
-                <option value="tradition-desc">Sort by Tradition (Z-A)</option>
-            </select>
-            <select id="filter-type" class="filter-select p-2 rounded w-full md:w-1/6">
-                <option value="">Filter by Type (All)</option>
-                <option value="talent">Ability</option>
-                <option value="trait monstrueux">Monstrous Trait</option>
-                <option value="atout">Boon</option>
-                <option value="fardeau">Burden</option>
-                <option value="pouvoir mystique">Mystical Power</option>
-                <option value="arme">Weapon</option>
-                <option value="armure">Armor</option>
-                <option value="qualite">Quality</option>
-                <option value="elixir">Potion</option>
-                <option value="rituel">Ritual</option>
-                <option value="trait">Trait</option>
+        <div id="flexContainer">
+            <div class="column">
+                <div id="selected-options">
+                    <h3 class="font-bold text-amber-200">Selected Skills</h3>
+                    <ul id="selected-list"></ul>
+                    <div id="total-points">Total Points: 0</div>
+                </div>
+            </div>
+            <div class="">
+                <div class="flex flex-col md:flex-row justify-between mb-6 gap-4">
+                    <input
+                        type="text"
+                        id="search"
+                        placeholder="Search by name or description..."
+                        class="search-bar p-2 rounded w-full md:w-1/3"
+                    >
+                    <select id="sort" class="sort-select p-2 rounded w-full md:w-1/6">
+                        <option value="name-asc">Sort by Name (A-Z)</option>
+                        <option value="name-desc">Sort by Name (Z-A)</option>
+                        <option value="attribute-asc">Sort by Attribute (A-Z)</option>
+                        <option value="attribute-desc">Sort by Attribute (Z-A)</option>
+                        <option value="tradition-asc">Sort by Tradition (A-Z)</option>
+                        <option value="tradition-desc">Sort by Tradition (Z-A)</option>
+                    </select>
+                    <select id="filter-type" class="filter-select p-2 rounded w-full md:w-1/6">
+                        <option value="">Filter by Type (All)</option>
+                        <option value="talent">Ability</option>
+                        <option value="trait monstrueux">Monstrous Trait</option>
+                        <option value="atout">Boon</option>
+                        <option value="fardeau">Burden</option>
+                        <option value="pouvoir mystique">Mystical Power</option>
+                        <option value="arme">Weapon</option>
+                        <option value="armure">Armor</option>
+                        <option value="qualite">Quality</option>
+                        <option value="elixir">Potion</option>
+                        <option value="rituel">Ritual</option>
+                        <option value="trait">Trait</option>
 
-            </select>
-            <select id="filter-tradition" class="filter-select p-2 rounded w-full md:w-1/6">
-                <option value="">Filter by Tradition (All)</option>
-                <option value="Warrior">Warrior</option>
-                <option value="Mystic">Mystic</option>
-                <option value="Rogue">Rogue</option>
-                <option value="Wizardry">Wizardry</option>
-                <option value="Witchcraft">Witchcraft</option>
-                <option value="Sorcery">Sorcery</option>
-                <option value="Troll Singing">Troll Singing</option>
-                <option value="Staff Magic">Staff Magic</option>
-                <option value="Symbolism">Symbolism</option>
-            </select>
-            <select id="filter-source" class="filter-select p-2 rounded w-full md:w-1/6">
-                <option value="">Filter by Source (All)</option>
-                <option value="ldb">Core Rulebook (ldb)</option>
-                <option value="cdx">Codex (cdx)</option>
-                <option value="adv">Advanced Player's Guide (adv)</option>
-                <option value="gdj">Adventure Books</option>
-                <option value="fanmade">Fanmade</option>
-            </select>
-            <select id="filter-rules" class="filter-select p-2 rounded w-full md:w-1/6">
-                <option value="official">Official Rules (en)</option>
-                <option value="house">House Rules (en_31)</option>
-            </select>
+                    </select>
+                    <select id="filter-tradition" class="filter-select p-2 rounded w-full md:w-1/6">
+                        <option value="">Filter by Tradition (All)</option>
+                        <option value="Warrior">Warrior</option>
+                        <option value="Mystic">Mystic</option>
+                        <option value="Rogue">Rogue</option>
+                        <option value="Wizardry">Wizardry</option>
+                        <option value="Witchcraft">Witchcraft</option>
+                        <option value="Sorcery">Sorcery</option>
+                        <option value="Troll Singing">Troll Singing</option>
+                        <option value="Staff Magic">Staff Magic</option>
+                        <option value="Symbolism">Symbolism</option>
+                    </select>
+                    <select id="filter-source" class="filter-select p-2 rounded w-full md:w-1/6">
+                        <option value="">Filter by Source (All)</option>
+                        <option value="ldb">Core Rulebook (ldb)</option>
+                        <option value="cdx">Codex (cdx)</option>
+                        <option value="adv">Advanced Player's Guide (adv)</option>
+                        <option value="gdj">Adventure Books</option>
+                        <option value="fanmade">Fanmade</option>
+                    </select>
+                    <select id="filter-rules" class="filter-select p-2 rounded w-full md:w-1/6">
+                        <option value="official">Official Rules (en)</option>
+                        <option value="house">House Rules (en_31)</option>
+                    </select>
+                </div>
+
+                <div id="item-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </div>
         </div>
-
-        <div id="item-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </main>
 
     <script>
@@ -213,7 +240,8 @@
                         source = item.livre;
                 }
 
-                let type
+                let type;
+                let baseValue = 10;
                 switch (item.type) {
                     case "talent":
                         type = "Ability";
@@ -226,33 +254,41 @@
                         break;
                     case "atout":
                         type = "Boon";
+                        baseValue = 5;
                         break;
                     case "fardeau":
                         type = "Burden";
+                        baseValue = -5;
                         break;
                     case "pouvoir mystique":
                         type = "Mystical Power";
                         break;
                     case "arme":
                         type = "Weapon";
+                        baseValue = 0;
                         break;
                     case "qualite":
                         type = "Quality";
+                        baseValue = 0;
                         break;
                     case "elixir":
                         type = "Potion";
+                        baseValue = 0;
                         break;
                     case "armure":
                         type = "Armor";
+                        baseValue = 0;
                         break;
                     case "rituel":
                         type = "Ritual";
                         break;
                     case "trait/atout":
                         type = "Trait/Boon";
+                        baseValue = 5;
                         break;
                     case "trait/fardeau":
                         type = "Trait/Burden";
+                        baseValue = -5;
                         break;
                     default:
                         type = item.type;
@@ -265,25 +301,41 @@
                     tradition = "Tradition";
                 }
 
+                let name = rules.nom || item.en.nom || item.en_31?.nom || 'Unknown Ability'
+
+                let noviceValue = baseValue;
+                let adeptValue = baseValue*2;
+                let masterValue = baseValue*3;
+
+
                 return `
-                    <div class="card p-4 rounded">
-                        <h2 class="font-bold text-amber-200">${rules.nom || item.en.nom || item.en_31?.nom || 'Unknown Ability'}</h2>
+                    <div class="card p-4 rounded" id="${name}">
+                        <h2 class="font-bold text-amber-200">${name}</h2>
                         <p class="text-sm text-gray-400">Type: ${type}</p>
                         <p class="text-sm text-gray-400">Attribute: ${item.attribut || 'None'}</p>
                         <p class="text-sm text-gray-400">${tradition}: ${rules.tradition || item.en?.tradition || item.en_31?.tradition || 'None'}</p>
                         <p class="text-sm text-gray-400">Source: ${source}</p>
                         <p class="text-sm text-gray-300 mt-2">${rules.description || item.en?.description || item.en_31?.description || 'No description available.'}</p>
                         <div class="mt-2">
-                            <p><span class='text-success'>Novice</span> ${rules.novice || item.en?.novice || item.en_31?.novice  || ""}</p>
-                            <p><span class='text-info'>Adept</span> ${rules.adepte || item.en?.adepte || item.en_31?.adepte  || ""}</p>
-                            <p><span class='text-danger'>Master</span> ${rules.maitre || item.en?.maitre || item.en_31?.maitre  || ""}</p>
+                            <p><input type="checkbox" class="novice-box mastery-box" value="${noviceValue}" onchange="updateSelectedOptions(this)" data-mastery="Novice"/><span class='text-success'>Novice</span> ${rules.novice || item.en?.novice || item.en_31?.novice  || ""}</p>
+                            <p><input type="checkbox" class="adept-box mastery-box" value="${adeptValue}"  onchange="updateSelectedOptions(this)" data-mastery="Adept"/><span class='text-info'>Adept</span> ${rules.adepte || item.en?.adepte || item.en_31?.adepte  || ""}</p>
+                            <p><input type="checkbox" class="master-box mastery-box" value="${masterValue}"  onchange="updateSelectedOptions(this)" data-mastery="Master"/><span class='text-danger'>Master</span> ${rules.maitre || item.en?.maitre || item.en_31?.maitre  || ""}</p>
                         </div>
                         ${rules.materiel ? `<p class="text-sm text-gray-400 mt-2">Material: ${rules.materiel || item.en?.materiel || item.en_31?.materiel}</p>` : ''}
                         ${rules.source ? `<p class="text-sm text-gray-400 mt-2">Source: ${rules.source || item.en?.source || item.en_31?.source}</p>` : ''}
                     </div>
                 `;
             }).join('');
+
+             const checkboxes = document.querySelectorAll('.mastery-box');
+             checkboxes.forEach(checkbox => {
+                let id = checkbox.closest('div.card').id +"_"+checkbox.getAttribute("data-mastery");
+                const listItem = document.getElementById(id);
+                checkbox.checked = (listItem != null);
+            });
+
         }
+
 
         function sortItems(items, sortBy) {
             const [key, direction] = sortBy.split('-');
@@ -306,12 +358,12 @@
         function filterItems(items, filters) {
             return items.filter(item => {
                 const typeMatch = !filters.type || item.type.includes(filters.type);
-                const traditionMatch = !filters.tradition || 
-                    (item.en?.tradition && item.en.tradition.includes(filters.tradition)) || 
+                const traditionMatch = !filters.tradition ||
+                    (item.en?.tradition && item.en.tradition.includes(filters.tradition)) ||
                     (item.fr?.tradition && item.fr.tradition.includes(filters.tradition)) ||
                     (item.en?.tradition === 'Witchcraft' && filters.tradition === 'Witchcraft');
                 const sourceMatch = !filters.source || item.livre === filters.source;
-                const searchMatch = !filters.search || 
+                const searchMatch = !filters.search ||
                     (item.en?.nom || '').toLowerCase().includes(filters.search) ||
                     (item.en_31?.nom || '').toLowerCase().includes(filters.search) ||
                     (item.fr?.nom || '').toLowerCase().includes(filters.search) ||
@@ -368,6 +420,39 @@
         }
 
         window.onload = init;
+
+
+
+        const selectedList = document.getElementById('selected-list');
+        const totalPointsDisplay = document.getElementById('total-points');
+        let totalPoints = 0;
+
+        function updateSelectedOptions(checkbox) {
+            let id = checkbox.closest('div.card').id +"_"+checkbox.getAttribute("data-mastery");
+               if (checkbox.checked) {
+                    totalPoints += parseInt(checkbox.value);
+                    const li = document.createElement('li');
+                    li.id = id;
+                    li.textContent = checkbox.closest('div.card').id +" : "+checkbox.getAttribute("data-mastery");
+                    selectedList.appendChild(li);
+               } else {
+                 totalPoints -= parseInt(checkbox.value);
+                    const listItem = document.getElementById(id);
+                    if (listItem) {
+                        listItem.remove();
+                    }
+               }
+
+            totalPointsDisplay.textContent = `Total Points: ${totalPoints}`;
+        }
+
+         function shouldBeChecked(id) {
+            // Example logic: Check if id is even
+            return parseInt(id) % 2 === 0;
+        }
+
+        // Initial update
+       // updateSelectedOptions();
     </script>
 </body>
 </html>

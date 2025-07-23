@@ -249,6 +249,7 @@
 
                 let type;
                 let baseValue = 10;
+                let showCheckbox = true;
                 switch (item.type) {
                     case "talent":
                         type = "Ability";
@@ -273,18 +274,22 @@
                     case "arme":
                         type = "Weapon";
                         baseValue = 0;
+                        showCheckbox = false;
                         break;
                     case "qualite":
                         type = "Quality";
                         baseValue = 0;
+                        showCheckbox = false;
                         break;
                     case "elixir":
                         type = "Potion";
                         baseValue = 0;
+                        showCheckbox = false;
                         break;
                     case "armure":
                         type = "Armor";
                         baseValue = 0;
+                        showCheckbox = false;
                         break;
                     case "rituel":
                         type = "Ritual";
@@ -318,9 +323,17 @@
                 let adept = rules.adepte || item.en?.adepte || item.en_31?.adepte;
                 let master = rules.maitre || item.en?.maitre || item.en_31?.maitre;
 
-                let noviceHtml =  `<p><input type="checkbox" class="novice-box mastery-box" value="${noviceValue}" onchange="updateSelectedOptions(this, 'Novice', '${novice}')" data-mastery="Novice"/><span class='text-success'>Novice</span> ${novice}</p>`;
-                let adeptHtml = `<p><input type="checkbox" class="adept-box mastery-box" value="${adeptValue}"  onchange="updateSelectedOptions(this, 'Adept', '${adept}')" data-mastery="Adept"/><span class='text-info'>Adept</span> ${adept}</p>`;
-                let masterHtml = `<p><input type="checkbox" class="master-box mastery-box" value="${masterValue}"  onchange="updateSelectedOptions(this, 'Master', '${master}')" data-mastery="Master"/><span class='text-danger'>Master</span> ${master}</p>`;
+                let noviceMod = rules.novice == item.en_31?.novice
+                let adeptMod = rules.adepte == item.en_31?.adepte
+                let masterMod = rules.maitre == item.en_31?.maitre
+
+                let noviceCheckbox = `<input type="checkbox" class="novice-box mastery-box" value="${noviceValue}" onchange="updateSelectedOptions(this, 'Novice', '${novice}')" data-mastery="Novice"/><span class='text-success'>Novice${noviceMod ? "*" : ""}</span> `;
+                let adeptCheckbox = `<input type="checkbox" class="adept-box mastery-box" value="${adeptValue}"  onchange="updateSelectedOptions(this, 'Adept', '${adept}')" data-mastery="Adept"/><span class='text-info'>Adept${adeptMod ? "*" : ""}</span> `;
+                let masterCheckbox = `<input type="checkbox" class="master-box mastery-box" value="${masterValue}"  onchange="updateSelectedOptions(this, 'Master', '${master}')" data-mastery="Master"/><span class='text-danger'>Master${masterMod ? "*" : ""}</span> `;
+
+                let noviceHtml =  `<p>${showCheckbox ? noviceCheckbox : ""}${novice}</p>`;
+                let adeptHtml = `<p>${showCheckbox ? adeptCheckbox : ""}${adept}</p>`;
+                let masterHtml = `<p>${showCheckbox ? masterCheckbox : ""}${master}</p>`;
                 return `
                     <div class="card p-4 rounded" id="${name}">
                         <h2 class="font-bold text-amber-200">${name}</h2>

@@ -1861,8 +1861,8 @@
 		"en":{
 			"description":"It is not uncommon for witch hunters and black cloaks to fight with a sword in one hand and a whip in the other. This is an effective and deadly combination; in the hands of someone with the proper training, it can even bring down wellarmored opponents.",
 			"novice":"Active. Attack with a whip in one hand and a one-handed weapon in the other. If the whip attack hits, the character gets a Free Attack with the one-handed weapon, regardless of whether or not the whip deals damage.",
-			"adepte":"<span class='text-info'>Adepte</span> Active. As Novice, but the whip hinders the enemy's movements so that the Free Attack hits automatically.",
-			"maitre":"<span class='text-danger'>Maître</span> Active. As Adept, but the whip fighter pulls the enemy toward himself/herself so that the Free Attack also deals +1D6 damage.",
+			"adepte":"Active. As Novice, but the whip hinders the enemy's movements so that the Free Attack hits automatically.",
+			"maitre":"Active. As Adept, but the whip fighter pulls the enemy toward himself/herself so that the Free Attack also deals +1D6 damage.",
 			"nom":"Whip Fighter"
 		}
 	},
@@ -1876,8 +1876,8 @@
 		"en":{
 			"description":"Most people fighting with a two-handed weapon rely on its considerable weight, but there are also those who cultivate the ability to wield huge two-handed swords with great finesse. Those who possess this ability belong to that category, and can use the length of the weapon to combat all sorts of opponents.",
 			"novice":"Passive. In the hands of the novice, two-handed swords gain the quality Long and can therefore be used with the Polearm Mastery ability.",
-			"adepte":"<span class='text-info'>Adepte</span> Reaction. After one successful Defense per turn, pass a [Strong←Strong] test to push enemies out of melee combat with the sword. The enemy takes 1D6 damage, is pushed back a couple of meters, and must once again face the quality Long.",
-			"maitre":"<span class='text-danger'>Maître</span> Active. The master's flowing strikes count as a chain of attacks against enemies within melee distance – if an enemy is hit, an attack is made against the next one, and so on until an attack fails.",
+			"adepte":"Reaction. After one successful Defense per turn, pass a [Strong←Strong] test to push enemies out of melee combat with the sword. The enemy takes 1D6 damage, is pushed back a couple of meters, and must once again face the quality Long.",
+			"maitre":"Active. The master's flowing strikes count as a chain of attacks against enemies within melee distance – if an enemy is hit, an attack is made against the next one, and so on until an attack fails.",
 			"nom":"Two-handed Finesse"
 		}
 	},
@@ -1891,8 +1891,8 @@
 		"en":{
 			"description":"Blessings represent the mystical tradition taught and practiced by all mystically inclined priests from the faraway Realm of the Order. In essence, it combines powers from both Witchcraft and Theurgy with a variety of blessings unique to the clergy of the Young Gods. Note that the tradition itself will be described in more detail in future books.",
 			"novice":"Special. The priest no longer suffers permanent Corruption when learning blessings at Novice level, nor when learning the rituals of the tradition. Despite this, the character has no protection against the temporary Corruption that comes from performing the blessings and rituals of the tradition.",
-			"adepte":"<span class='text-info'>Adepte</span> Special. The priest no longer suffers permanent Corruption when learning blessings at Adept level. The Adept has also learned to use the holy powers and rituals according to the will of the gods, and now only suffers one (1) temporary Corruption when performing them.",
-			"maitre":"<span class='text-danger'>Maître</span> Special. The priest's profound insight into the divine increases the effect of all healing and holy powers by 1D4, including damage dealt against Abominations and Undead. The priest suffers no Corruption when learning blessings at master level.",
+			"adepte":"Special. The priest no longer suffers permanent Corruption when learning blessings at Adept level. The Adept has also learned to use the holy powers and rituals according to the will of the gods, and now only suffers one (1) temporary Corruption when performing them.",
+			"maitre":"Special. The priest's profound insight into the divine increases the effect of all healing and holy powers by 1D4, including damage dealt against Abominations and Undead. The priest suffers no Corruption when learning blessings at master level.",
 			"nom":"Blessings"
 		}
 	},
@@ -1906,8 +1906,8 @@
 		"en":{
 			"description":"The player character is trained in using his/her armor to maximum effect. The ability can only be used with at least medium armor, but can be very effective, not least against armored opponents and when the user moves through the midst of a battle.",
 			"novice":"Movement. Wearing at least medium armor, the character has +1D6 in Armor against all enemy hits during the movement.",
-			"adepte":"<span class='text-info'>Adepte</span> Active. Roll an attack test to grab and restrain an enemy until failing a [Strong←Strong] test. Each turn after the first, an attack with a Short weapon can be made; while restrained the enemy may only defend, and if hit Armor is ignored.",
-			"maitre":"<span class='text-danger'>Maître</span> Active. Roll an attack test to grab and with a following [Strong←Strong] test throw an enemy to the ground; the character lands on top (1D6 crushing damage, ignoring Armor). The character may then restrain and attack as on Adept level, aside from the enemy not being able to defend during the first turn after the throw.",
+			"adepte":"Active. Roll an attack test to grab and restrain an enemy until failing a [Strong←Strong] test. Each turn after the first, an attack with a Short weapon can be made; while restrained the enemy may only defend, and if hit Armor is ignored.",
+			"maitre":"Active. Roll an attack test to grab and with a following [Strong←Strong] test throw an enemy to the ground; the character lands on top (1D6 crushing damage, ignoring Armor). The character may then restrain and attack as on Adept level, aside from the enemy not being able to defend during the first turn after the throw.",
 			"nom":"Armor Wrestling"
 		}
 	},
@@ -4732,15 +4732,9 @@
 		"es":{
 			"nom":"Robusto"
 		},
-		"en_31":{
-			"novice":"Special. The character is close to seven feet tall and very strong. The character can only use light or medium armor, which must be custom-made and therefore costs twice the normal price. In return, the character naturally ignores 1 damage from each hit taken, in addition to any armor it wears. Furthermore, once per turn, it can deal 1 extra damage with one of its melee attacks.",
-			"adepte":"Reaction. Once per scene, when the character is reduced to 0 Toughness but not killed outright, he or she can drop to 1D4 points of Toughness instead.",
-			"maitre":"Active. The character strikes with such violence that any creatures around him suffer the consequences of the attack. The character performs one melee attack against each enemy engaged in melee. Each attack is rolled separately.",
-			"nom":"Powerful Size"
-		},
 		"en":{
 			"description":"The character belongs to a race of creatures that are naturally tall and often continue to grow their entire lives. But there are variations: some grow quickly, others more slowly while some hardly seems to grow at all.",
-			"novice":"Special. The character is close to seven feet tall and very strong. Such a towering body is easier to hit in combat, which is bal - anced by a greater natural toughness. The character's Defense is based on [Quick –2] and it can only use light armor, which must be custom-made and therefore costs twice the normal price. In return, the character naturally ignores 1D4 damage from each hit taken, in addition to any armor it wears. Fur - thermore, it can deal 1D4 extra damage with one melee attack each turn.",
+			"novice":"Special. The character is close to seven feet tall and very strong. Such a towering body is easier to hit in combat, which is balanced by a greater natural toughness. The character's Defense is based on [Quick –2] and it can only use light armor, which must be custom-made and therefore costs twice the normal price. In return, the character naturally ignores 1D4 damage from each hit taken, in addition to any armor it wears. Furthermore, it can deal 1D4 extra damage with one melee attack each turn.",
 			"adepte":"Special. The character is over eight feet tall, weighs about 500 pounds and has skin as though as bark. A creature like this packs quite the punch but is also easy to hit. The character's Defense is based on [Quick –3] and it can only use light armor, which must be custom-made and costs three times the nor - mal price. In return, the character naturally ignores 1D6 damage from each hit taken, in addition to any armor it wears. Furthermore, it can deal 1D6 extra damage with one melee attack each turn.",
 			"maitre":"Special. The character is close to ten feet tall, weighs about half a ton and crushes lesser creatures while enemy weapons have a hard time penetrating its stone-like skin. It is very easy to hit a creature of this size, but equally hard to wound it seriously. The character's Defense is based on [Quick –4] and it can only use light armor (custom-made, costing four times the normal price). In return, the character ignores 1D8 damage from each hit taken, in addition to any armor it wears. Finally, it can deal 1D8 extra damage with one melee attack each turn.",
 			"nom":"Robust"

@@ -314,10 +314,13 @@
                 let adeptValue = baseValue*2;
                 let masterValue = baseValue*3;
 
-                let novice = rules.novice || item.en?.novice || item.en_31?.novice  || "";
-                let adept = rules.adepte || item.en?.adepte || item.en_31?.adepte  || "";
-                let master = rules.maitre || item.en?.maitre || item.en_31?.maitre  || "";
+                let novice = rules.novice || item.en?.novice || item.en_31?.novice;
+                let adept = rules.adepte || item.en?.adepte || item.en_31?.adepte;
+                let master = rules.maitre || item.en?.maitre || item.en_31?.maitre;
 
+                let noviceHtml =  `<p><input type="checkbox" class="novice-box mastery-box" value="${noviceValue}" onchange="updateSelectedOptions(this, 'Novice', '${novice}')" data-mastery="Novice"/><span class='text-success'>Novice</span> ${novice}</p>`;
+                let adeptHtml = `<p><input type="checkbox" class="adept-box mastery-box" value="${adeptValue}"  onchange="updateSelectedOptions(this, 'Adept', '${adept}')" data-mastery="Adept"/><span class='text-info'>Adept</span> ${adept}</p>`;
+                let masterHtml = `<p><input type="checkbox" class="master-box mastery-box" value="${masterValue}"  onchange="updateSelectedOptions(this, 'Master', '${master}')" data-mastery="Master"/><span class='text-danger'>Master</span> ${master}</p>`;
                 return `
                     <div class="card p-4 rounded" id="${name}">
                         <h2 class="font-bold text-amber-200">${name}</h2>
@@ -327,9 +330,9 @@
                         <p class="text-sm text-gray-400">Source: ${source}</p>
                         <p class="text-sm text-gray-300 mt-2">${rules.description || item.en?.description || item.en_31?.description || 'No description available.'}</p>
                         <div class="mt-2">
-                            <p><input type="checkbox" class="novice-box mastery-box" value="${noviceValue}" onchange="updateSelectedOptions(this, 'Novice', '${novice}')" data-mastery="Novice"/><span class='text-success'>Novice</span> ${novice}</p>
-                            <p><input type="checkbox" class="adept-box mastery-box" value="${adeptValue}"  onchange="updateSelectedOptions(this, 'Adept', '${adept}')" data-mastery="Adept"/><span class='text-info'>Adept</span> ${adept}</p>
-                            <p><input type="checkbox" class="master-box mastery-box" value="${masterValue}"  onchange="updateSelectedOptions(this, 'Master', '${master}')" data-mastery="Master"/><span class='text-danger'>Master</span> ${master}</p>
+                            ${novice ? noviceHtml : ""}
+                            ${adept ? adeptHtml : ""}
+                            ${master ? masterHtml : ""}
                         </div>
                         ${rules.materiel ? `<p class="text-sm text-gray-400 mt-2">Material: ${rules.materiel || item.en?.materiel || item.en_31?.materiel}</p>` : ''}
                         ${rules.source ? `<p class="text-sm text-gray-400 mt-2">Source: ${rules.source || item.en?.source || item.en_31?.source}</p>` : ''}

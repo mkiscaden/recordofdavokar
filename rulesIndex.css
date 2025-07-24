@@ -1,0 +1,105 @@
+ @font-face {
+    font-family: 'Adlibitum';
+    src: url('adlibitum.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.checkbox {
+    margin-right:5px;
+}
+
+body {
+    background: linear-gradient(to bottom, #1a1a1a, #2a2a2a);
+    color: #e5e7eb;
+    font-family: 'Georgia', serif;
+}
+.card {
+    background: rgba(40, 40, 40, 0.95);
+    border: 1px solid #4a2c2a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: scale(1.02);
+}
+.search-bar, .sort-select, .filter-select {
+    background: #2d2d2d;
+    border: 1px solid #4a2c2a;
+    color: #e5e7eb;
+}
+h1, h2, h3 {
+     font-family: 'Adlibitum';
+     letter-spacing: 3px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.5em !important;
+    letter-spacing: 3px;
+    border-bottom: 2px solid #ffbf00;
+}
+
+h2 {
+    font-size: 1.8em  !important;;
+    letter-spacing: 2px;
+}
+
+h3 {
+    font-size: 1.4em  !important;;
+    letter-spacing: 2px;
+}
+
+.text-success {
+     color: #33cc33;
+}
+
+ .text-info {
+     color: #0099ff;
+}
+
+ .text-danger {
+     color: #ff6600;
+}
+
+#flexContainer {
+    display: flex;
+    flex-direction: row; /* Columns side by side */
+    gap: 10px; /* Space between columns */
+}
+.column {
+    padding: 10px;
+    flex: 0 0 auto;
+}
+.question-icon {
+    display: inline-block;
+    margin-left: 3px;
+    cursor: help; /* Pointer changes to question mark on hover */
+    font-size: 14px; /* Adjust size as needed */
+    color: #9ca3af; /* Optional: Style the icon */
+}
+
+
+
+#dropdownContainer {
+    display: flex;
+    flex-direction: column; /* Vertical arrangement */
+    gap: 5px;
+    padding: 10px;
+    max-width: 300px;
+}
+.dropdown-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+label {
+    width: 80px; /* Fixed width for labels */
+    font-weight: bold;
+}
+select {
+    padding: 5px;
+    width: 50px;
+    background-color: #222;
+}

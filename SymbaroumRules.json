@@ -130,7 +130,7 @@
 		"en":{
 			"tradition":"Warrior",
 			"description":"The feared barbarian warriors of Davokar have developed the practice of working themselves into a berserker frenzy before battle. By letting the repressed anger of the heart strengthen its limbs, the character can unleash a fuming rage that, if channeled correctly, might determine which side will emerge victorious from the battle.",
-			"novice":"Free. As a Free Action, the character may enter into a murderous frenzy to solely focus on hurting the enemy, dealing 1D6 extra damage when fighting in melee combat. The downside of this frenzy is that the character cannot defend itself properly. The attribut on which Defense is based, is considered to be 5 when calculating Defense.",
+			"novice":"Free. As a Free Action, the character may enter into a murderous frenzy to solely focus on hurting the enemy, dealing 1D6 extra damage when fighting in melee combat. The downside of this frenzy is that the character cannot defend itself properly. The attribute on which Defense is based, is considered to be 5 when calculating Defense.",
 			"adepte":"Reaction. The rage is like armor to the character. He or she ignores 1D4 damage from each hit suffered while in a berserker rage.",
 			"maitre":"Free. The character has managed to harness its rage without losing any of its power. The character can utilize this capacity to both deal and ignore extra damage, while still being able to defend itself as normal.",
 			"nom":"Berserker"
@@ -7225,7 +7225,7 @@
 			"nom":"Corrosif"
 		},
 		"en_31":{
-			"novice":"Ancient forging procedures make every hit potentially corrosive. Each hit with the weapon deals 1D8 extra damage. The acidic effect is not added to the normal damage; it is rolled as a separate hit. Such a weapon is often carried in a special sheath or socket to avoid damaging the owner. In combat, the acid will affect the wielder if the attack roll is 20 and a consecutive roll is higher than the wielders Accurate (or the attribute replacing Accurate in attacks)."
+			"novice":"Ancient forging procedures make every hit potentially corrosive. Each hit with the weapon reduces the armor of the target by 1 for all subsequent attacks. The Acid deals no additional damage after the armor is destroyed. Natural armor is repaired when the creature is healed (1 point per point of healing). Manufactured armor must be repaired by a blacksmith."
 		},
 		"en":{
 			"novice":"Ancient forging procedures make every hit potentially corrosive. Each hit with the weapon deals 1d4 extra damage for 1d4 turns. The acidic effect is not added to the normal damage; it is rolled as a separate hit. Such a weapon is often carried in a special sheath or socket to avoid damaging the owner. In combat, the acid will affect the wielder if the attack roll is 20 and a consecutive roll is higher than the wielders Accurate (or the attribute replacing Accurate in attacks).",
@@ -7318,7 +7318,7 @@
 			"nom":"Punitif"
 		},
 		"en_31":{
-			"novice":"The armor is crafted with secret and retributive techniques that cause it to ooze acid. With each hit in melee combat, the attacker must pass a Quick test. If failed, the attacker is hit by an acid splash that deals 1D8 damage."
+			"novice":"The armor is crafted with secret and retributive techniques that cause it to ooze acid. With each hit in melee combat, the attacker must pass a Quick test. If failed, the attacker is hit by an acid splash that destroys 2 point of armor. The Acid deals no additional damage after the armor is destroyed. Natural armor is repaired when the creature is healed (1 point per point of healing). Manufactured armor must be repaired by a blacksmith."
 		},
 		"en":{
 			"novice":"The armor is crafted with secret and retributive techniques that cause it to ooze acid. With each hit in melee combat, the attacker must pass a Quick test. If failed, the attacker is hit by an acid splash that deals 1d4 damage for 1d4 turns.",
@@ -7375,9 +7375,10 @@
 			"nom":"Ataque ácido"
 		},
 		"en_31":{
-			"novice":"I Reaction. The acidic attack is weak and deals 3 points of damage for 3 turns at the start of the victim turn.",
-			"adepte":"II Reaction. The acidic attack is moderately strong and deals 4 points of damage for 4 turns at the start of the victim turn.",
-			"maitre":"III Reaction. The acidic attack is strong and deals 5 points of damage for 5 turns at the start of the victim turn."
+			"description":"Either the creature's unarmed attack or its Natural Weapon is covered in acid so that each hit has a corrosive side effect on the target.",
+			"novice":"I Reaction. The acidic attack is weak and reduces the target's armor by 1 point in addition to the creature's normal damage.",
+			"adepte":"II Reaction. The acidic attack is moderately strong and reduces the target's armor by 1d4 points in addition to the creature's normal damage.",
+			"maitre":"III Reaction. The acidic attack is strong and reduces the target's armor by 2d4 points in addition to the creature's normal damage."
 		},
 		"en":{
 			"description":"Either the creature's unarmed attack or its Natural Weapon is covered in acid so that each hit has a corrosive side effect on the target. The acid must first penetrate the target's Armor to deal damage, even if the initial attack does. Removing the acid from either body or armor requires that someone spends an Action and makes a successful Cunning test. Acidic Attack requires the Acidic Blood trait, at the same level or higher.",
@@ -7398,9 +7399,10 @@
 			"nom":"Sangre ácida"
 		},
 		"en_31":{
-			"novice":"I Reaction. The acidic blood is weak and deals 3 points of damage for 3 turns at the start of the victim turn.",
-			"adepte":"II Reaction. The acidic blood is moderately strong and deals 4 points of damage for 4 turns at the start of the victim turn.",
-			"maitre":"III Reaction. The acidic blood is strong and deals 5 points of damage for 5 turns at the start of the victim turn."
+			"description":"The creature's blood is corrosive, and sprays all around when the creature is hit by attacks. Whoever hits the creature in melee combat, and manages to damage it, must make a Defense test or be hit by the acidic blood.",
+			"novice":"I Reaction. The acidic blood is weak and reduces the target's armor by 1d4 points.",
+			"adepte":"II Reaction. The acidic blood is moderately strong and reduces the target's armor by 1d6 points.",
+			"maitre":"III Reaction. The acidic blood is strong and reduces the target's armor by 1d8 points."
 		},
 		"en":{
 			"description":"The creature's blood is corrosive, and sprays all around when the creature is hit by attacks. Whoever hits the creature in melee combat, and manages to damage it, must make a Defense test or be hit by the acidic blood. Removing the acid from either body or armor requires that someone spends an Action and makes a successful Cunning test (wash it away with water, dirt, sand or something similar).",

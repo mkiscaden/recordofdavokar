@@ -116,9 +116,9 @@
                 let adeptMod = rules.adepte == item.en_31?.adepte
                 let masterMod = rules.maitre == item.en_31?.maitre
 
-                let noviceCheckbox = `<input type="checkbox" class="novice-box mastery-box" value="${noviceValue}" onchange="updateSelectedOptions(this, 'Novice', '${novice}')" data-mastery="Novice"/><span class='text-success'> Novice${noviceMod ? "*" : ""}</span> `;
-                let adeptCheckbox = `<input type="checkbox" class="adept-box mastery-box" value="${adeptValue}"  onchange="updateSelectedOptions(this, 'Adept', '${adept}')" data-mastery="Adept"/><span class='text-info'> Adept${adeptMod ? "*" : ""}</span> `;
-                let masterCheckbox = `<input type="checkbox" class="master-box mastery-box" value="${masterValue}"  onchange="updateSelectedOptions(this, 'Master', '${master}')" data-mastery="Master"/><span class='text-danger'> Master${masterMod ? "*" : ""}</span> `;
+                let noviceCheckbox = `<input type="checkbox" class="novice-box mastery-box" value="${noviceValue}" onchange="updateSelectedOptions(this, 'Novice', '${novice}')" data-mastery="Novice"/><span class='text-success'> Novice${noviceMod ? "<span class='mod-icon' title='Original: "+item.en?.novice+"'>*</span>" : ""}</span> `;
+                let adeptCheckbox = `<input type="checkbox" class="adept-box mastery-box" value="${adeptValue}"  onchange="updateSelectedOptions(this, 'Adept', '${adept}')" data-mastery="Adept"/><span class='text-info'> Adept${adeptMod ? "<span class='mod-icon' title='Original: "+item.en?.adepte+"'>*</span>" : ""}</span> `;
+                let masterCheckbox = `<input type="checkbox" class="master-box mastery-box" value="${masterValue}"  onchange="updateSelectedOptions(this, 'Master', '${master}')" data-mastery="Master"/><span class='text-danger'> Master${masterMod ? "<span class='mod-icon' title='Original: "+item.en?.maitre+"'>*</span>" : ""}</span> `;
 
                 let noviceHtml =  `<p>${showCheckbox ? noviceCheckbox : ""}${novice}</p>`;
                 let adeptHtml = `<p>${showCheckbox ? adeptCheckbox : ""}${adept}</p>`;

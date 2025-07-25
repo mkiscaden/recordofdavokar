@@ -80,6 +80,9 @@ h3 {
     color: #9ca3af; /* Optional: Style the icon */
 }
 
+.mod-icon {
+    cursor: help; /* Pointer changes to question mark on hover */
+}
 
 
 #dropdownContainer {
@@ -95,7 +98,7 @@ h3 {
     gap: 10px;
 }
 label {
-    width: 80px; /* Fixed width for labels */
+    width: 90px; /* Fixed width for labels */
     font-weight: bold;
 }
 select {

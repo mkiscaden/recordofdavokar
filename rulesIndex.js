@@ -143,7 +143,7 @@
                             ${master ? masterHtml : ""}
                         </div>
                         ${rules.materiel ? `<p class="text-sm text-gray-400 mt-2">Material: ${rules.materiel || item.en?.materiel || item.en_31?.materiel}</p>` : ''}
-                        ${rules.source ? `<p class="text-sm text-gray-400 mt-2">Source: ${rules.source || item.en?.source || item.en_31?.source}</p>` : ''}
+                        ${rules.source ? `<p class="text-sm text-gray-400 mt-2">Fan Site: ${rules.source || item.en?.source || item.en_31?.source}</p>` : ''}
                     </div>
                 `;
             }).join('');
@@ -158,21 +158,12 @@
         }
 
 
-        function sortItems(items, sortBy) {
-            const [key, direction] = sortBy.split('-');
+        function sortItems(items) {
+
             return [...items].sort((a, b) => {
-                let valA, valB;
-                if (key === 'name') {
-                    valA = (a.en?.nom || a.en_31?.nom || '').toLowerCase();
-                    valB = (b.en?.nom || b.en_31?.nom || '').toLowerCase();
-                } else if (key === 'attribute') {
-                    valA = (a.attribut || '').toLowerCase();
-                    valB = (b.attribut || '').toLowerCase();
-                } else if (key === 'tradition') {
-                    valA = (a.en?.tradition || a.fr?.tradition || '').toLowerCase();
-                    valB = (b.en?.tradition || b.fr?.tradition || '').toLowerCase();
-                }
-                return direction === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                 valA = (a.en?.nom || a.en_31?.nom || '').toLowerCase();
+                 valB = (b.en?.nom || b.en_31?.nom || '').toLowerCase();
+                return valA.localeCompare(valB);
             });
         }
 
@@ -207,7 +198,7 @@
 
             function updateDisplay() {
                 let filteredItems = filterItems(items, currentFilters);
-                filteredItems = sortItems(filteredItems, document.getElementById('sort').value);
+                filteredItems = sortItems(filteredItems);
                 displayItems(filteredItems, currentFilters.rules);
             }
 
@@ -215,8 +206,6 @@
                 currentFilters.search = e.target.value.toLowerCase();
                 updateDisplay();
             });
-
-            document.getElementById('sort').addEventListener('change', updateDisplay);
 
             document.getElementById('filter-type').addEventListener('change', (e) => {
                 currentFilters.type = e.target.value;
@@ -238,7 +227,7 @@
                 updateDisplay();
             });
 
-            displayItems(items, currentFilters.rules);
+            displayItems(sortItems(items), currentFilters.rules);
         }
 
         window.onload = init;

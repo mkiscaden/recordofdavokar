@@ -48,7 +48,7 @@
 			"nom":"Alchemy"
 		},
 		"en_31":{
-			"source":"This Website",
+			"source":"<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
 			"description":"The character is schooled in the mysteries of alchemy. They spend their time cooking together strange elixirs and mystical concoctions to help themselves and their allies brave the dangers of Davokar. The character is constantly brewing and crafting in the background, filling their satchel with a plethora of concoctions.<br/>In problem-solving situations, Alchemy can be used to identify drugs and poisons or chemical ingredients, and to gain clues as to where they come from. Alchemists are not expected to track their ingredients for common recipes. Some recipes require rare ingredients and cannot be prepared during a scene and must be crafted with dedicated preparation.",
 			"novice":"Action. With a successful [Cunning] test the Alchemist pulls a Novice common Alchemy item from their bag. This item must be from the character's list of known recipes. However, elixirs obtained in this manner have a short shelf life, and they become non-functional at the end of the scene. When the Alchemist devotes an entire day to crafting and a successful [Cunning] test, the Alchmist may craft a single Novice potion of any type that can be used as a normal potion.<br>When taking this ability, the player immediately learns three Novice level recipes.",
 			"adepte":"Action. As Novice, except the Alchemist may take a single Adept level potion from their pouch. When devoting and entire day to crafting, the Alchemist may craft a single Adept level potion, or 1d4 Novice potions.<br>When taking this ability, the player immediately learns three Adept level recipes.",
@@ -3842,6 +3842,7 @@
 		"id":"#103",
 		"type":"rituel",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Magie",
 			"nom":"Saut des sept lieues"
@@ -8463,7 +8464,7 @@
 		"type":"talent",
 		"livre":"fanmade",
 		"en":{
-			"source":"This Website",
+			"source":"<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
 			"description":"All mystical traditions (Such as Wizardry, Witchcraft, etc) are an Incremental Ability. You do not buy the tradition directly with Experience. Instead, you advance the level of your Mystical Tradition ability by learning mystical powers of that tradition. Once characters have learned Novice level of a mystical tradition, they no longer gain permanent corruption for learning mystical powers of any skill level. Further, characters do not receive permanent corruption at character creation for learning two novice powers in order to qualify for Novice rank in that tradition. A power that is available to multiple traditions can only be applied to learning a single mystical tradition.",
 			"novice":"Special. The character has learned two mystical powers at Novice level associated with the Mystical Tradition.",
 			"adepte":"Special. The character has learned two mystical powers at Adept level associated with the Mystical Tradition.",
@@ -8477,7 +8478,7 @@
 		"livre":"fanmade",
 		"attribut":"ACC <- STR",
 		"en":{
-			"source":"This Website",
+			"source":"<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
 			"description": "Lone swordsman with poise,<br>Strikes fall yet never connect,<br>Riddle of Steel abides.",
 			"novice":"Passive. The character can precisely hit and deflect incoming attacks in close combat. The character may use Accurate as their basis for Defense in melee, as long as they are holding a melee weapon or have the Natural Warrior ability.",
 			"adepte":"Reaction. Once per turn, gain a Free Attack after a successful Defense test.",
@@ -8492,7 +8493,7 @@
 		"livre":"fanmade",
 		"attribut":"CUN",
 		"en":{
-			"source":"This Website",
+			"source":"<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
 			"description":"",
 			"novice":"Active. The character may use Cunning instead of Accurate when attacking with Alchemical substances.  Character can use thrown alchemical bombs and similar substances without risk to himself.",
 			"adepte":"Active. The character can throw two bombs or potions as a single action. This can be at the same target or different targets. Additionally, the character may draw two potions as a free action.",
@@ -8507,7 +8508,7 @@
 		"livre": "fanmade",
 		"attribut": "RES",
 		"en": {
-			"source": "This Website",
+			"source": "<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
 			"description": "The mystic summons the wind itself to push his opponents back, knocking them off their feet or even into tumbling to their death.",
 			"novice": "With a successful [Resolute <- Strong] test, push an enemy in melee range directly away from the mystic up to one movement action away and deals 2d4 damage. The Target's movement stops when they reach an obstacle larger than themselves and must pass a Quick test or be knocked prone. This power may be used to push the target off cliffs or into other hazards.",
 			"adepte": "Like Novice, but the mystic can throw a chain of enemies. The mystic starts with the first target and keeps making tests until one fails.",
@@ -8522,7 +8523,7 @@
 		"livre":"fanmade",
 		"en":{
 			"tradition":"Wizardry",
-			"novice":"By performing this ritual the mystic creates a wall made of solid stone up to three movements in length and half a Movement high. The Mystic must trace the path of the wall on the ground using a piece of stone. The wall does not need to be a straight line and may be built over uneven terrain so long as the path of the wall is a continuous line. If the wall is drawn in a manner that is unstable or over terrain that could not support its weight, the spell fails. When the ritual is completed stone of the same type used to trace the path springs forth from the ground at the rate of one foot per minute until it reaches its full height of half a Movement.<br>Multiple mystics who each know this ritual may work together to create larger structures.",
+			"novice":"By performing this ritual the mystic creates a wall made of solid stone up to three movements in length and half a Movement high. The Mystic must trace the path of the wall on the ground using a piece of stone. The wall does not need to be a straight line and may be built over uneven terrain so long as the path of the wall is a continuous line. If the wall is drawn in a manner that is unstable or over terrain that could not support its weight, the spell fails. When the ritual is completed stone of the same type used to trace the path springs forth from the ground at the rate of one foot per minute until it reaches its full height.<br>Multiple mystics who each know this ritual may work together to create larger structures.",
 			"nom":"Wall of Stone"
 		}
 	},
@@ -8532,7 +8533,7 @@
 		"livre":"fanmade",
 		"attribut":"CUN",
 		"en":{
-			"source":"This Website",
+			"source":"<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
 			"description":"Everybody has their price, and you have the talent and coin to exploit the greed of those around you even during the heat of battle.",
 			"novice":"Active. The character throws 2d4 silver shillings into the air. The character makes a [Persuasive<-Vigilant] against every cultured being within melee range. For each target the character succeeds against, the character may then move as a free action without being subject to Free Attack or Reactions related to movement.<br>The character must spend these coins from their own inventory, this ability may not be used if the character does not have the money to spend.",
 			"adepte":"Active. When using the Novice level of this ability, the character gains Advantage in addition to free movement against their opponents.",
@@ -8546,8 +8547,8 @@
 		"type":"fardeau",
 		"livre":"fanmade",
 		"en":{
-			"source":"This Website",
-			"novice":"The character came of age in the rural parts of Ambrian. Ignorant of the politics of the court, the latest fashion trends, or the dangers outside their rural village. For the character the price of a goods and services is 10% higher as the local merchants are more than happy to take advantage of an naive farmer. Furthermore, the character has a -1 penalty on all Vigilant an Persuasion tests when haggling or negotiating a deal.",
+			"source":"<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
+			"novice":"The character came of age in the rural parts of Ambrian. Ignorant of the politics of the court, the latest fashion trends, or the dangers outside their rural village. For the character the price of a goods and services is 10% higher as the local merchants are more than happy to take advantage of an naive farmer. Furthermore, the character has a -1 penalty on all Vigilant and Persuasion tests when haggling or negotiating a deal.",
 			"nom":"Country Bumpkin"
 		}
 	},
@@ -8556,8 +8557,8 @@
 		"type":"atout",
 		"livre":"fanmade",
 		"en":{
-			"source":"This Website",
-			"novice":"The character is canny and streetwise from life as a buerger in an Ambrian city. The character knows which inns have the softest beds, which taverns water down the wine, and where to find the best deal for anything sold for coin. For the character the price of a goods and services is 10% lower as the character knows where to get the best deals. Furthermore, the character has a +1 bonus on all Vigilant an Persuasion tests when haggling or negotiating a deal.",
+			"source":"<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
+			"novice":"The character is canny and streetwise from life as a buerger in an Ambrian city. The character knows which inns have the softest beds, which taverns water down the wine, and where to find the best deal for anything sold for coin. For the character the price of a goods and services is 10% lower as the character knows where to get the best deals. Furthermore, the character has a +1 bonus on all Vigilant and Persuasion tests when haggling or negotiating a deal.",
 			"nom":"Cosmopolitan"
 		}
 	},
@@ -8566,8 +8567,8 @@
 		"type":"fardeau",
 		"livre":"fanmade",
 		"en":{
-			"source":"This Website",
-			"novice":"The character has made a vow of poverty, either through devotion to Prios, undergoing penance, or personal reasons known only to them. The character cannot carry more than one Thaler worth of any form of currency. The character may not own nor borrow more than 50 Thaler worth of belongings, including weapons and armor; but excluding the value of mystical properties on that armor. Should the character find themselves in wealth in excess of this limit, the character must donate it to those in need.",
+			"source":"<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
+			"novice":"The character has made a vow of poverty, either through devotion to Prios, undergoing penance, or personal reasons known only to them. The character cannot carry more than one Thaler worth of any form of currency. The character may not own nor borrow more than 50 Thaler worth of belongings, including weapons and armor. The character may carry strong magical items and artifacts; provided the character donates them at the end of the adventure. Should the character find themselves in wealth in excess of this limit, the character must donate it the excess wealth.",
 			"nom":"Vow of Poverty"
 		}
 	},
@@ -8578,7 +8579,7 @@
 		"hidden": "true",
 		"en":{
 			"tradition":"Sorcery",
-			"source":"This Website",
+			"source":"<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
 			"novice":"The character forges a pact with a powerful demon from the Yonderworld or a corrupted entity tied to the dark forces of Davokar. This pact grants unique abilities at the cost of the character’s humanity, autonomy, and connection to the world’s natural order. The contract is designed to be inescapable, weaving a narrative of temptation, corruption, and struggle that will haunt the character until their death.<br>The contract cannot be broken by mortal rituals (e.g. Exorcism or Break Link) due to the demon’s overwhelming power.<br>The character is constantly aware of the demon's presence, receiving visions, whispers, or commands that influence their decisions.<br>While every contract is unique, the following is a rough guideline about what the character performing this ritual can expect: <Br>The demon grants the character 60 XP worth of Abilities,Mystical Powers, or Monstrous Traits without the needs to find a tutor. Even the most secret teachings of any organization can be obtained in this manner.<br>In exchange the demon demands regular living sacrifices of cultured beings, the demon may also instruct the character to do its bidding or otherwise pressure the character's decisions. Refusal to adhere to the contract, attempting to escape the contract, or informing others of the existence of the contract invokes horrible consequences in the form of Burdens and Monstrous Traits.",
 			"nom":"Dark Contract"
 		}
@@ -8588,7 +8589,7 @@
 		"type":"atout",
 		"livre":"fanmade",
 		"en":{
-			"source":"This Website",
+			"source":"<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
 			"novice":"The character has established a reputation amongst the local population as an untrustworthy and nefarious person. This might cover a region of many small settlements, a single large town, or a specific quarter or significant organisation within a city. In this environment, the character's Reputation functions as one level lower than that which they have actually achieved and they often refused service while amongst those who know of their reputation (in terms of meals, drink or a place to stay).",
 			"nom":"Infamous"
 		}
@@ -8598,11 +8599,11 @@
 		"type":"pouvoir mystique",
 		"livre":"fanmade",
 		"en":{
-			"source":"This Website",
+			"source":"<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
 			"tradition":"Troll Singing",
 			"description":"Contrary to the name, the song is not silent. It is instead a deep guttural grunt performed at a steady rhythm. The beat permeates the air around the singer and has the power to cancel other magical effects. Song of Silence does not affect rituals – their mystical bonds are too thoroughly woven and can only be dispelled by other rituals.",
-			"novice":"Active. By making a successful roll against [Resolute←Resolute] the Mystic can disperse an ongoing power or concentration effects on a creature or on himself. It is the Resolute of the mystic who has unleashed the power that is used as resistance when making the test. So long as the singing continues, the Troll Singer can make a new test against resolute each round on their turn.",
-			"adepte":"Active. While singing the Song of Silence, when a new mystical power is cast, the singer may force the caster to do a [Resolute<-Resolute] test. If successful, the spell is cancelled. The caster of the cancelled spell does not gain corruption (if applicable).",
+			"novice":"Active. By making a successful roll against [Resolute←Resolute] the Mystic can cancel a single ongoing power that targeted the singer or another creature. So long as the singing continues, the Troll Singer can attempt to cancel another ongoing power each turn.",
+			"adepte":"Reaction. While singing the Song of Silence, when a new mystical power is cast, the singer may force the caster to do a [Resolute<-Resolute] test. If successful, the spell is cancelled. The caster of the cancelled spell does not gain corruption (if applicable).",
 			"maitre":"Active. The Songs power is so great that it can cancel the power of mystical items. These item's become mundane and non-magical for as long as the song continues.",
 			"nom":"Song of Silence"
 		}
@@ -8614,9 +8615,9 @@
 		"en":{
 			"tradition":"Staff Magic",
 			"description":"By extending their will through the staff, it becomes and extension of the mystics senses.",
-			"novice":"Active. With a successful [Resolute] test, as long as the Staff Mage is touching the staff, the character can move and fight unhindered when blinded or in complete darkness until the end of the scene.",
-			"adepte":"Concentration is no longer required to maintain the spell. The staff picks up on tiny vibrations in the ground and air. Granting the Staff Mage the monsterous trait <i>Life Sense</i> at the Novice level.",
-			"maitre":"Passive. The Mystic can activate this power as a free action without a resolute test. The Staff Mage's connection to the staff is so strong this power is no longer considered an ongoing effect that can be disrupted by Anathema or similar magic cancelling effects.",
+			"novice":"Active. With a successful [Resolute] test, as long as the Staff Mage is touching the staff, the character can move and fight unhindered when blinded or in complete darkness until the end of the scene. The Staff Mage does not need to maintain concentration with this spell.",
+			"adepte":"Active. The staff picks up on tiny vibrations in the ground and air. Granting the Staff Mage the monsterous trait <i>Life Sense</i> at the Novice level.",
+			"maitre":"Passive. The Mystic can activate this power as a free action without a resolute test. The Staff Mage's connection to the staff is so strong this power is no longer considered an ongoing effect. It cannot be disrupted by Anathema or similar magic cancelling effects.",
 			"nom":"Staff Sense"
 		}
 	},

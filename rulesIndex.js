@@ -112,24 +112,30 @@
                 let adept = rules.adepte || item.en?.adepte || item.en_31?.adepte;
                 let master = rules.maitre || item.en?.maitre || item.en_31?.maitre;
 
-                let noviceMod = rules.novice == item.en_31?.novice
-                let adeptMod = rules.adepte == item.en_31?.adepte
-                let masterMod = rules.maitre == item.en_31?.maitre
+                let noviceMod = novice == item.en_31?.novice && item.houseRule != null;
+                let adeptMod = adept == item.en_31?.adepte && item.houseRule != null;
+                let masterMod = master == item.en_31?.maitre && item.houseRule != null;
 
-                let noviceCheckbox = `<input type="checkbox" class="novice-box mastery-box" value="${noviceValue}" onchange="updateSelectedOptions(this, 'Novice', '${novice}')" data-mastery="Novice"/><span class='text-success'> Novice${noviceMod ? "<span class='mod-icon' title='Original: "+item.en?.novice+"'>*</span>" : ""}</span> `;
-                let adeptCheckbox = `<input type="checkbox" class="adept-box mastery-box" value="${adeptValue}"  onchange="updateSelectedOptions(this, 'Adept', '${adept}')" data-mastery="Adept"/><span class='text-info'> Adept${adeptMod ? "<span class='mod-icon' title='Original: "+item.en?.adepte+"'>*</span>" : ""}</span> `;
-                let masterCheckbox = `<input type="checkbox" class="master-box mastery-box" value="${masterValue}"  onchange="updateSelectedOptions(this, 'Master', '${master}')" data-mastery="Master"/><span class='text-danger'> Master${masterMod ? "<span class='mod-icon' title='Original: "+item.en?.maitre+"'>*</span>" : ""}</span> `;
+                let noviceCheckbox = `<input type="checkbox" class="novice-box mastery-box" value="${noviceValue}" onchange="updateSelectedOptions(this, 'Novice', '${novice}')" data-mastery="Novice"/><span class='text-success'> Novice${noviceMod ? "<span class='mod-icon' title='Original: "+escapeHtmlForTitle(item.en?.novice)+"'>*</span>" : ""}</span> `;
+                let adeptCheckbox = `<input type="checkbox" class="adept-box mastery-box" value="${adeptValue}"  onchange="updateSelectedOptions(this, 'Adept', '${adept}')" data-mastery="Adept"/><span class='text-info'> Adept${adeptMod ? "<span class='mod-icon' title='Original: "+escapeHtmlForTitle(item.en?.adepte)+"'>*</span>" : ""}</span> `;
+                let masterCheckbox = `<input type="checkbox" class="master-box mastery-box" value="${masterValue}"  onchange="updateSelectedOptions(this, 'Master', '${master}')" data-mastery="Master"/><span class='text-danger'> Master${masterMod ? "<span class='mod-icon' title='Original: "+escapeHtmlForTitle(item.en?.maitre)+"'>*</span>" : ""}</span> `;
 
                 let noviceHtml =  `<p>${showCheckbox ? noviceCheckbox : ""}${novice}</p>`;
                 let adeptHtml = `<p>${showCheckbox ? adeptCheckbox : ""}${adept}</p>`;
                 let masterHtml = `<p>${showCheckbox ? masterCheckbox : ""}${master}</p>`;
+
+                let houseRuleText = "None";
+                if (item.en_31 != null) {
+                    houseRuleText = item.houseRule != null  ? item.houseRule : "Revised Wording";
+                }
+                let houseRule = `<p class="text-sm text-gray-400">House Rule: ${houseRuleText}</p>`
                 return `
                     <div class="card p-4 rounded" id="${name}">
                         <h2 class="font-bold text-amber-200">${name}</h2>
                         <p class="text-sm text-gray-400">Type: ${type}</p>
-                        <p class="text-sm text-gray-400">Attribute: ${item.attribut || 'None'}</p>
                         <p class="text-sm text-gray-400">${tradition}: ${rules.tradition || item.en?.tradition || item.en_31?.tradition || 'None'}</p>
                         <p class="text-sm text-gray-400">Source: ${source}</p>
+                        ${ rulesFilter === 'house' ? houseRule : "" }
                         <p class="text-sm text-gray-300 mt-2">${rules.description || item.en?.description || item.en_31?.description || 'No description available.'}</p>
                         <div class="mt-2">
                             ${novice ? noviceHtml : ""}
@@ -249,7 +255,7 @@
                     totalPoints += parseInt(checkbox.value);
                     const li = document.createElement('li');
                     li.id = id;
-                    li.innerHTML = checkbox.closest('div.card').id +" : "+ rank +"<span class='question-icon' title='"+title+"'>?</span>";
+                    li.innerHTML = checkbox.closest('div.card').id +" : "+ rank +"<span class='question-icon' title='"+escapeHtmlForTitle(title)+"'>?</span>";
                     li.title = title;
                     selectedList.appendChild(li);
                } else {
@@ -287,3 +293,15 @@
         document.querySelectorAll('#dropdownContainer select').forEach(select => {
             select.dataset.previousValue = select.value;
         });
+
+        function escapeHtmlForTitle(str) {
+            const entityMap = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;',
+                '/': '&#x2F;'
+            };
+            return String(str).replace(/[&<>"'/]/g, char => entityMap[char]);
+        }

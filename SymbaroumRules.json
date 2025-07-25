@@ -61,6 +61,7 @@
 		"type":"talent",
 		"livre":"ldb",
 		"attribut":"DIS",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Roublard",
 			"nom":"Coup en traître"
@@ -70,9 +71,9 @@
 			"nom":"Ataque traicionero"
 		},
 		"en_31":{
-			"novice":"Reaction*. An attack made from Advantage with any Short weapons deals +1D8 extra damage with the Advantage instead of +1D4. Use Discreet instead of Accurate when making attacks while at an Advantage. Backstab may only be performed once per turn.",
-			"adepte":"Reaction*. Like Novice, but the stab deals +2D8 damage with the Advantage instead of +1D4.",
-			"maitre":"Reaction*. A Short weapon in the hands of a Master can easily bypass the armor of an enemy. When a backstab of a Master hit its target, it completely ignores the target's Armor from manufactured armors and the Armored trait."
+			"novice":"Reaction. An attack made from Advantage with any Short weapons deals +1D8 extra damage with the Advantage instead of +1D4. Use Discreet instead of Accurate when making attacks while at an Advantage. Backstab may only be performed once per turn.",
+			"adepte":"Reaction. Like Novice, but the stab deals +2D8 damage with the Advantage instead of +1D4.",
+			"maitre":"Reaction. A Short weapon in the hands of a Master can easily bypass the armor of an enemy. When a backstab of a Master hit its target, it completely ignores the target's Armor from manufactured armors and the Armored trait."
 		},
 		"en":{
 			"tradition":"Rogue",
@@ -98,8 +99,8 @@
 		},
 		"en_31":{
 			"novice":"Free. Pass a Cunning test to identify a monster's strengths and weaknesses. The Game Master describes the monster and its statistics to the player.",
-			"adepte":"Free*. Deal +1 damage to a particular monster category (such as Abominations, Beasts, Cultural Beings or Undead). The bonus also applies to allies who have been instructed in how to fight the creature.",
-			"maitre":"Free*. Like Adept, but the character chooses an extra monster category to apply the bonus."
+			"adepte":"Free. Deal +1d4 damage to a particular monster category (pick from Abominations, Beasts, Cultural Beings or Undead). Allies who have been instructed in how to fight the creature also get a +1d4 damage bonus.",
+			"maitre":"Free. Like Adept, but the character and allies deal 1d6 extra damage to creatures from the category picked at the adept level."
 		},
 		"en":{
 			"tradition":"Mystic, Rogue",
@@ -114,6 +115,7 @@
 		"id":"#11",
 		"type":"talent",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Guerrier",
 			"nom":"Berserker"
@@ -123,8 +125,8 @@
 			"nom":"Berserker"
 		},
 		"en_31":{
-			"novice":"Free*. Deal +1D6 damage once per turn in melee combat at the expense of Defense (the attribute on which it is based counts as 5 when calculating Defense).",
-			"adepte":"Reaction*. When the character suffers damage from an attack equal to or higher than its Pain Threshold, he or she can roll a Strong test. If successful, it doesn't suffer from any additional effects from the attack.",
+			"novice":"Free. Deal +1D6 damage once per turn in melee combat at the expense of Defense (the attribute on which it is based counts as 5 when calculating Defense).",
+			"adepte":"Reaction. When the character suffers damage from an attack equal to or higher than its Pain Threshold, he or she can roll a Strong test. If successful, it doesn't suffer from any additional effects from the attack.",
 			"maitre":"Free. The character may utilize the berserker's capacity to deal extra damage, while still being able to defend as normal."
 		},
 		"en":{
@@ -149,8 +151,8 @@
 			"tradition":"Guerrero",
 			"nom":"Guardaespaldas"
 		},
-		"en_31":{
-			"novice":"Reaction*. The character may take blows directed against an ally in melee range. The character may not defend itself against these attacks, they hit automatically.",
+		"en_31_ignored":{
+			"novice":"Reaction. The character may take blows directed against an ally in melee range. The character may not defend itself against these attacks, they hit automatically.",
 			"adepte":"Reaction. Like Novice, but the character may defend itself against all attacks aimed at the protected person.",
 			"maitre":"Reaction. Like Adept, but the character also gets a Free Attack as a Reaction towards anyone making a melee attack against the person under its protection."
 		},
@@ -365,6 +367,7 @@
 		"type":"talent",
 		"livre":"ldb",
 		"attribut":"DIS,DIS <- VIG",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Roublard",
 			"nom":"Feinte"
@@ -374,7 +377,7 @@
 			"nom":"Finta"
 		},
 		"en_31":{
-			"novice":"Passive*. Use Discreet instead of Accurate when attacking with a Short or Precise with only one hand. Also, every such attack gains Advantage as if the opponent was surprised if the target is not adjacent to any of its allies.",
+			"novice":"Passive. Use Discreet instead of Accurate when attacking with a Short or Precise with only one hand. Also, every such attack gains Advantage as if the opponent was surprised if the target is not adjacent to any of its allies.",
 			"adepte":"Reaction. Use Discreet instead of Quick when defending against attacks."
 		},
 		"en":{
@@ -445,6 +448,7 @@
 		"type":"talent",
 		"livre":"ldb",
 		"attribut":"CUN",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Mystique, Roublard",
 			"nom":"Érudit"
@@ -454,7 +458,7 @@
 			"nom":"Estudioso"
 		},
 		"en_31":{
-			"novice":"Free*. Pass a Cunning test to learn the properties of an artifact (not how to activate it) or to read/speak another human language. Simple phrases require no test. The character's academic study also allows him or her to use Cunning instead of Resolute when weaving mystical powers, though not as a basis for the corruption threshold.",
+			"novice":"Free. Pass a Cunning test to learn the properties of an artifact (not how to activate it) or to read/speak another human language. Simple phrases require no test. The character's academic study also allows him or her to use Cunning instead of Resolute when weaving mystical powers, though not as a basis for the corruption threshold.",
 			"adepte":"Free. Roll a Cunning test to activate a power of an artifact which normally requires a Resolute test, or read/speak both Elvish and Troll Tongue. Simple phrases require no test.",
 			"maitre":"Free. Pass a Cunning test to activate mystical powers directly from scrolls and parchments. The Loremaster may also use Cunning in place of Resolute to resist mystical effects. Furthermore, the master is familiar with the secrets of Symbaroum. A successful Cunning test is required to be able to read a text written in its ancient and extinct language. Simple phrases require no test."
 		},
@@ -472,6 +476,7 @@
 		"type":"talent",
 		"livre":"ldb",
 		"attribut":"ACC <- STR",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Guerrier, Roublard",
 			"nom":"Tireur d'élite"
@@ -483,7 +488,7 @@
 		"en_31":{
 			"novice":"Passive. Damage dealt with bows and crossbows is increased to 1D10 and 1D12 respectively.",
 			"adepte":"Active. The character's projectiles have a crippling effect. The attack deals damage as usual and if the target is wounded the character may make an [Accurate←Strong] test every time the target attempts to move. A success means that the target cannot move and its Movement Action is forfeit. As soon as the target manages to move (the character fails the test), the crippling effect is gone.",
-			"maitre":"Active*. The master Marksman's projectiles become armor piercing. The shots hit a weak spot and completely ignores the target's Armor from manufactured armors and the Armored trait."
+			"maitre":"Active. The master Marksman's projectiles become armor piercing. The shots hit a weak spot and completely ignores the target's Armor from manufactured armors and the Armored trait."
 		},
 		"en":{
 			"tradition":"Warrior, Rogue",
@@ -526,6 +531,7 @@
 		"type":"talent",
 		"livre":"ldb",
 		"attribut":"CUN",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Mystique, Roublard",
 			"nom":"Medicus"
@@ -979,6 +985,7 @@
 		"id":"#35",
 		"type":"talent",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Guerrier",
 			"nom":"Puissance à deux mains"
@@ -990,7 +997,7 @@
 		"en_31":{
 			"novice":"Passive. Heavy weapons deal 1D12 damage.",
 			"adepte":"Reaction. When an attack with a Heavy Weapon misses a target, use the returning swing in an attempt to hit the target again. Make a new attack roll, dealing 1D8 damage if it hits.",
-			"maitre":"Passive*. With every successful hit, the target armor is reduced by 1, or by 2 if the weapon has the Massive quality. This effect is cumulative and last until repaired (if the armor is manufactured) or the end of the scene (if natural)."
+			"maitre":"Passive. With every successful hit, the target armor is reduced by 1, or by 2 if the weapon has the Massive quality. This effect is cumulative and last until repaired (if the armor is manufactured) or the end of the scene (if natural)."
 		},
 		"en":{
 			"tradition":"Warrior",
@@ -1005,6 +1012,7 @@
 		"id":"#39",
 		"type":"talent",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Mystique",
 			"nom":"Sorcellerie"
@@ -1016,7 +1024,7 @@
 		"en_31":{
 			"novice":"Special. Learn the powers of Witchcraft at novice level, and also its rituals, without suffering permanent Corruption.",
 			"adepte":"Special. Learn the powers of Witchcraft at adept level without suffering permanent Corruption. The powers and rituals of the craft only give one (1) temporary Corruption when used.",
-			"maitre":"Special*. Learn the powers of Witchcraft at master level without suffering permanent Corruption. Additionally, Beasts don't attack or target the mystic unless provoked first."
+			"maitre":"Special. Learn the powers of Witchcraft at master level without suffering permanent Corruption. Additionally, Beasts don't attack or target the mystic unless provoked first."
 		},
 		"en":{
 			"tradition":"Mystic",
@@ -1031,6 +1039,7 @@
 		"id":"#43",
 		"type":"talent",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Mystique, Roublard",
 			"nom":"Vision de l'Ombre"
@@ -1040,9 +1049,9 @@
 			"nom":"Ojo místico"
 		},
 		"en_31":{
-			"novice":"Free*. Pass a [Vigilant←Discreet] test to see the Shadow of a creature, location or object but not its Corruption strength. Suffer 1 temporary Corruption from each attempt.",
-			"adepte":"Free*. Automatically reveal the Shadow and Corruption strength of the target. Suffer 1D4 temporary Corruption from each attempt.",
-			"maitre":"Free*. Automatically reveal the Shadows as well as their respective Corruption strength of all creatures within sight. Witchsight can perceive the faint and fleeting traces that Shadows leave in the world and reveal if any living creatures or magical items have moved through the area and what their natures were. If a creature's shadow is already known, it can be tracked this way. The traces of all shadows are erased at midday and on the night of a new moon. Suffer 1D6 temporary Corruption from each attempt."
+			"novice":"Free. Pass a [Vigilant←Discreet] test to see the Shadow of a creature, location or object but not its Corruption strength. Suffer 1 temporary Corruption from each attempt.",
+			"adepte":"Free. Automatically reveal the Shadow and Corruption strength of the target. Suffer 1D4 temporary Corruption from each attempt.",
+			"maitre":"Free. Automatically reveal the Shadows as well as their respective Corruption strength of all creatures within sight. Witchsight can perceive the faint and fleeting traces that Shadows leave in the world and reveal if any living creatures or magical items have moved through the area and what their natures were. If a creature's shadow is already known, it can be tracked this way. The traces of all shadows are erased at midday and on the night of a new moon. Suffer 1D6 temporary Corruption from each attempt."
 		},
 		"en":{
 			"tradition":"Mystic, Rogue",
@@ -1083,6 +1092,7 @@
 		"id":"#113",
 		"type":"talent",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Accessible uniquement aux Frères jurés du Pacte du Fer (Chasseur)",
 			"nom":"Combattant véloce"
@@ -1091,13 +1101,14 @@
 			"tradition":"Only available to Iron Sworn (Cazador)"
 		},
 		"en_31":{
-			"novice":"Passive*. As a part of its Movement Action, the character may also run on vertical surfaces, along the edges of thin barriers, or hop from one outcropping to another as if the character were travelling along normal terrain. If the character stop moving while running across a wall, he or she begin to fall. The character also ignores difficult terrain.",
-			"adepte":"Reaction*. The character may perform one Free Attack, either melee or ranged, in the first round of combat.",
-			"maitre":"Passive*. The character cannot be flanked, or rather that those flanking it do not gain Advantage against the character."
+			"novice":"Passive. As a part of its Movement Action, the character may also run on vertical surfaces, along the edges of thin barriers, or hop from one outcropping to another as if the character were travelling along normal terrain. If the character stop moving while running across a wall, he or she begin to fall. The character also ignores difficult terrain.",
+			"adepte":"Passive. The character can split his or her movement and perform one part of the movement action before the combat action, and the other part after. The character still suffers Free Attacks from enemies if the movement leads into or through melee combat distance.",
+			"maitre":"Passive. The character cannot be flanked, or rather that those flanking it do not gain Advantage against the character."
 		},
 		"en":{
 			"tradition":"Only available to Iron Sworn (Hunter)",
 			"description":"During combat in wooded areas and hilly terrain the distance between opponents can shift quickly, from ranged to melee. The Iron Sworn have developed techniques for handling these rapid shifts between weapon types, and the most skilled among them can dance forth over the battlefield, seamlessly alternating between melee and ranged weapons and using every hostile attack for making counter-strikes. The character is trained in the Iron Sworns' advanced techniques on how to emerge victorious from skirmishes.",
+
 			"novice":"Passive. The character can split his or her movement and perform one part of the movement action before the combat action, and the other part after. This is done in order to make maximum use of the terrain and cover. The character still suffers Free Attacks from enemies if the movement leads into or through melee combat distance.",
 			"adepte":"Passive. As a part of its combat action, the character may freely switch between weapons. This only pertains to changing weapons; it does not provide an extra action to be used for anything else. For instance, the Iron Sworn may start holding two weapons, move a part of its movement range, and as a combat action switch to a bow, fire it, and then switch back to two weapons. Finally, the rest of the movement is made.",
 			"maitre":"Reaction. The character gains a second chance to pass all Defense tests against Free Attacks provoked by withdrawing from melee. In addition, every such Free Attack against the character lets the Iron Sworn make their own Free Attack against the enemy. The character may freely switch weapons for these counter-strikes and choose the tool that fits the situation best.",
@@ -1180,6 +1191,7 @@
 		"type":"talent",
 		"livre":"gdj",
 		"attribut":"ACC <- RES",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Guerrier",
 			"nom":"Maîtrise de la hache"
@@ -1188,9 +1200,7 @@
 			"tradition":"Guerrero"
 		},
 		"en_31":{
-			"novice":"Active*. Make a short-end thrust that deals one dice tier lower than normal (1D10=1D8). With a successful [Accurate←Resolute] test, the enemy is stunned and loses one of its action on its next turn (either the Active or Movement action).",
-			"adepte":"Active. Make axe two attacks in one Active Action, both of them at one dice tier lower than normal (1D10=1D8).",
-			"maitre":"Passive*. The axe master can now inflict devastating crippling blows. When the character deals damage with an axe-attack, the Pain Threshold of the target is considered halved (rounded down), limited to one attack per turn."
+			"novice":"Active. Make a short-end thrust that deals one dice tier lower than normal (1D10=1D8). With a successful [Accurate←Resolute] test, the enemy is stunned and loses one of its action on its next turn (either the Active or Movement action)."
 		},
 		"en":{
 			"tradition":"Warrior",
@@ -1233,9 +1243,9 @@
 		"es":{
 			"tradition":"Only available to Wrath Guard (Guerrero)"
 		},
-		"en_31":{
-			"novice":"Reaction*. When its Toughness has been halved (rounded down), all attacks made by the character in melee combat deal +1D4 damage once per turn.",
-			"adepte":"Reaction*. Like Novice, but all attacks made by the character in melee combat now deal +1D6 damage once per turn.",
+		"en_31_ignored":{
+			"novice":"Reaction. When its Toughness has been halved (rounded down), all attacks made by the character in melee combat deal +1D4 damage once per turn.",
+			"adepte":"Reaction. Like Novice, but all attacks made by the character in melee combat now deal +1D6 damage once per turn.",
 			"maitre":"Reaction. The warrior is healed by the blood spilt by the enemy; half of the damage that the character deals in melee combat is added to the character's Toughness, rounded down."
 		},
 		"en":{
@@ -1286,7 +1296,7 @@
 		},
 		"en_31":{
 			"novice":"Active. Cheap shots come naturally to the character in stressful situations. Such attacks deal 1D6 damage, and if the opponent is damaged the character also gets to follow up with a Free Attack.",
-			"adepte":"Reaction*. When dealing damage with an attack, pass a [Cunning←Quick] test to knock the enemy off its feet.",
+			"adepte":"Reaction. When dealing damage with an attack, pass a [Cunning←Quick] test to knock the enemy off its feet.",
 			"maitre":"Reaction. Any enemies who engage the character in melee suffers a bloody riposte directly after an attack, dealing 1D6 damage if successful. The riposte always hits a weak spot and consequently ignores any Armor."	 
 		},
 		"en":{
@@ -1294,7 +1304,7 @@
 			"description":"In the slums of Alberetor's larger cities, special techniques for self-defense emerged. These techniques are still practiced among the gangs of Yndaros.",
 			"novice":"Active. Cheap Shots like a “gutter-kiss” (head-butt) or a “goblin-squeeze” (groin kick) comes naturally to the character in stressful situations. Such an attack deals 1D6 damage, and if the opponent is damaged the character also gains a Free Attack against him or her.",
 			"adepte":"Reaction. The character performs a normal melee attack and if it deals damage, he or she adds a trip or a tackle. Such a maneuver knocks the opponent to the ground if the character succeeds with a [Cunning←Quick] test.",
-			"maitre":"Reaction. Every enemy who engages the character in melee suffers a bloody riposte direcly after each attack, dealing 1D6 damage if successfull. The riposte always hits a weak spot and consequently ignores any armor.",
+			"maitre":"Reaction. Every enemy who engages the character in melee suffers a bloody riposte directly after each attack, dealing 1D6 damage if successful. The riposte always hits a weak spot and consequently ignores any armor.",
 			"nom":"Cheap shot"
 		}
 	},
@@ -1309,14 +1319,15 @@
 		"es":{
 			"tradition":"Guerrero, Maleante"
 		},
-		"en_31":{
-			"novice":"Active*. Get a second chance to ensnare a target (requires a weapon with the quality Ensnaring). Jointed weapons gain the Ensnaring quality and may be used to ensnare an enemy, instead of making a normal attack.",
+		"en_31_ignored":{
+			"novice":"Active. Get a second chance to ensnare a target (requires a weapon with the quality Ensnaring). Jointed weapons gain the Ensnaring quality and may be used to ensnare an enemy, instead of making a normal attack.",
 			"adepte":"Active. Like Novice, but the character also gets a second chance to bring an ensnared target to the ground.",
 			"maitre":"Reaction. All ensnaring attacks are assumed to hit the target's neck and have a strangling effect; besides the ensnaring effect and the chance to bring down the enemy, the target suffers 1D6 damage per turn, ignoring Armor. If the target reaches 0 Toughness, the character can choose to make it unconscious instead of dying."	 
 		},
 		"en":{
 			"tradition":"Warrior, Rogue",
 			"description":"Using weapons like bolas, nets or the long whip, many fighters and hunters of barbarian origin learn to limit the movement of enemies or prey. This skill is also known among Ambrians; flail weapons are, for instance, used in the lengthy show-fights at the gladiatorial arenas and by many bounty hunters. Abducted humans can sometimes be seen wielding chain staffs, making it possible to ensnare the enemy. The character is trained in the ensnaring techniques used to gain Advantage in melee or to capture prey alive.",
+
 			"novice":"Active. The character gains a second chance to ensnare a target (requires a weapon with the quality Ensnaring, see page 118).",
 			"adepte":"Active. In addition to the novice effect, the character gains a second chance to bring down an ensnared enemy (requires a weapon with the quality Ensnaring, see page 118).",
 			"maitre":"Reaction. The character's skill with ensnaring weapons is such that every ensnaring attack hits the target's neck and has a strangling effect; besides the ensnaring effect and the chance to bring down the enemy, the target suffers 1D6 damage per turn, ignoring armor. If the target reaches 0 Toughness, the character can choose to make it unconscious instead of dead/dying.",
@@ -1334,10 +1345,10 @@
 		"es":{
 			"tradition":"Only available to Warriors (Guerrero)"
 		},
-		"en_31":{
+		"en_31_ignored":{
 			"novice":"Passive. Toughness counts as [Strong +5]. This does not affect the Pain Threshold.",
 			"adepte":"Reaction. When Toughness is halved (rounded down), get a second chance to pass all Strong tests, including attacks if rolled against Strong.",
-			"maitre":"Reaction*. The character exceptional strength makes him able to make an enemy vulnerable. When the character inflicts damage to a target with a melee attack, that target also has second chance to fail a Defense roll against the next attack test it suffers during the combat."
+			"maitre":"Reaction. The character exceptional strength makes him able to make an enemy vulnerable. When the character inflicts damage to a target with a melee attack, that target also has second chance to fail a Defense roll against the next attack test it suffers during the combat."
 		},
 		"en":{
 			"tradition":"Only available to Warriors",
@@ -1386,8 +1397,8 @@
 		"es":{
 			"tradition":"Guerrero"
 		},
-		"en_31":{
-			"novice":"Reaction*. The character can crush the enemy with the hammer. After a failed attack roll where the opponent defends (that is, the enemy parries the character's attack), the character may roll a [Strong←Quick]. If successful, the enemy suffers 1D6 damage from the heavy blow. If the enemy also carries a wooden shield, the shield shatters to splinters while a metal shield is torn from the opponent's arm and dropped.",
+		"en_31_ignored":{
+			"novice":"Reaction. The character can crush the enemy with the hammer. After a failed attack roll where the opponent defends (that is, the enemy parries the character's attack), the character may roll a [Strong←Quick]. If successful, the enemy suffers 1D6 damage from the heavy blow. If the enemy also carries a wooden shield, the shield shatters to splinters while a metal shield is torn from the opponent's arm and dropped.",
 			"adepte":"Reaction. When an enemy successfully defends against a hammer attack, pass a [Strong←Strong] test to ram it one step backwards and gain a Free Attack.",
 			"maitre":"Active. Make two attacks against the same target, with one Active Action. If the target defends against any of these, a hammer ram like on the Adept level may be performed (once per turn)."
 		},
@@ -1480,6 +1491,7 @@
 		"id":"#129",
 		"type":"talent",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Guerrier, Roublard",
 			"nom":"Opportuniste"
@@ -1488,9 +1500,9 @@
 			"tradition":"Guerrero, Maleante"
 		},
 		"en_31":{
-			"novice":"Reaction*. Get a second chance to succeed with Free Attacks.",
-			"adepte":"Reaction*. Active abilities may be used on Free Attacks. If so, this cancels out the effect of the novice level.",
-			"maitre":"Reaction*. Gain a second chance to succeed with, and also use active abilities on Free Attacks. You are not limited to one Free Attacks per turn when enemies withdraw in combat or try to run pass the character."
+			"novice":"Reaction. Get a second chance to succeed with Free Attacks.",
+			"adepte":"Reaction. Active abilities may be used on Free Attacks. If so, this cancels out the effect of the novice level.",
+			"maitre":"Reaction. Gain a second chance to succeed with, and also use active abilities on Free Attacks. You are not limited to one Free Attacks per turn when enemies withdraw in combat or try to run pass the character."
 		},
 		"en":{
 			"tradition":"Warrior, Rogue",
@@ -1591,7 +1603,7 @@
 		"en_31":{
 			"novice":"Reaction. The tattoo provides a +1D4 bonus to Armor against attacks, but only if the character chooses to activate it. Activating the effect costs 1 temporary Corruption for each attack that hits and the character decides whether or not to use it before he or she rolls for other kinds of Armor. The character can only wear light or medium armor to use the tattoo's powers.",
 			"adepte":"Free. Regenerate 1 Toughness per turn, and gain 1 temporary Corruption for each point healed. The regeneration can be canceled at any time.",
-			"maitre":"Reaction*. When an enemy is hit and the character so wishes, the glowing tattoo flows over the weapon dealing +1D4 damage, at the cost of as many points in temporary Corruption for the character."
+			"maitre":"Reaction. When an enemy is hit and the character so wishes, the glowing tattoo flows over the weapon dealing +1D4 damage, at the cost of as many points in temporary Corruption for the character."
 		},
 		"en":{
 			"tradition":"Warrior",
@@ -1677,6 +1689,7 @@
 		"id":"#116",
 		"type":"talent",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Accessible uniquement aux Mystiques",
 			"nom":"Don exceptionnel"
@@ -1685,9 +1698,9 @@
 			"tradition":"Only available to Mystics (Místico)"
 		},
 		"en_31":{
-			"novice":"Special*. Choose one of the character's mystical powers (or an Ability or Trait which causes Corruption), which then only costs 1 temporary Corruption to use. If the power already cost only one temporary Corruption, the effect of any dice is increased by one step.",
+			"novice":"Special. Choose one of the character's mystical powers (or an Ability or Trait which causes Corruption), which then only costs 1 temporary Corruption to use. If the power already cost only one temporary Corruption, the effect of any dice is increased by one step.",
 			"adepte":"Passive. Use the full Resolute value as the Corruption Threshold; the character will not be blight born until its total Corruption reaches a value of [Resolute ×2].",
-			"maitre":"Special*. The gift of the Master lets the character cast any mystical power, albeit only at the novice level. There is a second chance to fail all success tests and using the power causes 1D6 temporary Corruption. All mystical powers are available, no matter what tradition they belong to."
+			"maitre":"Special. The gift of the Master lets the character cast any mystical power, albeit only at the novice level. There is a second chance to fail all success tests and using the power causes 1D6 temporary Corruption. All mystical powers are available, no matter what tradition they belong to."
 		},
 		"en":{
 			"tradition":"Only available to Mystics",
@@ -1838,13 +1851,14 @@
 			"tradition":"Guerrero"
 		},
 		"en_31":{
-			"novice":"Active*. Can wrestle while holding weapons; they need not be dropped or put away. The wrestler may try to throw the enemy or maintain the grip; both alternatives require a [Strong←Strong] test. The throw inflicts 1D4 damage, ignoring Armor from manufactured armors and the Armored trait, and leaves the enemy flat on its back. The alternative to a throw, maintaining the grip, inflicts no damage, but the enemy cannot act until the wrestler fails a [Strong←Strong] test at the beginning of the wrestler's turn. Also, all allies of the wrestler have Advantage on the gripped enemy. The wrestler is unable to do anything else while maintaining the grip, leaving him or her vulnerable: all enemies have Advantage on the wrestler.",
+			"novice":"Active. Can wrestle while holding weapons; they need not be dropped or put away. After a successful attack the wrestler may make a [Strong←Strong] test. If successful, the wrestler may try to throw the enemy or maintain the grip. The throw inflicts 1D4 damage, ignoring Armor from manufactured armors and the Armored trait, and leaves the enemy flat on its back. The alternative to a throw, maintaining the grip, inflicts no damage, but the enemy cannot act until the wrestler fails a [Strong←Strong] test at the beginning of the wrestler's turn. Also, all allies of the wrestler have Advantage on the gripped enemy. The wrestler is unable to do anything else while maintaining the grip, leaving him or her vulnerable: all enemies have Advantage on the wrestler.",
 			"adepte":"Reaction. After passing a Defense test against a melee attack, roll a [Quick←Strong] test to throw the attacker to the ground (1D4 damage, ignoring Armor from manufactured armors and the Armored trait). The enemy cannot perform Active Actions during the following turn.",
 			"maitre":"Reaction. Like Adept, but no Defense test, only a [Quick←Strong], is required; the throw deals 1D6 damage and grants a Free Attack against the enemy. If the throw fails, pass a Defense test to avoid being hit."
 		},
 		"en":{
 			"tradition":"Warrior",
 			"description":"Wrestling is popular among warriors, appreciated for educational purposes as well as its entertainment value. Hence, wrestling matches can be seen in the arenas of Ambria's larger towns, in army camps among bored soldiers and on the battlefield amidst swinging swords and axes. The character is trained to wrestle, both with and without the protection of armor. The trait Robust adds a bonus to Strong when throwing an opponent or resisting being thrown: +2 at novice level, +4 at adept level, +8 at master level. Robust gives no bonus if some other attribute besides Strong is used.",
+
 			"novice":"Active. The character knows the basic wrestling maneuvers and can use them against armed opponents. Also, the character can wrestle while holding weapons; they need not be dropped or put away. The attack is made as usual and if successful the wrestler gets the enemy in a firm grip. The wrestler may then try to throw the enemy or just maintain the grip; both alternatives require a [Strong←Strong] test. The throw inflicts 1D4 damage, ignoring armor, and leaves the enemy flat on its back. The alternative to a throw, maintaining the grip, inflicts no damage, but the enemy cannot act until the wrestler fails a [Strong←Strong] test. Also, all allies of the wrestler have Advantage on the gripped enemy. The wrestler is unable to do anything else while maintaining the grip, leaving him or her vulnerable: all enemies have Advantage on the wrestler.",
 			"adepte":"Reaction. The character has learned how to counter an opponent's strength and can use it to throw the enemy to the ground. First, the wrestler must pass a normal Defense test verses the enemy's melee attack, then he or she must pass a [Quick←Strong] test. The throw deals 1D4 damage, ignoring armor, and the thrown enemy ends up flat on its back, loses its breath and is unable to perform any active actions during the following turn.",
 			"maitre":"Reaction. The reactive throw of the character (see the adept level) only requires a passed [Quick←Strong] test, no Defense test is needed. If the throw fails, then a Defense test is rolled to avoid being hit. The master's throw deals 1D6 damage, ignoring armor, and the thrown enemy ends up flat on its back, loses its breath and is unable to perform any active actions during the following turn. Furthermore, the master wrestler immediately gets a Free Attack on the enemy.",
@@ -1942,6 +1956,7 @@
 		"id":"#69",
 		"type":"pouvoir mystique",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Magie, Conjuration, Sorcellerie",
 			"nom":"Soumission"
@@ -1951,7 +1966,7 @@
 			"nom":"Someter voluntad"
 		},
 		"en_31":{
-			"novice":"Active*. The mystic can take partially control of a creature. The Mystic must give the creature a verbal command each turn or the target will not take any action. It can only be made to perform one Action each turn and may not use abilities or powers. The effect lasts until the mystic fails a [Resolute←Resolute] test at the beginning of the target's turn or breaks concentration. <br>Has no effect on Abominations. Cannot be used to force the target to cause harm to an ally or take an action that grossly violates their moral code. Cultured beings have a wide variety of ethical guidelines and the caster should take this into consideration.<br>If the player commands the target to break their moral code; the mystic has a second chance to fail all subsequent resolute checks to maintain control. If control is lost, the mystic cannot use Bend Will against the target again for the remainder of the scene.<br>The target recalls everything that happens while under the influence of the spell, but sees these events more as a surreal dream than an actual memory.",
+			"novice":"Active. The mystic can take partially control of a creature. The Mystic must give the creature a verbal command each turn or the target will not take any action. It can only be made to perform one Action each turn and may not use abilities or powers. The effect lasts until the mystic fails a [Resolute←Resolute] test at the beginning of the target's turn or the mystic breaks concentration. <br>Has no effect on Abominations. Cannot be used to force the target to cause harm to an ally or take an action that grossly violates their moral code. Cultured beings have a wide variety of ethical guidelines and the caster should take this into consideration.<br>If the player commands the target to break their moral code; the mystic has a second chance to fail all subsequent resolute checks to maintain control. If control is lost, the mystic cannot use Bend Will against the target again for the remainder of the scene.<br>The target recalls everything that happens while under the influence of the spell, but sees these events more as a surreal dream than an actual memory.",
 			"adepte":"Active. Like Novice, but the target will continue performing the last command they were given; the effect lasts until the mystic fails a [Resolute←Resolute] test.",
 			"maitre":"Active. The creature can be made to perform its usual Actions and Reactions each turn (including Active ones). The effect lasts until the mystic fails a [Resolute←Resolute] test."
 		},
@@ -1977,10 +1992,10 @@
 			"tradition":"Teúrgia",
 			"nom":"Escudo bendito"
 		},
-		"en_31":{
-			"novice":"Active*. The mystic is surrounded by a warm glow. This glow provides an additional 1D4 Armor. Also, any Abomination or Undead who attacks the mystic with melee attacks suffers 1D4 holy damage once from the glow, ignoring Armor. The blessed shield lasts until the end of the combat or when used again.",
-			"adepte":"Active*. Like Novice, but an ally within sight, no more than two Movement Actions away, can be included in the effect.",
-			"maitre":"Active*. Like Novice, but the shield now provides 1D6 of extra Armor and damage. Two of the mystic's allies can now be included in the effect."
+		"en_31_ignored":{
+			"novice":"Active. The mystic is surrounded by a warm glow. This glow provides an additional 1D4 Armor. Also, any Abomination or Undead who attacks the mystic with melee attacks suffers 1D4 holy damage once from the glow, ignoring Armor. The blessed shield lasts until the end of the the scene.",
+			"adepte":"Active. Like Novice, but an ally within sight, no more than two Movement Actions away, can be included in the effect.",
+			"maitre":"Active. Like Novice, but the shield now provides 1D6 of extra Armor and damage. Two of the mystic's allies can now be included in the effect."
 		},
 		"en":{
 			"materiel":"Material: A holy symbol.",
@@ -1996,6 +2011,7 @@
 		"id":"#52",
 		"type":"pouvoir mystique",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Magie",
 			"nom":"Cascade de soufre"
@@ -2005,9 +2021,9 @@
 			"nom":"Cascada de azufre"
 		},
 		"en_31":{
-			"novice":"Active*. The mystic lashes out out with fire and brimstone against one target. If the mystic succeeds with a [Resolute←Quick] test, the cascade deals 2D6 fire damage. If the mystic fails the test the cascade deals only 1D6 fire damage.",
+			"novice":"Active. The mystic lashes out out with fire and brimstone against one target. If the mystic succeeds with a [Resolute←Quick] test, the cascade deals 2D6 fire damage, ignoring 2 points of armor. If the mystic fails the test the cascade deals only 1D6 fire damage.",
 			"adepte":"Active. Like Novice, but in a Chain. If the test against [Resolute←Quick] is successful, another target is hit, and so on until the test fails.",
-			"maitre":"Active*. Like Adept, but now even if one test fails, the Chain continues to strike new targets until a second test fails. In addition, creatures hit by the cascade start burning, losing their next Movement Action to put down the flames."
+			"maitre":"Active. Like Adept, but now even if one test fails, the Chain continues to strike new targets until a second test fails."
 		},
 		"en":{
 			"materiel":"Material: A fistful of pure brimstone.",
@@ -2015,7 +2031,7 @@
 			"description":"The mystic can unleash the rampaging spirit of fire and burn its enemies to cinders, or at least scorch them severely.",
 			"novice":"Active. The mystic lashes out with fire and brimstone against a target. If the mystic succeeds with a [Resolute←Quick] test, the cascade deals 1D12 points of damage. If the mystic fails the test the cascade deals only 1D6 damage.",
 			"adepte":"Active. The mystic unleashes a Chain of burning energy. If the mystic succeeds with a [Resolute←Quick] test, the cascade deals 1D12 points of damage. If the mystic fails the test the cascade deals only 1D6 damage. If the target suffers the full 1D12 damage, the mystic may try to steer the flaming energy towards an additional target, and so on until the mystic fails a [Resolute←Quick] test.",
-			"maitre":"Active. The mystic unleashes a veritable storm of flaming and smoking energies. If the mystic passes a [Resolute←Quick] test, the cascade deals 1D12 points of damage. If the mystic fail the test the cascade only deals 1D6 damage. Even if the mystic should fail a test the Chain does not stop; it continues to strike new oppenents until a second test is failed.",
+			"maitre":"Active. The mystic unleashes a veritable storm of flaming and smoking energies. If the mystic passes a [Resolute←Quick] test, the cascade deals 1D12 points of damage. If the mystic fail the test the cascade only deals 1D6 damage. Even if the mystic should fail a test the Chain does not stop; it continues to strike new opponents until a second test is failed.",
 			"nom":"Brimstone cascade"
 		}
 	},
@@ -2059,10 +2075,10 @@
 			"tradition":"Hechicería, Brujería",
 			"nom":"Maldición"
 		},
-		"en_31":{
-			"novice":"Free*. Once per turn, the mystic's dark glare automatically gives an enemy a second chance to fail all success tests meant to affect the mystic (roll twice, the action fails if one of the tests is a failure) until the end of its next turn.",
+		"en_31_ignored":{
+			"novice":"Free. Once per turn, the mystic's dark glare automatically gives an enemy a second chance to fail all success tests meant to affect the mystic (roll twice, the action fails if one of the tests is a failure) until the end of its next turn.",
 			"adepte":"Free. Like Novice, but the enemy gets a second chance to fail all success tests, regardless of target.",
-			"maitre":"Active*. The mystic puts a curse of death upon an enemy. The enemy suffers 1D4 magical damage, ignoring Armor, for all Actions it tries to perform. The target suffers no damage if it remains still and passive. This effect is active until the mystic fails a Resolute test or loses concentration."
+			"maitre":"Active. The mystic puts a curse of death upon an enemy. The enemy suffers 1D4 magical damage, ignoring Armor, for all Actions it tries to perform. The target suffers no damage if it remains still and passive. This effect is active until the mystic fails a Resolute test or loses concentration."
 		},
 		"en":{
 			"materiel":"Material: None, a dark glare is enough.",
@@ -2133,6 +2149,7 @@
 		"id":"#49",
 		"type":"pouvoir mystique",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Théurgie",
 			"nom":"Aura sacrée"
@@ -2142,9 +2159,9 @@
 			"nom":"Aura sagrada"
 		},
 		"en_31":{
-			"novice":"Active. Pass a Resolute test to project a holy aura that deals 1D4 holy damage (ignoring Armor) to all Abominations and Undead within sight, no more than two Movement Actions away. The effect lasts until the mystic fails a Resolute test or loses concentration. The mystic cannot exclude allied abominations or undead from the effect.",
+			"novice":"Active. Pass a Resolute test to project a holy aura that deals 1D4 holy damage (ignoring Armor) to all Abominations and Undead within sight, no more than two Movement Actions away. The effect lasts until the mystic fails a Resolute test at the start of their turn or loses concentration. The mystic cannot exclude allied abominations or undead from the effect.",
 			"adepte":"Active. Like Novice, but allied Cultural Beings and Beasts within the aura immediately heal 1D4 Toughness when the spell is cast. Further, all other forms of healing within the aura heal and additional 1d4 Toughness.",
-			"maitre":"Active*. Like Novice, but the aura deals 1D6 holy damage (ignoring Armor) each turn, and allied Cultural Beings and Beasts within range may heal 1D6 Toughness at the moment the spell is cast and all other forms of healing within the aura heal an additional 1d6 Toughness."
+			"maitre":"Active. Like Novice, but the aura deals 1D6 holy damage (ignoring Armor) each turn, and allied cultural beings and beasts within range heal 1D6 Toughness at the moment the spell is cast and all other forms of healing within the aura heal an additional 1d6 Toughness."
 		},
 		"en":{
 			"materiel":"Material: Holy symbol.",
@@ -2241,6 +2258,7 @@
 		"id":"#59",
 		"type":"pouvoir mystique",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Théurgie, Sorcellerie",
 			"nom":"Imposition des mains"
@@ -2250,9 +2268,9 @@
 			"nom":"Imposición de manos"
 		},
 		"en_31":{
-			"novice":"Active*. Touch a target and pass a Resolute test to heal 1D8 of its Toughness; also works on the mystic itself.",
+			"novice":"Active. Touch a target and pass a Resolute test to heal 1D8 of its Toughness; also works on the mystic itself.",
 			"adepte":"Active. The mystic's healing hands now stop the ongoing effect of poisons and bleeding.",
-			"maitre":"Active*. The mystic can heal a creature within sight, no more than two Movement Actions away, healing 1D10 Toughness and halting the ongoing effect of poisons and bleeding. The mystic now heals 1D12 points of Toughness when touching the target."
+			"maitre":"Active. The mystic can heal a creature within sight, no more than two Movement Actions away, healing 1D10 Toughness and halting the ongoing effect of poisons and bleeding. The mystic now heals 1D12 points of Toughness when touching the target."
 		},
 		"en":{
 			"materiel":"Material: A holy symbol.",
@@ -2295,6 +2313,7 @@
 		"id":"#70",
 		"type":"pouvoir mystique",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Sorcellerie",
 			"nom":"Transformation dégénérative"
@@ -2322,6 +2341,7 @@
 		"id":"#67",
 		"type":"pouvoir mystique",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Magie",
 			"nom":"Psychokinésie"
@@ -2377,6 +2397,7 @@
 		"id":"#71",
 		"type":"pouvoir mystique",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Théurgie",
 			"nom":"Verre ardent de Prios"
@@ -2386,8 +2407,8 @@
 			"nom":"Prisma ardiente de Prios"
 		},
 		"en_31":{
-			"novice":"Active*. Pass a Resolute test to steer the holy light towards one target, dealing 2D4 holy damage. The damage increases to 2D6 if the target is an Abomination or Undead.",
-			"adepte":"Active*. With a successful Resolute test, the mystic can let the holy light pass over all close enemies. The burning energy deals 2D6 holy damage, or 2D8 on Abominations and Undead.",
+			"novice":"Active. Pass a Resolute test to steer the holy light towards one target, dealing 2D4 holy damage. The damage increases to 2D6 if the target is an Abomination or Undead.",
+			"adepte":"Active. With a successful Resolute test, the mystic can let the holy light pass over all close enemies. The burning energy deals 2D6 holy damage, or 2D8 on Abominations and Undead.",
 			"maitre":"Active. Like Adept, but with a successful [Resolute←Resolute] test, all Abominations and Undead are also stunned for one turn."
 		},
 		"en":{
@@ -2404,6 +2425,7 @@
 		"id":"#57",
 		"type":"pouvoir mystique",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Conjuration",
 			"nom":"Frappe du revenant"
@@ -2413,9 +2435,9 @@
 			"nom":"Golpe espectral"
 		},
 		"en_31":{
-			"novice":"Free*. The sorcerer ignites a malicious flame around a melee weapon tainted by the ritual Desecrating Rite, which then deals 1D4 unholy additional damage, or 1D6 unholy additional damage if the target is a Cultural Being or a Beast. This effect is active for the remainder of the combat.",
-			"adepte":"Reaction*. Like Novice, and living creatures slain by the Revenant Strike rise again as dragouls loyal to the sorcerer. The dragouls begin to act during the next turn and last until the end of the scene.",
-			"maitre":"Free*. The sorcerer's weapon now deals +1D4 damage, or +1D8 damage to Cultural Beings or Beasts targets. In addition, living creatures slain by the Revenant Strike now rises again as a wraith, loyal to the sorcerer. The wraith begins to act during the next turn and last until the end of the scene."
+			"novice":"Free. The sorcerer ignites a malicious flame around a melee weapon tainted by the ritual Desecrating Rite, which then deals 1D4 unholy additional damage, or 1D6 unholy additional damage if the target is a Cultural Being or a Beast. This effect is active for the remainder of the combat.",
+			"adepte":"Reaction. Like Novice, and living creatures slain by the Revenant Strike rise again as dragouls loyal to the sorcerer. The dragouls begin to act during the next turn and last until the end of the scene.",
+			"maitre":"Free. The sorcerer's weapon now deals +1D4 damage, or +1D8 damage to Cultural Beings or Beasts targets. In addition, living creatures slain by the Revenant Strike now rises again as a wraith, loyal to the sorcerer. The wraith begins to act during the next turn and last until the end of the scene."
 		},
 		"en":{
 			"materiel":"Material: A weapon tainted by a Desecrating Rite.",
@@ -2458,6 +2480,7 @@
 		"id":"#65",
 		"type":"pouvoir mystique",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Sorcellerie",
 			"nom":"Pluie de flèches"
@@ -2467,9 +2490,9 @@
 			"nom":"Tormenta de flechas"
 		},
 		"en_31":{
-			"novice":"Active*. The mystic enchants a handful of arrows (up to five) with a successful Resolute test. The electric arrows then float next to the mystic for the rest of the scene and can be fired as a Free Action, once per turn, dealing 1D8 magical damage. The arrows hit their target automatically. Any quality or special ability that the arrow might have is added to the effect.",
-			"adepte":"Active*. Each arrow now deals 1D10 magical damage. As an Active Action, fire two arrows at either the same or two different targets. If the mystic does so, no additional arrow can be fired as a Free Action this turn.",
-			"maitre":"Active*. Like Adept, but now as an Active Action the mystic can fire three arrows at either the same or separate targets and each arrow now deals 1D12 magical damage."
+			"novice":"Active. The mystic enchants a handful of arrows (up to five) with a successful Resolute test. The electric arrows then float next to the mystic for the rest of the scene and can be fired as a Free Action, once per turn, dealing 1D8 magical damage. The arrows hit their target automatically. Any quality or special ability that the arrow might have is added to the effect.",
+			"adepte":"Active. Each arrow now deals 1D10 magical damage. As an Active Action, fire two arrows at either the same or two different targets. If the mystic does so, no additional arrow can be fired as a Free Action this turn.",
+			"maitre":"Active. Like Adept, but now as an Active Action the mystic can fire three arrows at either the same or separate targets and each arrow now deals 1D12 magical damage."
 		},
 		"en":{
 			"materiel":"Material: Arrows or crossbow bolts.",
@@ -2593,6 +2616,7 @@
 		"id":"#156",
 		"type":"pouvoir mystique",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Symbolisme",
 			"nom":"Sceau de bannissement"
@@ -2601,14 +2625,15 @@
 			"tradition":"Simbolismo"
 		},
 		"en_31":{
-			"novice":"Active*. The symbol triggers a Chain of banishing effects. Pass a [Resolute←Resolute] test to banish the target closest to it, then make an attempt on the next, and so on until the test fails. Banished targets cannot be targeted by any ability or power but cannot also use any ability or power themself until the start of their next turn.",
-			"adepte":"Active*. Like Novice, but failed attempts deal 1D4 magical damage to the target (ignoring Armor). The target can choose to avoid being damaged; if so, it suffers the effect of being banished as normal.",
-			"maitre":"Active*. Like Novice, but failed attempts deal 1D8 magical damage to the target (ignoring Armor). The target can choose to be banished and only suffer 1D4 magical damage."
+			"novice":"Active. The symbol triggers a Chain of banishing effects. Pass a [Resolute←Resolute] test to banish the target closest to it, then make an attempt on the next, and so on until the test fails. Banished targets cannot be targeted by any ability or power but cannot also use any ability or power themself until the start of their next turn.",
+			"adepte":"Active. Like Novice, but failed attempts deal 1D4 magical damage to the target (ignoring Armor). The target can choose to avoid being damaged; if so, it suffers the effect of being banished as normal.",
+			"maitre":"Active. Like Novice, but failed attempts deal 1D8 magical damage to the target (ignoring Armor). The target can choose to be banished and only suffer 1D4 magical damage."
 		},
 		"en":{
 			"tradition":"Symbolism",
 			"materiel":"Material: A symbol created for the purpose",
 			"description":"The mystic binds banishing energies to a symbol, that when unleashed sweeps out in waves over the area. Upon creation, the mystic must choose what type of creature will be affected (Abominations, Beasts, Cultural Beings or Undead).",
+
 			"novice":"Active. The symbol triggers a chain of banishing energies. The target closest to the symbol is affected if the mystic passes a [Resolute←Resolute] test; if this succeeds, an attempt is made to banish the next enemy and so on, until a test fails. Banished creatures must leave the area as quickly as they can and may not return before the end of the scene.",
 			"adepte":"Active. Same as the novice level, but creatures that are unaffected (the test fails) suffer 1D4 damage from the power, ignoring Armor. Targets that are unaffected by the banishing effect can choose to flee to avoid being damaged; if so, they may not return until after the scene.",
 			"maitre":"Active. Same as the novice level, but those that are not banished suffer 1D8 damage, ignoring Armor. Targets that are unaffected by the banishing effect can choose to flee instead and only suffer 1D4 damage, ignoring Armor; if so, they may not return until after the scene.",
@@ -2619,6 +2644,7 @@
 		"id":"#143",
 		"type":"pouvoir mystique",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Conjuration",
 			"nom":"Éclair noir"
@@ -2627,9 +2653,7 @@
 			"tradition":"Hechicería"
 		},
 		"en_31":{
-			"novice":"Active*. Pass a [Resolute←Quick] test to cast a black bolt which deals 1D4 unholy damage (ignoring Armor). If hit, the target may make an Active Action or a Movement Action, until it passes a Resolute test (one test is made at the start of each target's turn after the magic hits) or the mystic loses concentration.",
-			"adepte":"Active. Like Novice, but roll 1D6 instead.",
-			"maitre":"Active*. Like Adept, but when a target suffers Corruption, another one is hit. The Chain is broken as soon as a target is healed."
+			"novice":"Active. Pass a [Resolute←Quick] test to cast a black bolt which deals 1D4 unholy damage (ignoring Armor). If hit, the target may only make an Active Action or a Movement Action, until it passes a Resolute test (one test is made at the start of each target's turn after the magic hits) or the mystic loses concentration."
 		},
 		"en":{
 			"tradition":"Sorcery",
@@ -2796,6 +2820,7 @@
 		"id":"#139",
 		"type":"pouvoir mystique",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Accessible uniquement aux Pyromanciens (Magie)",
 			"nom":"Âme incandescente"
@@ -2804,9 +2829,9 @@
 			"tradition":"Only available to Pyromancers (Magia)"
 		},
 		"en_31":{
-			"novice":"Reaction*. When hit by a melee attack, deal 2D4 fire damage against the attacker. As Passive, the pyromancer ignore 1D6 fire damage.",
-			"adepte":"Reaction*. Like Novice, except the mystic ignore 1D8 damage from fire damage and the fire damage dealt against those attacking in melee combat are rolled with 2D6.",
-			"maitre":"Reaction*. The mystic is not damaged by fire damage but is instead healed, by half of any fire damage that would have been dealt. When hit by an attack, melee or ranged, deal 2D6 fire damage against the attacker. Powers that affect the mind do not trigger this retaliation, but potentially damaging powers do."
+			"novice":"Reaction. When hit by a melee attack, deal 1d6 fire damage against the attacker, ignoring 2 points armor. As Passive, the pyromancer ignores 1D6 fire damage.",
+			"adepte":"Reaction. Like Novice, except the mystic ignore 1D8 damage from fire damage and the fire damage dealt against those attacking in melee combat are rolled with 2D6 (ignoring 2 points of armor).",
+			"maitre":"Reaction. The mystic is not damaged by fire damage but is instead healed, by half of any fire damage that would have been dealt. When hit by an attack, melee or ranged, deal 2D6 fire damage against the attacker. Powers that affect the mind do not trigger this retaliation, but potentially damaging powers do."
 		},
 		"en":{
 			"tradition":"Only available to Pyromancers (Wizardry)",
@@ -2822,6 +2847,7 @@
 		"id":"#149",
 		"type":"pouvoir mystique",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Chant des trolls",
 			"nom":"Hymne héroïque"
@@ -2908,9 +2934,9 @@
 			"tradition":"Magia del báculo, Simbolismo"
 		},
 		"en_31":{
-			"novice":"Free*. The mystic gains +1D4 Armor until it fails a Resolute test or loses concentration. The Armor bonus is rolled separately with each hit.",
-			"adepte":"Free*. Like Novice, but a retaliating effect also inflicts 1D4 damage once on every enemy that harms the mystic, ignoring Armor.",
-			"maitre":"Free*. Like Adept, but the protective and retaliating effects are rolled with 1D6 instead of 1D4. No concentration is required; the effect lasts until the mystic fails a Resolute test."
+			"novice":"Active. The mystic gains +1D4 Armor until it fails a Resolute test or loses concentration. The Armor bonus is rolled separately with each hit.",
+			"adepte":"Active. Like Novice, but a retaliating effect also inflicts 1D4 damage once on every enemy that harms the mystic, ignoring Armor.",
+			"maitre":"Active. Like Adept, but the protective and retaliating effects are rolled with 1D6 instead of 1D4. No concentration is required; the effect lasts until the mystic fails a Resolute test."
 		},
 		"en":{
 			"tradition":"Staff Magic, Symbolism",
@@ -3134,6 +3160,7 @@
 		"id":"#144",
 		"type":"pouvoir mystique",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Accessible uniquement aux Spirites (Sorcellerie) et aux Nécromanciens (Conjuration)",
 			"nom":"Esprits tourmenteurs"
@@ -3142,7 +3169,7 @@
 			"tradition":"Only available to Spiritualists (Brujería) and Necromancers (Hechicería)"
 		},
 		"en_31":{
-			"novice":"Active*. The mystic calls spirits to his or her aid, and these transparent shapes attack one enemy. The target has a second chance to fail all tests while using mystical powers, including concentration. The mystic must pass a Resolute test each turn in order for the spirits to continue their attacks.",
+			"novice":"Active. The mystic calls spirits to his or her aid, and these transparent shapes attack one enemy. The target has a second chance to fail all tests while using mystical powers, including concentration. The mystic must pass a Resolute test each turn in order for the spirits to continue their attacks.",
 			"adepte":"Active. Like Novice, but the spirits also deal 1D4 magical damage to Resolute (ignoring Armor, heals like other damage). At 0 Resolute, the target dies, unless it may roll death tests, during which it cannot act. The effect lasts until a Resolute test fails or concentration is lost.",
 			"maitre":"Active. Like Adept, but the spirit attacks deal 1D6 magical damage to Resolute."
 		},
@@ -7221,6 +7248,7 @@
 		"id":"#216",
 		"type":"qualite",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"nom":"Corrosif"
 		},
@@ -7314,6 +7342,7 @@
 		"id":"#219",
 		"type":"qualite",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"nom":"Punitif"
 		},
@@ -7368,6 +7397,7 @@
 		"id":"#228",
 		"type":"trait monstrueux",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"nom":"Attaque acide"
 		},
@@ -7392,6 +7422,7 @@
 		"id":"#239",
 		"type":"trait monstrueux",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"nom":"Sang acide"
 		},

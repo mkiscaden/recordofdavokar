@@ -131,13 +131,13 @@
                 let adeptMod = adept == item.en_31?.adepte && item.houseRule != null;
                 let masterMod = master == item.en_31?.maitre && item.houseRule != null;
 
-                let noviceCheckbox = `<input type="checkbox" class="novice-box mastery-box" value="${noviceValue}" onchange="updateSelectedOptions(this, 'Novice', '${novice}')" data-mastery="Novice"/><span class='text-success'> Novice${noviceMod ? "<span class='mod-icon' title='Original: "+escapeHtmlForTitle(item.en?.novice)+"'>*</span>" : ""}</span> `;
-                let adeptCheckbox = `<input type="checkbox" class="adept-box mastery-box" value="${adeptValue}"  onchange="updateSelectedOptions(this, 'Adept', '${adept}')" data-mastery="Adept"/><span class='text-info'> Adept${adeptMod ? "<span class='mod-icon' title='Original: "+escapeHtmlForTitle(item.en?.adepte)+"'>*</span>" : ""}</span> `;
-                let masterCheckbox = `<input type="checkbox" class="master-box mastery-box" value="${masterValue}"  onchange="updateSelectedOptions(this, 'Master', '${master}')" data-mastery="Master"/><span class='text-danger'> Master${masterMod ? "<span class='mod-icon' title='Original: "+escapeHtmlForTitle(item.en?.maitre)+"'>*</span>" : ""}</span> `;
+                let noviceCheckbox = `<input type="checkbox" class="novice-box mastery-box" value="${noviceValue}" onchange="updateSelectedOptions(this)" data-mastery="Novice"/><span class='text-success'> Novice${noviceMod ? "<span class='mod-icon' title='Original: "+escapeHtmlForTitle(item.en?.novice)+"'>*</span>" : ""}</span> `;
+                let adeptCheckbox = `<input type="checkbox" class="adept-box mastery-box" value="${adeptValue}"  onchange="updateSelectedOptions(this)" data-mastery="Adept"/><span class='text-info'> Adept${adeptMod ? "<span class='mod-icon' title='Original: "+escapeHtmlForTitle(item.en?.adepte)+"'>*</span>" : ""}</span> `;
+                let masterCheckbox = `<input type="checkbox" class="master-box mastery-box" value="${masterValue}"  onchange="updateSelectedOptions(this)" data-mastery="Master"/><span class='text-danger'> Master${masterMod ? "<span class='mod-icon' title='Original: "+escapeHtmlForTitle(item.en?.maitre)+"'>*</span>" : ""}</span> `;
 
-                let noviceHtml =  `<p>${showCheckbox ? noviceCheckbox : ""}${novice}</p>`;
-                let adeptHtml = `<p>${showCheckbox ? adeptCheckbox : ""}${adept}</p>`;
-                let masterHtml = `<p>${showCheckbox ? masterCheckbox : ""}${master}</p>`;
+                let noviceHtml =  `<p>${showCheckbox ? noviceCheckbox : ""}<span class="Novice-text">${novice}</span></p>`;
+                let adeptHtml = `<p>${showCheckbox ? adeptCheckbox : ""}<span  class="Adept-text">${adept}</span></p>`;
+                let masterHtml = `<p>${showCheckbox ? masterCheckbox : ""}<span  class="Mastery-text">${master}</span></p>`;
 
                 let houseRuleText = "None";
                 if (item.en_31 != null) {
@@ -259,13 +259,16 @@
         const totalPointsDisplay = document.getElementById('total-points');
         let totalPoints = 0;
 
-        function updateSelectedOptions(checkbox, rank, title) {
-            let id = checkbox.closest('div.card').id +"_"+checkbox.getAttribute("data-mastery");
+        function updateSelectedOptions(checkbox) {
+            let card = checkbox.closest('div.card');
+            let rank = checkbox.getAttribute("data-mastery");
+            let title = card.querySelector("."+rank+"-text").innerHTML;
+            let id = card.id +"_"+rank;
                if (checkbox.checked) {
                     totalPoints += parseInt(checkbox.value);
                     const li = document.createElement('li');
                     li.id = id;
-                    li.innerHTML = checkbox.closest('div.card').id +" : "+ rank +"<span class='question-icon' title='"+escapeHtmlForTitle(title)+"'>?</span>";
+                    li.innerHTML = checkbox.closest('div.card').id +" : "+ rank +"<span class='question-icon' title='"+ escapeHtmlForTitle(title)+"'>?</span>";
                     li.title = title;
                     selectedList.appendChild(li);
                } else {

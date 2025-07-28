@@ -14,7 +14,22 @@
         function displayItems(items, rulesFilter) {
             const itemList = document.getElementById('item-list');
             itemList.innerHTML = items.map(item => {
-                const rules = rulesFilter === 'house' && item.en_31 ? item.en_31 : item.en || {};
+                let rules
+                switch (rulesFilter) {
+                    case "house":
+                        rules = (item.houseRule != null && item.en_31) ? item.en_31 : item.en
+                    break;
+                    case "house_and_revised":
+                        rules = item.en_31 ? item.en_31 : item.en
+                     break;
+                    case "official":
+                        rules = item.en
+                     break;
+                    default:
+                        rules = item.en_31 ? item.en_31 : item.en
+
+                }
+
                 let source
                 switch (item.livre) {
                     case "ldb":
@@ -128,7 +143,7 @@
                 if (item.en_31 != null) {
                     houseRuleText = item.houseRule != null  ? item.houseRule : "Revised Wording";
                 }
-                let houseRule = `<p class="text-sm text-gray-400">House Rule: ${houseRuleText}</p>`
+                let houseRule = `<p class="text-sm text-gray-400">House Changes: ${houseRuleText}</p>`
                 return `
                     <div class="card p-4 rounded" id="${name}">
                         <h2 class="font-bold text-amber-200">${name}</h2>
@@ -193,7 +208,7 @@
                 tradition: '',
                 source: '',
                 search: '',
-                rules: 'official'
+                rules: 'house'
             };
 
             function updateDisplay() {

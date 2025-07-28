@@ -31,6 +31,7 @@
 		"type":"talent",
 		"livre":"ldb",
 		"attribut":"CUN",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Mystique, Roublard",
 			"nom":"Alchimie"
@@ -143,6 +144,7 @@
 		"type":"talent",
 		"livre":"ldb",
 		"attribut":"RES",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Guerrier",
 			"nom":"Garde du corps"
@@ -412,7 +414,7 @@
 			"description":"The character is trained to use its strength for maximum effect on a target in melee combat. Knights, members of the barbarian Wrathguard and other heavily armed warriors rely on their strength in combat and leave precision and finesse for others to worry about.",
 			"novice":"Passive. The character can fully utilize its strength and therefore uses Strong instead of Accurate when making melee attacks.",
 			"adepte":"Passive. The character's melee attacks now deal 1D4 additional damage.",
-			"maitre":"Active. The character knows how to truly put its back into an attack. The character can perform a devastating melee attack once per turn that delas +1D8, instead of +1D4, additional damage.",
+			"maitre":"Active. The character knows how to truly put its back into an attack. The character can perform a devastating melee attack once per turn that deals +1D8, instead of +1D4, additional damage.",
 			"nom":"Iron fist"
 		}
 	},
@@ -437,6 +439,7 @@
 		"en":{
 			"tradition":"Warrior, Mystic, Rogue",
 			"description":"There are many who fight their way to a position of leadership, but there are few who get pointed out as true leaders by the people they are meant to lead. If equipped with this ability the character is an inspiring, charismatic and eloquent person whom others listen to and follow, sometimes to their death. Outside of combat, the Leader ability can be useful to seize command over a group of strangers, organize a militia and the like.",
+
 			"novice":"Passive. Due to its strong personality, the character can use Persuasive in place of Resolute, for instance when weaving mystical powers, though not as a basis for the corruption threshold.",
 			"adepte":"Active. The character can nominate a creature or an object to be the focused target of his or her allies for the duration of a scene. All allies who attack that target inflict 1D4 additional damage with each hit. Changing the target requires a new active Action from the Leader.",
 			"maitre":"Active. The Leader gives a rousing speech to its allies. This allows them to use his or her Persuasive instead of their own Resolute for the duration of a scene.",
@@ -653,6 +656,7 @@
 		"en":{
 			"tradition":"Warrior, Rogue",
 			"description":"The character is initiated in the secrets of longshafted weapons. The spear is a simple weapon and anyone can quickly learn how to make good use of its length. For this reason, the militia armies of the plains and forests are often armed with spears. The character's advanced skill with long weapons really shows that a simple shaft of hardened wood can be a fearsome weapon in the hands of a trained warrior.",
+
 			"novice":"Passive. The damage dealt by Long weapons is increased one step, to 1D10 for spears and halberds and to 1D8 for staves.",
 			"adepte":"Reaction. The character has truly mastered the long thrust. The character receives a Free Attack against all enemies who come into range of melee combat – whether it is the enemy who engages the character or vice versa is irrelevant. The only exception is when the enemy also wields a long weapon; in such a situation the character receives no Free Attack.",
 			"maitre":"Reaction. As a Master of long weapons, the character has the skill to keep his or her enemies at bay. The character can use the Free Attack with a polearm to keep an enemy from coming close enough to attack. For as long as the character succeeds in hitting the enemy, the enemy remains unable to attack the character with melee weapons – whether or not the damage penetrates the enemy's armor.",
@@ -717,6 +721,7 @@
 		"id":"#37",
 		"type":"talent",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Guerrier, Mystique, Roublard",
 			"nom":"Ritualiste"
@@ -4884,6 +4889,7 @@
 		"id":"#289",
 		"type":"atout",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"nom":"Archiviste"
 		},
@@ -4903,6 +4909,7 @@
 		"id":"#290",
 		"type":"atout",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"nom":"Augure"
 		},
@@ -5215,6 +5222,7 @@
 		"id":"#307",
 		"type":"atout",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"nom":"Main verte"
 		},

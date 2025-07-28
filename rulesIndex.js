@@ -143,13 +143,19 @@
                 if (item.en_31 != null) {
                     houseRuleText = item.houseRule != null  ? item.houseRule : "Revised Wording";
                 }
-                let houseRule = `<p class="text-sm text-gray-400">House Changes: ${houseRuleText}</p>`
+                let houseRule = `<p class="text-sm text-gray-400">House Changes: ${houseRuleText}</p>`;
+
+                let isArmor = type === "Armor";
+                let isWeapon = type === "Weapon";
                 return `
                     <div class="card p-4 rounded" id="${name}">
                         <h2 class="font-bold text-amber-200">${name}</h2>
                         <p class="text-sm text-gray-400">Type: ${type}</p>
                         <p class="text-sm text-gray-400">${tradition}: ${rules.tradition || item.en?.tradition || item.en_31?.tradition || 'None'}</p>
                         <p class="text-sm text-gray-400">Source: ${source}</p>
+                         ${isArmor ? `<p class="text-sm text-gray-400">Protection: ${item.caracs?.jet} Type: ${item.caracs?.type} (${item.caracs?.gene} Defense)` : ''}
+                         ${isWeapon ? `<p class="text-sm text-gray-400">Damage: ${item.caracs?.jet}` : ''}
+                         ${isArmor || isWeapon ? `<p class="text-sm text-gray-400">Qualities: ${rules.qualites}</p>` : ''}
                         ${ rulesFilter === 'house' ? houseRule : "" }
                         <p class="text-sm text-gray-300 mt-2">${rules.description || item.en?.description || item.en_31?.description || 'No description available.'}</p>
                         <div class="mt-2">

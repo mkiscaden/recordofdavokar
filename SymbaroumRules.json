@@ -72,9 +72,9 @@
 			"nom":"Ataque traicionero"
 		},
 		"en_31":{
-			"novice":"Reaction. An attack made from Advantage with any Short weapons deals +1D8 extra damage with the Advantage instead of +1D4. Use Discreet instead of Accurate when making attacks while at an Advantage. Backstab may only be performed once per turn.",
+			"novice":"Reaction. An attack made from Advantage with any Short weapons deals +1D8 extra damage with the Advantage instead of +1D4. Use Discreet instead of Accurate when making attacks while at an Advantage. Backstab may only be performed once per turn. This ability does not apply to Free Attacks.",
 			"adepte":"Reaction. Like Novice, but the stab deals +2D8 damage with the Advantage instead of +1D4.",
-			"maitre":"Reaction. A Short weapon in the hands of a Master can easily bypass the armor of an enemy. When a backstab of a Master hit its target, it completely ignores the target's Armor from manufactured armors and the Armored trait."
+			"maitre":"Reaction. A Short weapon in the hands of a Master can easily bypass the armor of an enemy. When a backstab of a Master hit its target, it gains the quality Armor Piercing."
 		},
 		"en":{
 			"tradition":"Rogue",
@@ -396,6 +396,7 @@
 		"type":"talent",
 		"livre":"ldb",
 		"attribut":"STR",
+		"houseRule": "Clarification",
 		"fr":{
 			"tradition":"Guerrier",
 			"nom":"Poigne de fer"
@@ -405,7 +406,7 @@
 			"nom":"Golpe de hierro"
 		},
 		"en_31":{
-			"novice":"Passive. Use Strong instead of Accurate when making melee attacks.",
+			"novice":"Passive. Use Strong instead of Accurate when making melee attacks. This ability does not apply to Free Attacks.",
 			"adepte":"Passive. Melee attacks deal +1D4 damage.",
 			"maitre":"Active. Perform a devastating melee attack once per turn, that deals +1D8 (instead of +1D4)."
 		},
@@ -491,7 +492,7 @@
 		"en_31":{
 			"novice":"Passive. Damage dealt with bows and crossbows is increased to 1D10 and 1D12 respectively.",
 			"adepte":"Active. The character's projectiles have a crippling effect. The attack deals damage as usual and if the target is wounded the character may make an [Accurate←Strong] test every time the target attempts to move. A success means that the target cannot move and its Movement Action is forfeit. As soon as the target manages to move (the character fails the test), the crippling effect is gone.",
-			"maitre":"Active. The master Marksman's projectiles become armor piercing. The shot ignores the target's Armor from manufactured armors and the Armored trait."
+			"maitre":"Active. The master Marksman's projectiles become armor piercing. The shot has the quality Armor Piercing."
 		},
 		"en":{
 			"tradition":"Warrior, Rogue",
@@ -780,6 +781,7 @@
 		"type":"talent",
 		"livre":"ldb",
 		"attribut":"VIG",
+		"houseRule": "Clarification",
 		"fr":{
 			"tradition":"Guerrier, Roublard",
 			"nom":"Sixième sens"
@@ -789,7 +791,7 @@
 			"nom":"Sexto sentido"
 		},
 		"en_31":{
-			"novice":"Passive. Use Vigilant instead of Accurate when attacking with ranged weapons.",
+			"novice":"Passive. Use Vigilant instead of Accurate when attacking with ranged weapons. This ability does not apply to Free Attacks.",
 			"adepte":"Passive. Use Vigilant instead of Quick for Initiative and when calculating Defense.",
 			"maitre":"Passive. Move and fight unhindered when blinded or in complete darkness."
 		},
@@ -913,6 +915,7 @@
 		"type":"talent",
 		"livre":"ldb",
 		"attribut":"CUN",
+		"houseRule": "Clarification",
 		"fr":{
 			"tradition":"Mystique, Roublard",
 			"nom":"Tacticien"
@@ -924,7 +927,7 @@
 		"en_31":{
 			"novice":"Passive. Use Cunning instead of Quick when calculating Initiative.",
 			"adepte":"Passive. Use Cunning instead of Quick when calculating Defense.",
-			"maitre":"Passive. Use Cunning instead of Accurate when attacking with anything but heavy weapons."
+			"maitre":"Passive. Use Cunning instead of Accurate when attacking with anything but heavy weapons. This ability does not apply to Free Attacks."
 		},
 		"en":{
 			"tradition":"Mystic, Rogue",
@@ -1003,7 +1006,7 @@
 		"en_31":{
 			"novice":"Passive. Heavy weapons deal 1D12 damage.",
 			"adepte":"Reaction. When an attack with a Heavy Weapon misses a target, use the returning swing in an attempt to hit the target again. Make a new attack roll, dealing 1D8 damage if it hits.",
-			"maitre":"Passive.  A heavy weapon in the hands of a master is truly a tool of armor-crushing destruction.  With every successful hit, the target armor is reduced by 1, or by 2 if the weapon has the Massive quality. This effect is cumulative and last until repaired (if the armor is manufactured) or the end of the scene (if natural)."
+			"maitre":"Active.  A heavy weapon in the hands of a master is truly a tool of armor-crushing destruction. This attack gains the property Armor Piercing."
 		},
 		"en":{
 			"tradition":"Warrior",
@@ -1293,6 +1296,7 @@
 		"type":"talent",
 		"livre":"gdj",
 		"attribut":"CUN <- QUI",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Roublard",
 			"nom":"Coup bas"
@@ -1303,7 +1307,7 @@
 		"en_31":{
 			"novice":"Active. Cheap shots come naturally to the character in stressful situations. Such attacks deal 1D6 damage, and if the opponent is damaged the character also gets to follow up with a Free Attack.",
 			"adepte":"Reaction. When dealing damage with an attack, pass a [Cunning←Quick] test to knock the enemy off its feet.",
-			"maitre":"Reaction. Any enemies who engage the character in melee suffers a bloody riposte directly after an attack, dealing 1D6 damage if successful. The riposte always hits a weak spot and consequently ignores any Armor."	 
+			"maitre":"Reaction. Any enemies who engage the character in melee suffers a bloody riposte directly after an attack (successful or not). The riposte deals 1D6 damage and has the property Armor Piercing."
 		},
 		"en":{
 			"tradition":"Rogue",
@@ -1447,6 +1451,7 @@
 		"type":"talent",
 		"livre":"gdj",
 		"attribut":"QUI",
+		"houseRule": "Clarification",
 		"fr":{
 			"tradition":"Roublard",
 			"nom":"Jeu de lames"
@@ -1455,7 +1460,7 @@
 			"tradition":"Maleante"
 		},
 		"en_31":{
-			"novice":"Passive. Roll the success test against Quick when attacking with a short, knife-like weapon.",
+			"novice":"Passive. Roll the success test against Quick instead of Accurate when attacking with a short, knife-like weapon. This ability does not apply to Free Attacks.",
 			"adepte":"Passive. Make two separate knife attacks at the same target with every Active Action. Combined with Twin Attack a total of three attacks may be made.",
 			"maitre":"Reaction. When the character deals damage with a knife-attack, he or she is assumed to be so close that the enemy has a hard time using ordinary weapons effectively (the character has two chances to pass the Defense test), and is unable to attack with Long weapons. To reach a better distance, the enemy has to win the initiative next turn, or withdraw from melee and suffer a Free Attack. If this Free Attack deals damage, the enemy once again finds itself at too short of a distance to attack effectively."
 		},
@@ -1465,7 +1470,7 @@
 			"novice":"Passive. The character can choose to attack with Quick instead of Accurate when attacking with a short, knife-like weapon.",
 			"adepte":"Passive. The character makes two separate knife-attacks at the same target with every combat action. If the character also has Twin Attack, this ability only affects one of the attacks, for a total of three attacks (two with the main hand and one with the other).",
 			"maitre":"Reaction. The character can fight effectively with a knife at very short range from the enemy: when the character deals damage with a knife-attack, he or she is assumed to be so close that the enemy has a hard time using ordinary weapons effectively (the character has two chances to pass the Defense test), and is unable to attack with Long weapons. To reach a better distance, the enemy has to…<br/>… win the initiative next turn (see Quick Strike on page 99 or Take the Initiative on page 104) and then continue attacking until the knife-fighter hits again.<br/>… use a movement action to withdraw from melee, and then suffer a Free Attack from the knife-fighter. If the Free Attack deals damage, the enemy once again finds itself at too short of a distance to attack effectively.",
-			"nom":"Knife play"
+			"nom":"Knife Play"
 		}
 	},
 	{
@@ -1857,8 +1862,8 @@
 			"tradition":"Guerrero"
 		},
 		"en_31":{
-			"novice":"Active. Can wrestle while holding weapons; they need not be dropped or put away. After a successful attack the wrestler may make a [Strong←Strong] test. If successful, the wrestler may try to throw the enemy or maintain the grip. The throw inflicts 1D4 damage, ignoring Armor from manufactured armors and the Armored trait, and leaves the enemy flat on its back. The alternative to a throw, maintaining the grip, inflicts no damage, but the enemy cannot act until the wrestler fails a [Strong←Strong] test at the beginning of the wrestler's turn. Also, all allies of the wrestler have Advantage on the gripped enemy. The wrestler is unable to do anything else while maintaining the grip, leaving him or her vulnerable: all enemies have Advantage on the wrestler.",
-			"adepte":"Reaction. After passing a Defense test against a melee attack, roll a [Quick←Strong] test to throw the attacker to the ground (1D4 damage, ignoring Armor from manufactured armors and the Armored trait). The enemy cannot perform Active Actions during the following turn.",
+			"novice":"Active. Can wrestle while holding weapons; they need not be dropped or put away. After a successful attack the wrestler may make a [Strong←Strong] test. If successful, the wrestler may try to throw the enemy or maintain the grip. The throw inflicts 1D4 damage, ignoring Armor, and leaves the enemy flat on its back. The alternative to a throw, maintaining the grip, inflicts no damage, but the enemy cannot act until the wrestler fails a [Strong←Strong] test at the beginning of the wrestler's turn. Also, all allies of the wrestler have Advantage on the gripped enemy. The wrestler is unable to do anything else while maintaining the grip, leaving him or her vulnerable: all enemies have Advantage on the wrestler.",
+			"adepte":"Reaction. After passing a Defense test against a melee attack, roll a [Quick←Strong] test to throw the attacker to the ground (1D4 damage, ignoring Armor). The enemy cannot perform Active Actions during the following turn.",
 			"maitre":"Reaction. Like Adept, but no Defense test, only a [Quick←Strong], is required; the throw deals 1D6 damage and grants a Free Attack against the enemy. If the throw fails, pass a Defense test to avoid being hit."
 		},
 		"en":{
@@ -1879,7 +1884,7 @@
 			"nom":"Maîtrise du fouet"
 		},
 		"en":{
-			"description":"It is not uncommon for witch hunters and black cloaks to fight with a sword in one hand and a whip in the other. This is an effective and deadly combination; in the hands of someone with the proper training, it can even bring down wellarmored opponents.",
+			"description":"It is not uncommon for witch hunters and black cloaks to fight with a sword in one hand and a whip in the other. This is an effective and deadly combination; in the hands of someone with the proper training, it can even bring down well armored opponents.",
 			"novice":"Active. Attack with a whip in one hand and a one-handed weapon in the other. If the whip attack hits, the character gets a Free Attack with the one-handed weapon, regardless of whether or not the whip deals damage.",
 			"adepte":"Active. As Novice, but the whip hinders the enemy's movements so that the Free Attack hits automatically.",
 			"maitre":"Active. As Adept, but the whip fighter pulls the enemy toward himself/herself so that the Free Attack also deals +1D6 damage.",
@@ -1920,8 +1925,16 @@
 		"id":"#465",
 		"type":"talent",
 		"livre":"adv",
+		"houseRule": "Rule Change",
 		"fr":{
 			"nom":"Lutte en Armure"
+		},
+		"en_31":{
+			"novice":"Movement. Wearing at least medium armor, the character has +1D6 in Armor against all enemy hits during the movement.",
+			"adepte":"Active. Roll an attack test to grab and restrain an enemy until failing a [Strong←Strong] test. While restrained the enemy may only defend against attacks and cannot take actions. Each turn after the first, the Armor Wrestler may attack with a Short weapon. This attack has the property Armor Piercing.",
+
+			"maitre":"Active. Roll an attack test to grab and with a following [Strong←Strong] test throw an enemy to the ground; the character lands on top (1D6 crushing damage, ignoring Armor). The character may then restrain and attack as on Adept level, aside from the enemy not being able to defend during the first turn after the throw.",
+			"nom":"Armor Wrestling"
 		},
 		"en":{
 			"description":"The player character is trained in using his/her armor to maximum effect. The ability can only be used with at least medium armor, but can be very effective, not least against armored opponents and when the user moves through the midst of a battle.",
@@ -2958,6 +2971,7 @@
 		"id":"#141",
 		"type":"pouvoir mystique",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Accessible uniquement aux Mentalistes (Magie)",
 			"nom":"Assaut psychique"
@@ -2968,7 +2982,7 @@
 		"en_31":{
 			"novice":"Reaction. The mystic performs a normal melee attack in combination with a psychic thrust, aimed at the enemy's defensive capability. The character gains a second chance to succeed on the attack test.",
 			"adepte":"Reaction. The psychic thrust is made in combination with the melee attack, and if the mystic passes a [Resolute←Resolute] test the enemy is incapable of defending against the attack. Hence, if this test is successful, the mystic automatically hits the enemy.",
-			"maitre":"Reaction. Like Adept, except the melee attack deals +1D6 and ignores the target's manufacted Armor."
+			"maitre":"Reaction. Like Adept, except the melee attack deals +1D6 and has the property Armor Piercing."
 		},
 		"en":{
 			"tradition":"Only available to Mentalists (Wizardry)",
@@ -6425,8 +6439,8 @@
         "fr":{
             "nom":"Grenade alchimique"
         },
-		"en":{
-			"novice":"The alchemical grenade is the smaller cousin of the breaching pot – a sturdy ceramic vessel is filled with volatile substances that explode when ignited with a fuse or when the vessel is crushed. The grenade is fist-sized and is thrown by hand or with a sling. The thrower aims at one target and may also roll to hit anyone within melee range from the targeted creature. With a successful attack roll, those who are hit suffer 1d10 damage, ignoring 2 points of armor.Should the attack test instead fail, all who manage to defend themselves suffer only half damage. Anyone can use an alchemical grenade, but an untrained user (i.e. who has not learned Alchemy, Siege Expert or Pyrotechnics) are at risk of triggering a catastrophic failure (see Alchemical Weapons, page 98.)"
+		"en_31":{
+			"novice":"The alchemical grenade is the smaller cousin of the breaching pot – a sturdy ceramic vessel is filled with volatile substances that explode when ignited with a fuse or when the vessel is crushed. The grenade is fist-sized and is thrown by hand or with a sling. The thrower aims at one target and may also roll to hit anyone within melee range from the targeted creature. With a successful attack roll, those who are hit suffer 1d10 damage, ignoring 2 points of armor. Should the attack test instead fail, all who manage to defend themselves suffer only half damage. Anyone can use an alchemical grenade, but an untrained user (i.e. who has not learned Alchemy, Siege Expert or Pyrotechnics) are at risk of triggering a catastrophic failure (see Alchemical Weapons, page 98.)"
 		},
         "en":{
             "nom":"Alchemical Grenade",
@@ -7259,7 +7273,7 @@
 			"nom":"Destructeur"
 		},
 		"en_31":{
-			"novice":"The weapon is primarily meant to attack buildings, rather than living creatures; its lack of precision makes it all but impossible to aim at individual enemies, leaving it better suited for shots at fortifications or large areas on the battlefield. Its effect on buildings is considerable and multiple hits will likely wreck the structure – a tower collapses, a wall is breached, a gate is blown open to give the attackers a chance to storm the building.<br/>Creatures who happen to be where a Wrecking weapon hits take damage; Armor by manufacted armors or the Armored trait is ignored, but a passed Defense test halves the damage. Anyone present in or on a building which is destroyed dies or becomes dying if they fail a Defense test; if the test is passed, he or she suffers damage instead, ignoring Armor. Furthermore, the individual is buried in the rubble and it takes the rest of the scene to get out of the wreckage."
+			"novice":"The weapon is primarily meant to attack buildings, rather than living creatures; its lack of precision makes it all but impossible to aim at individual enemies, leaving it better suited for shots at fortifications or large areas on the battlefield. Its effect on buildings is considerable and multiple hits will likely wreck the structure – a tower collapses, a wall is breached, a gate is blown open to give the attackers a chance to storm the building.<br/>Creatures who happen to be where a Wrecking weapon hits take damage; Armor by manufactured armors is ignored, but a passed Defense test halves the damage. Anyone present in or on a building which is destroyed dies or becomes dying if they fail a Defense test; if the test is passed, he or she suffers damage instead, ignoring Armor. Furthermore, the individual is buried in the rubble and it takes the rest of the scene to get out of the wreckage."
 		},
 		"en":{
 			"novice":"The weapon is primarily meant to attack buildings, rather than living creatures; its lack of precision makes it all but impossible to aim at individual enemies, leaving it better suited for shots at fortifications or large areas on the battlefield . Its effect on buildings is considerable and multiple hits will likely wreck the structure – a tower collapses, a wall is breached, a gate is blown open to give the attackers a chance to storm the building. Creatures who happen to be where a Wrecking weapon hits take damage; Armor is ignored but a passed Defense test halves the damage. Anyone present in or on a building which is destroyed dies or becomes dying if they fail a Defense test; if the test is passed, he or she suffers damage instead, ignoring Armor. Furthermore, the individual is buried in the rubble and it takes the rest of the scene to get out of the wreckage.",
@@ -8503,7 +8517,7 @@
 			"source":"<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
 			"description": "Lone swordsman with poise,<br>Strikes fall yet never connect,<br>Riddle of Steel abides.",
 			"novice":"Passive. The character can precisely hit and deflect incoming attacks in close combat. The character may use Accurate as their basis for Defense in melee, as long as they are holding a melee weapon or have the Natural Warrior ability.",
-			"adepte":"Reaction. Once per turn, gain a Free Attack after a successful Defense test.",
+			"adepte":"Reaction. The Adept swordsman can perform a riposte against an opponent's failed attack. Once per turn, gain a Free Attack after a successful Defense test.",
 			"maitre":"Reaction. The master can perform a series of ripostes and gains a Free Attack against the opponent with each successful Defense test, with no limitation on the number of Free Attacks per turn. Further, the character may use Accurate for Defense even against ranged attacks, as long as they are holding a melee weapon. If the character also has the Natural Warrior ability, a successful Defense means that they catch the projectile in the air.",
 			"nom":"Riddle of Steel",
 			"tradition":"Warrior, Rogue"
@@ -8641,6 +8655,15 @@
 			"adepte":"Active. The staff picks up on tiny vibrations in the ground and air. Granting the Staff Mage the monsterous trait <i>Life Sense</i> at the Novice level.",
 			"maitre":"Passive. The Mystic can activate this power as a free action without a resolute test. The Staff Mage's connection to the staff is so strong this power is no longer considered an ongoing effect. It cannot be disrupted by Anathema or similar magic cancelling effects.",
 			"nom":"Staff Sense"
+		}
+	},
+	{
+		"id":"#912",
+		"type":"qualite",
+		"livre":"fanmade",
+		"en":{
+			"novice":"The weapon is unnaturally sharp and able to penetrate armors. Attacks with this weapon ignore the armor value of manufactured armor and the Armored Trait.",
+			"nom":"Armor Piercing"
 		}
 	},
 	{

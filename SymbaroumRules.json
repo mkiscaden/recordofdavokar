@@ -126,7 +126,7 @@
 			"nom":"Berserker"
 		},
 		"en_31":{
-			"novice":"Free. Deal +1D6 damage once per turn in melee combat at the expense of Defense (the attribute on which it is based counts as 5 when calculating Defense).",
+			"novice":"Free. Deal +1D6 damage once per turn in melee combat at the expense of Defense (the attribute on which it is based counts as 5 when calculating Defense). Once used, the Berserker rage continues until the end of the scene.",
 			"adepte":"Reaction. When the character suffers damage from an attack equal to or higher than its Pain Threshold, he or she can roll a Strong test. If successful, it doesn't suffer from any additional effects from the attack.",
 			"maitre":"Free. The character may utilize the berserker's capacity to deal extra damage, while still being able to defend as normal."
 		},
@@ -491,7 +491,7 @@
 		"en_31":{
 			"novice":"Passive. Damage dealt with bows and crossbows is increased to 1D10 and 1D12 respectively.",
 			"adepte":"Active. The character's projectiles have a crippling effect. The attack deals damage as usual and if the target is wounded the character may make an [Accurate←Strong] test every time the target attempts to move. A success means that the target cannot move and its Movement Action is forfeit. As soon as the target manages to move (the character fails the test), the crippling effect is gone.",
-			"maitre":"Active. The master Marksman's projectiles become armor piercing. The shots hit a weak spot and completely ignores the target's Armor from manufactured armors and the Armored trait."
+			"maitre":"Active. The master Marksman's projectiles become armor piercing. The shot ignores the target's Armor from manufactured armors and the Armored trait."
 		},
 		"en":{
 			"tradition":"Warrior, Rogue",
@@ -885,6 +885,7 @@
 		"type":"talent",
 		"livre":"ldb",
 		"attribut":"CUN,CUN <- CUN",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Roublard",
 			"nom":"Étrangleur"
@@ -1002,7 +1003,7 @@
 		"en_31":{
 			"novice":"Passive. Heavy weapons deal 1D12 damage.",
 			"adepte":"Reaction. When an attack with a Heavy Weapon misses a target, use the returning swing in an attempt to hit the target again. Make a new attack roll, dealing 1D8 damage if it hits.",
-			"maitre":"Passive. With every successful hit, the target armor is reduced by 1, or by 2 if the weapon has the Massive quality. This effect is cumulative and last until repaired (if the armor is manufactured) or the end of the scene (if natural)."
+			"maitre":"Passive.  A heavy weapon in the hands of a master is truly a tool of armor-crushing destruction.  With every successful hit, the target armor is reduced by 1, or by 2 if the weapon has the Massive quality. This effect is cumulative and last until repaired (if the armor is manufactured) or the end of the scene (if natural)."
 		},
 		"en":{
 			"tradition":"Warrior",
@@ -1531,9 +1532,9 @@
 			"tradition":"Only available to Queen's Spy (Maleante)"
 		},
 		"en_31":{
-			"novice":"Active. Use Flash Powder in melee combat: roll [Accurate←Quick] to deal 1D4 damage (ignoring Armor) and blind the target for 1D4 turns. Alchemical grenades and mines can be handled without risk.",
-			"adepte":"Active. Use a Smoke Bomb. If thrown at a distance, an Accurate test is required for it to hit the intended area. If dropped at one's feet, no test is required. Everyone in the area (caster included) is blinded until they make two Movement Actions in any direction. Those in the smoke must pass a Strong test each turn or suffer 1D4 damage (ignoring Armor).",
-			"maitre":"Active. Use a Thunder Ball. All targets within a five meters radius are hit, and an [Accurate←Quick] test decides whether they take full (1D12, ignoring Armor) or half damage. Full damage also causes blindness for 1D4 turns."
+			"novice":"Active. Use Flash Powder in melee combat: roll [Accurate←Quick] to deal 1D4 fire damage (ignoring 2 points of Armor) and blind the target for 1D4 turns. Alchemical grenades and mines can be handled without risk.",
+			"adepte":"Active. Use a Smoke Bomb. If thrown at a distance, an Accurate test is required for it to hit the intended area. If dropped at one's feet, no test is required. Everyone in the area (caster included) is blinded until they make two Movement Actions in any direction. Those in the smoke must pass a Strong test each turn or suffer 1D4 fire damage (ignoring 2 Points of Armor).",
+			"maitre":"Active. Use a Thunder Ball. All targets within a five meters radius are hit, and an [Accurate←Quick] test decides whether they take 1D12 fire damage or half damag (ignoring 2 points of Armor). Full damage also causes blindness for 1D4 turns."
 		},
 		"en":{
 			"tradition":"Only available to Queen's Spy (Rogue)",
@@ -1760,7 +1761,7 @@
 		"en":{
 			"tradition":"Mystic",
 			"description":"Symbolism was developed in the east, beyond the Ravens, in what the symbolists call “The first city of humans” – a place of myth, lost somewhere in the vast deserts of the eastern wastes. Nowadays, the symbolists gather in Vajvod, in eastern Davokar, even though some of them travel far and wide in their search for knowledge of runes, signs and symbols. The basic assumption of the symbolists states that the world consists of signs and symbols, and that it therefore may be affected and influenced by altering signs and symbols which represent its diverse features. The powers of Symbolism are created by drawing or writing. More fanciful procedures are also possible, like embroidery, etchings or weaves. Procedures aside, the power of the symbol is released by the symbolist's command, and the symbol vaporizes when its power has been unleashed. Creating a symbol gives no corruption but when it is activated the one who uses it suffers one (1) point of temporary corruption.",
-			"novice":"<span class='text-success'>Novice</span>. Special. The character has begun to grasp the power of runes. The signs must be physically represented – carved, painted, etched, tattooed – which takes time; for a novice, it takes one hour to create a power symbol. However, it only takes a combat action to activate a symbol, which is done by uttering an activation phrase. Note that the symbolist has to see or be in direct contact (melee range) with the symbol in order to activate it. The symbolist can only have one symbol per mystical power prepared in this way. When a symbol has been used it must be recharged, which takes as much time as it does to create the symbol from scratch.",
+			"novice":"Special. The character has begun to grasp the power of runes. The signs must be physically represented – carved, painted, etched, tattooed – which takes time; for a novice, it takes one hour to create a power symbol. However, it only takes a combat action to activate a symbol, which is done by uttering an activation phrase. Note that the symbolist has to see or be in direct contact (melee range) with the symbol in order to activate it. The symbolist can only have one symbol per mystical power prepared in this way. When a symbol has been used it must be recharged, which takes as much time as it does to create the symbol from scratch.",
 			"adepte":"Special. With a combat action, the symbolist can quickly paint a symbol in a book or draw it in the mud or dust of the ground. These temporary symbols transcend the limitation stating that the symbolist may only have one symbol per power prepared. To the adept, activating symbols – no matter if they are prepared in a more permanent fashion (see novice) or are of a temporary nature – is a free action where he or she only has to utter a single word. However, only one symbol may be activated per turn. In addition, the adept symbolist can choose to activate symbols using a physical trigger instead of a word. The trigger is decided by the mystic when the symbol is created, and can for instance be that a living creature enters a room, that someone steps on the symbol or that a weapon is drawn within melee range. The symbolist may or may not exclude him- or herself from this equation, but the allies of the symbolist cannot be excluded: if they act in accordance with the trigger, the symbol is activated. The adept can erase one of his or her own symbols with a simple gesture (free action), but this requires actually touching the symbol.",
 			"maitre":"Active. As a combat action, the symbolist can draw flaming power runes in the air and activate them as part of the same action. Hence, the symbols work just like the powers of other traditions, aside from the mystic only suffering one point in temporary corruption per activation. These momentary symbols transcend the limitation stating that the symbolist may only have one symbol per power prepared.",
 			"nom":"Symbolism"
@@ -6420,9 +6421,13 @@
         "id":"#446",
         "type":"arme",
         "livre":"gdj",
+		"houseRule": "Rule Change",
         "fr":{
             "nom":"Grenade alchimique"
         },
+		"en":{
+			"novice":"The alchemical grenade is the smaller cousin of the breaching pot – a sturdy ceramic vessel is filled with volatile substances that explode when ignited with a fuse or when the vessel is crushed. The grenade is fist-sized and is thrown by hand or with a sling. The thrower aims at one target and may also roll to hit anyone within melee range from the targeted creature. With a successful attack roll, those who are hit suffer 1d10 damage, ignoring 2 points of armor.Should the attack test instead fail, all who manage to defend themselves suffer only half damage. Anyone can use an alchemical grenade, but an untrained user (i.e. who has not learned Alchemy, Siege Expert or Pyrotechnics) are at risk of triggering a catastrophic failure (see Alchemical Weapons, page 98.)"
+		},
         "en":{
             "nom":"Alchemical Grenade",
             "novice":"The alchemical grenade is the smaller cousin of the breaching pot – a sturdy ceramic vessel is filled with volatile substances that explode when ignited with a fuse or when the vessel is crushed. The grenade is fist-sized and is thrown by hand or with a sling. The thrower aims at one target and may also roll to hit anyone within melee range from the targeted creature. With a successful attack roll, those who are hit suffer full damage, plus damage from fire as an ongoing effect. Should the attack test instead fail, all who manage to defend themselves suffer only half damage and no ongoing effect from fire. Anyone can use an alchemical grenade, but an untrained user (i.e. who has not learned Alchemy, Siege Expert or Pyrotechnics) are at risk of triggering a catastrophic failure (see Alchemical Weapons, page 98.)",
@@ -6514,7 +6519,7 @@
             "qualites":"Wrecking (if buried) or Flaming, Area Effect (radius)"
         },
         "caracs":{
-            "jet":"1D412",
+            "jet":"1D12",
             "cost":"100 Th."
         }
     },
@@ -6555,9 +6560,13 @@
         "id":"#454",
         "type":"arme",
         "livre":"gdj",
+		"houseRule": "Rule Change",
         "fr":{
             "nom":"Tube incendiaire alchimique, fixe"
         },
+		"en_31":{
+			"novice":"The stationary firetube consists of a cylinder – usually a hollowed log, but fully cast versions also exist – which is loaded with alchemical flammables that when ignited turn the weapon into a devastating flamethrower. The flames can hit all enemies in front of the device; one test is made for each target. Those who are hit suffer 1d12 damage, ignoring 2 points of armor; those who manage to defend themselves suffer half damage. Only persons with the ability Siege Expert at adept level can operate a stationary alchemical firetube (see Alchemical Weapons, page 98)."
+		},
         "en":{
             "nom":"Alchemical Firetube, Stationary",
             "novice":"The stationary firetube consists of a cylinder – usually a hollowed log, but fully cast versions also exist – which is loaded with alchemical flammables that when ignited turn the weapon into a devastating flamethrower. The flames can hit all enemies in front of the device; one test is made for each target. Those who are hit suffer full damage, plus damage from fire as an ongoing effect; those who manage to defend themselves suffer half damage and no ongoing effect from fire. Only persons with the ability Siege Expert at adept level can operate a stationary alchemical firetube (see Alchemical Weapons, page 98).",
@@ -6572,9 +6581,13 @@
         "id":"#455",
         "type":"arme",
         "livre":"gdj",
+		"houseRule": "Rule Change",
         "fr":{
             "nom":"Tube incendiaire alchimique, Portable"
         },
+		"en_31": {
+			"novice":"The portable alchemical firetube is a lighter version of the stationary siege weapon with the same name. The portable version is made of a solid pipe, which is loaded with alchemical flammables that when ignited turn the weapon into a flamethrower. The firetube flames can hit all enemies in front of the carrier; one test is made for each target. Those who are hit suffer 1d12 damage, ignoring 2 points of armor; those who manage to defend themselves suffer half damage. Anyone can use an alchemical firetube, but users who do not have the ability Siege Expert at adept level are at risk of triggering a catastrophic failure. For more details, see the rules on Alchemical Weapons on page 98."
+		},
         "en":{
             "nom":"Alchemical Firetube, Portable",
             "novice":"The portable alchemical firetube is a lighter version of the stationary siege weapon with the same name. The portable version is made of a solid pipe, which is loaded with alchemical flammables that when ignited turn the weapon into a flamethrower. The firetube flames can hit all enemies in front of the carrier; one test is made for each target. Those who are hit suffer full damage, plus damage from fire as an ongoing effect; those who manage to defend themselves suffer half damage and no ongoing effect from fire. Anyone can use an alchemical firetube, but users who do not have the ability Siege Expert at adept level are at risk of triggering a catastrophic failure. For more details, see the rules on Alchemical Weapons on page 98.",
@@ -7309,11 +7322,12 @@
 		"id":"#218",
 		"type":"qualite",
 		"livre":"gdj",
+		"houseRule": "Rule Change",
 		"fr":{
 			"nom":"Enflammé"
 		},
 		"en_31":{
-			"novice":"The weapon glows and even sparks before bursting into flames when actively used. The weapon deals 1d4 fire damage and illuminate the surrounding like a torch."
+			"novice":"The weapon glows and even sparks before bursting into flames when actively used. The weapon deals an additional 1d4 fire damage and illuminate the surrounding like a torch."
 		},
 		"en":{
 			"novice":"The weapon glows and even sparks before bursting into flames when actively used. The weapon deals damage as usual, but the target starts to burn – dealing 1d4 damage for 1d4 turns, starting the turn after the initial hit. The fire is extinguished if the target uses a whole turn to roll on the ground and passes a Quick test.",

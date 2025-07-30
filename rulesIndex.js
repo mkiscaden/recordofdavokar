@@ -147,6 +147,8 @@
 
                 let isArmor = type === "Armor";
                 let isWeapon = type === "Weapon";
+                let isElixir = type === "Potion";
+                let justInTimeAllowed = item.justInTime == false ? "No" : "Yes";
                 return `
                     <div class="card p-4 rounded" id="${name}">
                         <h2 class="font-bold text-amber-200">${name}</h2>
@@ -154,6 +156,7 @@
                         <p class="text-sm text-gray-400">${tradition}: ${rules.tradition || item.en?.tradition || item.en_31?.tradition || 'None'}</p>
                         <p class="text-sm text-gray-400">Source: ${source}</p>
                          ${isArmor ? `<p class="text-sm text-gray-400">Protection: ${item.caracs?.jet} Type: ${item.caracs?.type} (${item.caracs?.gene} Defense)` : ''}
+                         ${isElixir ? `<p class="text-sm text-gray-400">Just In Time Alchemy: ${justInTimeAllowed}</p>` : ''}
                          ${isWeapon ? `<p class="text-sm text-gray-400">Damage: ${item.caracs?.jet}` : ''}
                          ${isArmor || isWeapon ? `<p class="text-sm text-gray-400">Qualities: ${rules.qualites}</p>` : ''}
                         ${ rulesFilter === 'house' ? houseRule : "" }

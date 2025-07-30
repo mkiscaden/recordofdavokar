@@ -2509,7 +2509,7 @@
 			"nom":"Tormenta de flechas"
 		},
 		"en_31":{
-			"novice":"Active. The mystic enchants a handful of arrows (up to five) with a successful Resolute test. The electric arrows then float next to the mystic for the rest of the scene and can be fired as a Free Action, once per turn, dealing 1D8 magical damage. The arrows hit their target automatically. Any quality or special ability that the arrow might have is added to the effect.",
+			"novice":"Active. The mystic enchants a handful of arrows (up to five) with a successful Resolute test. The arrows then float next to the mystic for the rest of the scene and can be fired as a Free Action, once per turn, dealing 1D8 magical damage. The arrows hit their target automatically. Any quality or special ability that the arrow might have is added to the effect.",
 			"adepte":"Active. Each arrow now deals 1D10 magical damage. As an Active Action, fire two arrows at either the same or two different targets. If the mystic does so, no additional arrow can be fired as a Free Action this turn.",
 			"maitre":"Active. Like Adept, but now as an Active Action the mystic can fire three arrows at either the same or separate targets and each arrow now deals 1D12 magical damage."
 		},
@@ -7395,11 +7395,12 @@
 		"id":"#220",
 		"type":"qualite",
 		"livre":"gdj",
+		"HouseRule":"Rule Change",
 		"fr":{
 			"nom":"Rugissant"
 		},
 		"en_31":{
-			"novice":"The weapon is instilled with storming, thunderous energies. Each hit echoes with the powers of lightning. If any of the damage penetrates the armor, the target also has to pass a Strong test or lose an active or movement action because of the force unleashed by the Thundering hit."
+			"novice":"The weapon is instilled with storming, thunderous energies. Each hit echoes with the powers of lightning. If any of the damage penetrates the armor, the target has a second chance to fail their next Resolute test."
 		},
 		"en":{
 			"novice":"The weapon is instilled with storming, thunderous energies. Each hit echoes with the powers of lightning and deals 1d8 damage, rolled separately from the normal damage caused by the attack. Abilities do not add to this extra damage effect. If any of the damage from this quality penetrates the armor the target also has to pass a Strong test or lose an action because of the force unleashed by the Thundering hit.",
@@ -8011,6 +8012,7 @@
 		"fr":{
 			"nom":"Souffle Mortel"
 		},
+		"houseRule": "Errata",
 		"en_31":{
 			"adepte":"II Action: Active. The creature exhales a continuous cascade. Should the first target succeed with a [Quick←Accurate] test, the damage is 4; if the test fails, the damage is 8. If the target fails, the creature may redirect the cascade towards another target, and so on until a target succeeds with the [Quick←Accurate] test."
 		},
@@ -8103,7 +8105,7 @@
 		"fr":{
 			"nom":"Aura Nocive"
 		},
-		"en_31":{
+		"en_31_ignored":{
 			"novice":"I Action: Passive. All who are within melee range of the creature suffer 2 points of damage at the start of their turn, ignoring Armor."
 		},
 		"en":{
@@ -8753,10 +8755,11 @@
 		"id": 1008,
 		"livre": "ldb",
 		"type": "elixir",
+		"justInTime": false,
 		"en": {
 			"tradition": "6 Th.",
 			"nom": "Elixir of Life",
-			"master": "Consuming an Elixir of Life gives the drinker regenerative powers that heal 1D6 points of Toughness during 1D6 turns, on the character's initiative. Sadly the character also suffers 1 temporary corruption for each turn the elixir is in effect. Just in Time alchemy cannot be used with this elixer due to the rare ingredients required."
+			"master": "Consuming an Elixir of Life gives the drinker regenerative powers that heal 1D6 points of Toughness during 1D6 turns, on the character's initiative. Sadly the character also suffers 1 temporary corruption for each turn the elixir is in effect. Just in Time alchemy cannot be used with this elixir due to the rare ingredients required."
 		}
 	},
 	{
@@ -8803,10 +8806,11 @@
 		"id": 1013,
 		"livre": "adv",
 		"type": "elixir",
+		"justInTime": false,
 		"en": {
 			"tradition": "2 Th.",
 			"nom": "Holy Water",
-			"adepte": "Holy water, instilled with the light of Prios, can heal wounds and sooth souls. It works as a Herbal Cure with +1 on the effect test (meaning +2 Toughness if used without the ability Medicus), and it also removes 1 point of temporary corruption."
+			"adepte": "Holy water, instilled with the light of Prios, can heal wounds and sooth souls. It works as a Herbal Cure with +1 on the effect test (meaning +2 Toughness if used without the ability Medicus), and it also removes 1 point of temporary corruption. Just In Time Alchemy can be used with this elixir only if the Alchemist is also a cleric of Prios."
 		}
 	},
 	{
@@ -8823,10 +8827,11 @@
 		"id": 1015,
 		"livre": "adv",
 		"type": "elixir",
+		"justInTime": false,
 		"en": {
 			"tradition": "4 Th.",
 			"nom": "Homunculus",
-			"adepte": "A seed is planted and one day later a miniature servant sprouts from the ground. The homunculus is small as a child, has no abilities and all attribute values are 5 (+5). It serves its maker loyally then withers away after a month; all it leaves behind is a pile of dirt. Creating a homunculus is a true violation of the natural order, meaning that the one using the seed suffers 1d6 temporary corruption. Just in Time alchemy cannot be used with this elixer due to the rare ingredients required."
+			"adepte": "A seed is planted and one day later a miniature servant sprouts from the ground. The homunculus is small as a child, has no abilities and all attribute values are 5 (+5). It serves its maker loyally then withers away after a month; all it leaves behind is a pile of dirt. Creating a homunculus is a true violation of the natural order, meaning that the one using the seed suffers 1d6 temporary corruption. Just in Time alchemy cannot be used with this elixir due to the rare ingredients required."
 		}
 	},
 	{
@@ -8866,10 +8871,11 @@
 		"id": 1019,
 		"livre": "adv",
 		"type": "elixir",
+		"justInTime": false,
 		"en": {
 			"tradition": "4 Th.,8 Th.,12 Th.",
 			"nom": "Purple Sap",
-			"novice": "The Purple Sap is made from a decoction of a purple Lily of the Valley, a flower whose cleansing properties and resistance to corruption were discovered by the witches of Davokar long ago. Purchasing the elixir is expensive, because the ingredient is so rare and few alchemists are skilled enough to brew it. The elixir has no effect on permanent corruption or on blight-marks which have already appeared on the user. Weak: A novice alchemist can brew a potion which immediately removes 1d4 temporary corruption from the user’s soul. Just in Time alchemy cannot be used with this elixer due to the rare ingredients required.",
+			"novice": "The Purple Sap is made from a decoction of a purple Lily of the Valley, a flower whose cleansing properties and resistance to corruption were discovered by the witches of Davokar long ago. Purchasing the elixir is expensive, because the ingredient is so rare and few alchemists are skilled enough to brew it. The elixir has no effect on permanent corruption or on blight-marks which have already appeared on the user. Weak: A novice alchemist can brew a potion which immediately removes 1d4 temporary corruption from the user’s soul. Just in Time alchemy cannot be used with this elixir due to the rare ingredients required.",
 			"adepte": "Moderate: When made by an adept, the elixir immediately removes 1d6 temporary corruption.",
 			"maitre": "Strong: The master’s version removes 1d8 temporary corruption."
 		}
@@ -8908,10 +8914,11 @@
 		"id": 1023,
 		"livre": "adv",
 		"type": "elixir",
+		"justInTime": false,
 		"en": {
 			"tradition": "12 Th.",
 			"nom": "Spirit Friend",
-			"maitre": "The miraculous drug called Spirit Friend is cooked in a cauldron, but it is not the liquid that is bottled, but the vapors. The gray-white smoke is captured in small ceramic jars and inhaled when needed. Spirit Friend gives the user level I in the trait Spirit Form. The effect lasts for 1d4 turns, to the price of as many points in temporary corruption."
+			"maitre": "The miraculous drug called Spirit Friend is cooked in a cauldron, but it is not the liquid that is bottled, but the vapors. The gray-white smoke is captured in small ceramic jars and inhaled when needed. Spirit Friend gives the user level I in the trait Spirit Form. The effect lasts for 1d4 turns, to the price of as many points in temporary corruption. This elixir cannot be used with Just In Time Alchemy."
 		}
 	},
 	{
@@ -8922,7 +8929,7 @@
 			"tradition": "1 Th.",
 			"nom": "Stun Bolt",
 			"novice": "The alchemist creates a crossbow bolt (or arrow) in a fast acting muscle relaxant; anyone hit by the bolt must pass a [Strong –Damage] test or fall to the ground. The monstrous trait Robust gives +2 in Strong per level when rolling this test.",
-			"adepte": "As Novice, except the target does the [Strong-Damage] test with a -2 penality. Robust no longer provides any bonus to this test."
+			"adepte": "As Novice, except the target does the [Strong-Damage] test with a -2 penalty. Robust no longer provides any bonus to this test."
 		}
 	},
 	{
@@ -8939,10 +8946,11 @@
 		"id": 1026,
 		"livre": "adv",
 		"type": "elixir",
+		"justInTime": false,
 		"en": {
 			"tradition": "4 Th.",
 			"nom": "Thorn Beasties",
-			"adepte": "A handful of seeds are thrown to the ground and one turn later 1d4 thorn beasties appear to serve the user. The thorn beasties are small, vaguely humanoid creatures made of thorns; they do not speak but squeak and crack as twigs that are bent and rubbed together. The beasties live during a single scene before drying up to look like thorny witch dolls. The summoning of the thorn beasties is a clear violation of the natural order, meaning that the one using the seeds suffers 1d6 temporary corruption."
+			"adepte": "A handful of seeds are thrown to the ground and one turn later 1d4 thorn beasties appear to serve the user. The thorn beasties are small, vaguely humanoid creatures made of thorns; they do not speak but squeak and crack as twigs that are bent and rubbed together. The beasties live during a single scene before drying up to look like thorny witch dolls. The summoning of the thorn beasties is a clear violation of the natural order, meaning that the one using the seeds suffers 1d6 temporary corruption. This elixir cannot be used with Just In Time Alchemy."
 		}
 	},
 	{
@@ -8962,7 +8970,8 @@
 		"en": {
 			"tradition": "4 Th.,6 Th.",
 			"nom": "Transforming Draught",
-			"maitre": "This is a powerful mutagen which transforms the body of the user in a monstrous way. During a scene the user is twisted into a bestial half-creature and has a second chance to fail all Persuasive tests until the effect wears off. The draught gives the user a monstrous trait for the rest of the scene; the level of the trait is decided by the strength of the elixir. In addition, each dose consumed deals temporary corruption, also determined by the strength of the elixir. The following monstrous traits can be acquired, decided by the alchemist when brewing the elixir: Armored, Amphibian, Natural Weapon, Night Perception, Robust, Swift, and Wings. <br>Weak: The draught gives the selected trait at level I, to the cost of 1d4 temporary corruption. <br>Moderate: The draught gives the selected trait at level II, to the cost of 1d6 temporary corruption. Strong: The draught gives the selected trait at level III, to the cost of 1d8 temporary corruption."
+			"justInTime": false,
+			"maitre": "This is a powerful mutagen which transforms the body of the user in a monstrous way. During a scene the user is twisted into a bestial half-creature and has a second chance to fail all Persuasive tests until the effect wears off. The draught gives the user a monstrous trait for the rest of the scene; the level of the trait is decided by the strength of the elixir. In addition, each dose consumed deals temporary corruption, also determined by the strength of the elixir. The following monstrous traits can be acquired, decided by the alchemist when brewing the elixir: Armored, Amphibian, Natural Weapon, Night Perception, Robust, Swift, and Wings. Just in Time alchemy cannot be used with this elixir due to the rare ingredients required.<br>Weak: The draught gives the selected trait at level I, to the cost of 1d4 temporary corruption. <br>Moderate: The draught gives the selected trait at level II, to the cost of 1d6 temporary corruption. Strong: The draught gives the selected trait at level III, to the cost of 1d8 temporary corruption."
 		}
 	},
 	{

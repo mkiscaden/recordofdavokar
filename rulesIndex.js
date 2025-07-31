@@ -265,7 +265,7 @@
         function updateSelectedOptions(checkbox) {
             let card = checkbox.closest('div.card');
             let rank = checkbox.getAttribute("data-mastery");
-            let title = card.querySelector("."+rank+"-text").innerHTML;
+            let title = card.querySelector("."+rank+"-text")?.innerHTML;
             let id = card.id +"_"+rank;
                if (checkbox.checked) {
                     totalPoints += parseInt(checkbox.value);
@@ -321,3 +321,89 @@
             };
             return String(str).replace(/[&<>"'/]/g, char => entityMap[char]);
         }
+
+    function copyDivToClipboard(divId) {
+        const div = document.getElementById(divId);
+        if (!div) {
+            console.error('Div not found');
+            return false;
+        }
+
+        // Function to convert HTML to Google Docs-compatible plain text
+        function convertToGoogleDocsFormat(element) {
+            let text = '';
+
+            // Handle different node types
+            function processNode(node) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    return node.textContent.trim();
+                }
+                if (node.nodeType !== Node.ELEMENT_NODE) {
+                    return '';
+                }
+
+                // Skip elements with class "question-icon"
+                if (node.classList && node.classList.contains('question-icon')) {
+                    return '';
+                }
+
+                let result = '';
+                const tagName = node.tagName.toLowerCase();
+
+                if (tagName === 'li') {
+                    const title = node.getAttribute('title') || '';
+                     const titleText = title ? `${title}` : '';
+                    // Format as a bulleted list item with a hyphen (Google Docs auto-converts to bullets)
+                    result += `- ${Array.from(node.childNodes).map(processNode).join(' ').trim()}\n${titleText}\n\n`;
+                } else if (tagName === 'select') {
+                    // Format as a simple text table for the selected option
+                    const selectedOption = node.options[node.selectedIndex];
+                    if (selectedOption) {
+                        result += ` ${selectedOption.text}\n`;
+                        result += `\n`; // Extra newline for clarity
+                    }
+                } else if (tagName === 'div' || tagName === 'p' || tagName === 'h4' || tagName === 'h3' || tagName === 'h2' || tagName === 'h1') {
+                    // Add newline after processing child nodes
+                    result += `${Array.from(node.childNodes).map(processNode).join('').trim()}\n`;
+                } else if (tagName === 'br' ) {
+                    // Add a newline for <br> tags
+                    result += `\n`;
+                } else {
+                    // Process child nodes
+                    result += Array.from(node.childNodes).map(processNode).join('');
+                }
+
+                return result;
+            }
+
+            // Start processing from the root element
+            text = processNode(element);
+
+            return text.trim();
+        }
+
+        const googleDocsContent = convertToGoogleDocsFormat(div);
+        console.log(googleDocsContent)
+
+        // Use Clipboard API to copy
+        try {
+            navigator.clipboard.writeText(googleDocsContent);
+            return true;
+        } catch (err) {
+            console.error('Copy failed:', err);
+            // Fallback to execCommand
+            const textarea = document.createElement('textarea');
+            textarea.value = googleDocsContent;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                return true;
+            } catch (fallbackErr) {
+                console.error('Fallback copy failed:', fallbackErr);
+                document.body.removeChild(textarea);
+                return false;
+            }
+        }
+    }

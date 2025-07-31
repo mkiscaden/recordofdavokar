@@ -106,3 +106,10 @@ select {
     width: 50px;
     background-color: #222;
 }
+
+a.copyToClipboard {
+    color: #fde68a;
+    text-decoration: none;
+    font-family: 'Georgia';
+    font-size: .9em;
+}

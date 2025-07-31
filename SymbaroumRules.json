@@ -9023,5 +9023,87 @@
 			"nom": "Wraith Dust",
 			"maitre": "The wraith dust forces an incorporeal being (a creature with the monstrous trait Spirit Form) to take physical form for the duration of a scene. The dust must be thrown with a [Accurate←Defense] test; if hit the spirit takes damage as living creatures do."
 		}
+	},
+	{
+		"id": 1034,
+		"livre": "ldb",
+		"type": "elixir",
+		"JustInTime": false,
+		"en": {
+			"tradition": "8 Th.",
+			"nom": "Sleeping Drops",
+			"maitre": "The sleeping drops consist of a syrup-like liquid which can easily be mixed with another beverage without significantly affecting its taste. Brewing it is a time-consuming process, so difficult that only a master alchemist can manage it. But many of them would never even attempt it, as the powerful elixir will not only induce sleep, but corrupt its victim. Those who ingest the sleeping drops will inevitably pass out the next turn. With a successful Strong test, the person wakes up after 1d4 turns, so woozy that he or she can only perform a single action for the next 1d8 turns. If the test fails, the person is fast asleep for an entire scene (or an hour, if the exact time is relevant). The sleeping individual can be woken up before then, but will not be able to act, speak, or even walk. Regardless of whether the test succeeds or fails, the victim suffers 1d6 corruption – enough to blightmark the feeble-minded."
+		}
+	},
+	{
+		"id": 1035,
+		"livre": "ldb",
+		"type": "elixir",
+		"JustInTime": false,
+		"en": {
+			"tradition": "6 Th., 9 Th.",
+			"nom": "Truth Serum",
+			"adepte": "Moderate. Those who (more or less reluctantly) inhale this powder, or drink a solution of it, are robbed of their mental clarity, giving them –5 to Resolute as they try to resist interrogations where the other person uses Persuasive or the Telepathic Interrogation ritual. With a successful Strong test, the modifier becomes –3.",
+			"maitre": "Strong. If the serum was made by a true master alchemist, the modifier becomes –8, or –5 after a successful Strong test. The effect lasts for an entire scene."
+		}
+	},
+	{
+		"id": 1036,
+		"livre": "ldb",
+		"type": "elixir",
+		"en": {
+			"tradition": "2 Th., 4 Th., 6 Th.",
+			"nom": "Mistball",
+			"novice": "Weak. The Mistball is small enough to fit in the palm of one’s hand, and consists of dried leaves wrapped around a dazing powder made from drone spores. It is thrown at a single target with a Success Test, like a throwing weapon. If it hits, the target makes a Strong test. If the test is successful nothing happens, but if it is not, the victim is dazed and gains a penalty to all Success Tests for 1d4 turns. The penalty's value is determined by the maker’s Alchemy level: –1 for novice, –3 for adept, and –5 for master.",
+			"adepte": "Moderate. The penalty to Success tests is -3.",
+			"maitre": "Strong.  The penalty to Success tests is -5."
+		}
+	},
+	{
+		"id": 1037,
+		"livre": "ldb",
+		"type": "elixir",
+		"en": {
+			"tradition": "2 Th., 4 Th., 6 Th.",
+			"nom": "Lightning Dust",
+			"novice": "Weak. Lightning Dust consists of unstable substances encased within the thin shell of the alum nut. It is thrown at a target with a Success Test, like a throwing weapon, and when it breaks, the dust explodes in a blinding flash of light. If it hits, the target makes a Quick test. If the test is successful nothing happens, but if it is not, the victim is blinded for a number of turns. How long the victim is blinded is determined by the maker’s Alchemy level: 1 turn for novice, 1d4 turns for adept, and 1d6 for master.",
+			"adepte": "Moderate. Target is blinded for 1d4 turns.",
+			"maitre": "Strong. Target is blinded for 1d6 turns."
+		}
+	},
+	{
+		"id": 1038,
+		"livre": "ldb",
+		"type": "elixir",
+		"en": {
+			"tradition": "2 Th., 4 Th., 6 Th.",
+			"nom": "Boom Stone",
+			"novice": "The Boom Stone is best described as a smaller, weaker, more primitive version of the alchemical Thunder Ball. Unstable substances are formed into a paste and placed inside a hollow sandstone roughly the size of a fist. It is thrown at a single target with a Success Test, like a throwing weapon, and deals explosive damage upon impact. The amount of damage is determined by the maker’s Alchemy level: 1d4 for novice, 1d6 for adept, and 1d8 for master.",
+			"adepte": "Moderate. Damage is increased to 1d6.",
+			"maitre": "Strong. Damage is increased to 1d8."
+		}
+	},
+	{
+		"id": 1039,
+		"livre": "ldb",
+		"type": "elixir",
+		"en": {
+			"tradition": "2 Th., 4 Th., 6 Th.",
+			"nom": "Acid Orb",
+			"novice": "The alkaline liquid of the Acid Orb is contained within a spherical flask of acid resistant porcelain. The flask is thrown at a single target with a Success Test, like a throwing weapon, and if it hits, the target suffers its corrosive effect.The strength of the acid is determined by the maker’s Alchemy level: 1d4 for novice, 1d6 for adept, and 1d8 for master.",
+			"adepte": "Moderate. Damage is increased to 1d6.",
+			"maitre": "Strong. Damage is increased to 1d8."
+		}
+	},
+	{
+		"id": 1040,
+		"livre": "ldb",
+		"type": "elixir",
+		"justInTime": false,
+		"en": {
+			"tradition": "",
+			"nom": "Wrathbrew",
+			"maitre": "Vigilant, but also +2 to all Resolute tests made when trying to resist mental influence, fear, or pressure. Those who leave the guard before the elixir has taken effect will suffer no long-term damage. The rest are not so lucky. Nothing will happen as long as they keep drinking Wrathbrew, but if they stop, they must make a Strong test at the end of each year. Failing the test means that the elixir has taken its toll on their bodies, and their Strong value is reduced by –1. When the Strong value reaches 0, the person will die. Pure Wrathbrew is only made by the Huldra and her aides, and it is not for sale. However, since the recipe was first developed, a few people have managed to learn its secrets. In some corners of Thistle Hold and Yndaros, barbarian alchemists sometimes appear with small amounts of Blackbrew. One must have the Contacts boon (drug-makers or equivalent) and pass a Cunning test in order to find a seller, who will only sell a month’s consumption of Wrathbrew, at the staggering price of 1d6+5 thaler per daily dose. Furthermore, as this infusion is less pure than the Huldra’s, those who drink it will suffer 1d4 temporary corruption."
+		}
 	}
 ]

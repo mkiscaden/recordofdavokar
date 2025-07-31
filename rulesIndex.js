@@ -137,7 +137,7 @@
 
                 let noviceHtml =  `<p>${showCheckbox ? noviceCheckbox : ""}<span class="Novice-text">${novice}</span></p>`;
                 let adeptHtml = `<p>${showCheckbox ? adeptCheckbox : ""}<span  class="Adept-text">${adept}</span></p>`;
-                let masterHtml = `<p>${showCheckbox ? masterCheckbox : ""}<span  class="Mastery-text">${master}</span></p>`;
+                let masterHtml = `<p>${showCheckbox ? masterCheckbox : ""}<span class="Master-text">${master}</span></p>`;
 
                 let houseRuleText = "None";
                 if (item.en_31 != null) {
@@ -149,19 +149,30 @@
                 let isWeapon = type === "Weapon";
                 let isElixir = type === "Potion";
                 let justInTimeAllowed = item.justInTime == false ? "No" : "Yes";
+                let qualities = rules.qualites != null ? `Qualities: ${rules.qualites}` : "";
+
+
+                 let armorCheckbox = `<input type="checkbox" class="armor-box mastery-box" onchange="updateSelectedArmor(this)"/>
+                 <span class="protection-text"><span class="text-sm text-gray-400">Protection: ${item.caracs?.jet}<br>Type: ${item.caracs?.type} (${item.caracs?.gene} Defense)</span><br>
+                 <span class="text-sm text-gray-400">Qualities: ${rules.qualites}</span></span>`;
+
+                  let weaponCheckbox = `<input type="checkbox" class="weapon-box mastery-box" onchange="updateSelectedWeapon(this)"/>
+                                  <span class="protection-text"><span class="text-sm text-gray-400">Damage: ${item.caracs?.jet}</span><br>
+                                  <span class="text-sm text-gray-400">${qualities}</span></span>`;
+
                 return `
                     <div class="card p-4 rounded" id="${name}">
                         <h2 class="font-bold text-amber-200">${name}</h2>
                         <p class="text-sm text-gray-400">Type: ${type}</p>
                         <p class="text-sm text-gray-400">${tradition}: ${rules.tradition || item.en?.tradition || item.en_31?.tradition || 'None'}</p>
                         <p class="text-sm text-gray-400">Source: ${source}</p>
-                         ${isArmor ? `<p class="text-sm text-gray-400">Protection: ${item.caracs?.jet} Type: ${item.caracs?.type} (${item.caracs?.gene} Defense)` : ''}
                          ${isElixir ? `<p class="text-sm text-gray-400">Just In Time Alchemy: ${justInTimeAllowed}</p>` : ''}
-                         ${isWeapon ? `<p class="text-sm text-gray-400">Damage: ${item.caracs?.jet}` : ''}
-                         ${isArmor || isWeapon ? `<p class="text-sm text-gray-400">Qualities: ${rules.qualites}</p>` : ''}
                         ${ rulesFilter === 'house' ? houseRule : "" }
-                        <p class="text-sm text-gray-300 mt-2">${rules.description || item.en?.description || item.en_31?.description || 'No description available.'}</p>
+                        <p class="text-sm text-gray-300 mt-2">${rules.description || item.en?.description || item.en_31?.description || ''}</p>
+                         ${isArmor ? armorCheckbox : ""}
+                         ${isWeapon ? weaponCheckbox : ""}
                         <div class="mt-2">
+
                             ${novice ? noviceHtml : ""}
                             ${adept ? adeptHtml : ""}
                             ${master ? masterHtml : ""}
@@ -285,6 +296,58 @@
             totalPointsDisplay.textContent = `Total Points: ${totalPoints}`;
         }
 
+         const selectedArmor = document.getElementById('armor-select');
+
+         function updateSelectedArmor(checkbox) {
+            let card = checkbox.closest('div.card');
+            let title = card.querySelector(".Novice-text")?.innerHTML;
+            let id = card.id+"_armor";
+
+            document.getElementById("armor-select").innerHTML = "";
+
+               if (checkbox.checked) {
+                     const div = document.createElement('div');
+                      div.id = id;
+                    div.innerHTML = card.id +"<span class='question-icon' title='"+ escapeHtmlForTitle(title)+"'>?</span><br>" +
+                    card.querySelector(".protection-text")?.innerHTML;
+                    div.title = title;
+
+                     selectedArmor.appendChild(div);
+               } else {
+                    const listItem = document.getElementById(id);
+                    if (listItem) {
+                        listItem.remove();
+                    }
+                    document.getElementById("armor-select").innerHTML = "-";
+               }
+        }
+
+            const selectedWeapon = document.getElementById('weapon-select');
+
+           function updateSelectedWeapon(checkbox) {
+             let card = checkbox.closest('div.card');
+             let title = card.querySelector(".Novice-text")?.innerHTML;
+             let id = card.id+"_weapon";
+
+             document.getElementById("weapon-select").innerHTML = "";
+
+                if (checkbox.checked) {
+                      const div = document.createElement('div');
+                       div.id = id;
+                     div.innerHTML = card.id +"<span class='question-icon' title='"+ escapeHtmlForTitle(title)+"'>?</span><br>" +
+                     card.querySelector(".protection-text")?.innerHTML;
+                     div.title = title;
+
+                      selectedWeapon.appendChild(div);
+                } else {
+                     const listItem = document.getElementById(id);
+                     if (listItem) {
+                         listItem.remove();
+                     }
+                     document.getElementById("weapon-select").innerHTML = "-";
+                }
+           }
+
          // Handle dropdown change to enforce unique values and swap duplicates
         function handleDropdownChange(currentSelect) {
             const allSelects = document.querySelectorAll('#dropdownContainer select');
@@ -359,10 +422,14 @@
                     // Format as a simple text table for the selected option
                     const selectedOption = node.options[node.selectedIndex];
                     if (selectedOption) {
-                        result += ` ${selectedOption.text}\n`;
+                        result += ` - ${selectedOption.text}\n`;
                         result += `\n`; // Extra newline for clarity
                     }
-                } else if (tagName === 'div' || tagName === 'p' || tagName === 'h4' || tagName === 'h3' || tagName === 'h2' || tagName === 'h1') {
+                } else if (tagName === 'input') {
+                    result += " - "+node.value;
+                } else if (node.classList && node.classList.contains('char-sheet-item')) {
+                    result += `${Array.from(node.childNodes).map(processNode).join('').trim()}\n\n`;
+                } else if (tagName === 'div' || tagName === 'p' || tagName === 'h3' || tagName === 'h2' || tagName === 'h1') {
                     // Add newline after processing child nodes
                     result += `${Array.from(node.childNodes).map(processNode).join('').trim()}\n`;
                 } else if (tagName === 'br' ) {

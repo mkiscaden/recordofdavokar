@@ -8561,7 +8561,7 @@
 		"livre":"fanmade",
 		"en":{
 			"tradition":"Wizardry",
-			"novice":"By performing this ritual the mystic creates a wall made of solid stone up to three movements in length and half a Movement high. The Mystic must trace the path of the wall on the ground using a piece of stone. The wall does not need to be a straight line and may be built over uneven terrain so long as the path of the wall is a continuous line. If the wall is drawn in a manner that is unstable or over terrain that could not support its weight, the spell fails. When the ritual is completed stone of the same type used to trace the path springs forth from the ground at the rate of one foot per minute until it reaches its full height.<br>Multiple mystics who each know this ritual may work together to create larger structures.",
+			"novice":"By performing this ritual the mystic creates a wall made of solid stone up to three movements in length and half a Movement high. The Mystic must trace the path of the wall on the ground using a piece of stone. The wall does not need to be a straight line and may be built over uneven terrain so long as the path of the wall is a continuous line. If the wall is drawn in a manner that is unstable or over terrain that could not support its weight, the spell fails. When the ritual is completed stone of the same type used to trace the path springs forth from the ground at the rate of one foot per minute until it reaches its full height. The wall is not a permanent structure. It begins to decay after a few months, collapsing to dust after a year. The ritual must be performed regularly to keep the wall at full strength.<br>Multiple mystics who each know this ritual may work together to create larger structures.",
 			"nom":"Wall of Stone"
 		}
 	},

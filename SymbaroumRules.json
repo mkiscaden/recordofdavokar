@@ -1846,7 +1846,7 @@
 			"novice":"Special. The troll singer suffers no permanent corruption from learning troll songs, rituals or powers at the novice level, but has no protection from temporary corruption suffered when singing them. In addition, once per scene all troll singers have a second chance to succeed on a test when trying to influence or affect a target's mind (that is, situations when the adversary defends using the attribute Resolute). The re-roll may not be used to create or maintain a chain of mystical effects.",
 			"adepte":"Special. The troll singer suffers no permanent corruption from learning troll songs at the adept level. Additionally, the adept may re-roll one success test when trying to influence or affect a target's mind, also when creating or maintaining a chain of such mystical effects.",
 			"maitre":"Special. The troll singer suffers no permanent corruption from learning troll songs at the master level. The master may re-roll every success test when trying to influence or affect a target's mind, also when creating or maintaining a chain of such mystical effects.",
-			"nom":"Troll singing"
+			"nom":"Troll Singing"
 		}
 	},
 	{
@@ -8666,6 +8666,32 @@
 		"en":{
 			"novice":"The weapon is unnaturally sharp and able to penetrate armors. Attacks with this weapon ignore the armor value of manufactured armor and the Armored Trait.",
 			"nom":"Armor Piercing"
+		}
+	},
+	{
+		"id":"#913",
+		"type":"pouvoir mystique",
+		"livre":"fanmade",
+		"en":{
+			"tradition":"Sorcery",
+			"description":"The Mystic reaches out with their hand and slowly squeezes the windpipe of their victim at a distance.",
+			"novice":"With a Successful [Resolute<-Cunning] Test and until the mystic fails a [Resolute<-Cunning] test or breaks concentration, the mystic reduces the target's Strong attribute by 1d4 points per round at the start of the target's turn. If the target takes no actions on their turn, the damage is reduced by half (minimum of 1). If the target's Strong attribute goes to zero, the target falls unconscious. The target's strong value returns to normal at the end of the scene.",
+			"adepte":"As Novice, except the Mystic deals 1d6 damage per round and no longer needs to maintain concentration.",
+			"maitre":"As Adept, except the damage is now 1d8 damage per round.",
+			"nom":"Choking Grasp"
+		}
+	},
+	{
+		"id":"#914",
+		"type":"pouvoir mystique",
+		"livre":"fanmade",
+		"en":{
+			"tradition":"Witchcraft",
+			"description":"The mystic calls upon the primal forces of nature, summoning a writhing swarm of biting, crawling insects to engulf their enemies. The swarm obscures vision, inflicts pain, and sows chaos among those caught within its buzzing mass.",
+			"novice":"With a successful [Resolute] test the mystic summons a swarm of biting insects for 1d6 rounds that surround a targeted creature dealing 1d4 damage (ignoring armor) per round. The target has a second chance to fail a concentration check from this damage. Target creature may spend an action swatting the insects; A successful [Accurate] test will scatter the swarm.",
+			"adepte":"The swarm now effects all creatures in melee range of the initial target. Each creature so affected has their own swarm that may be defeated with a successful [Accurate] test.",
+			"maitre":"The spell now lasts for 2d6 rounds and cannot be dispersed. Instead, if the initial target succeeds in a [Accurate] test to disrupt the swarm, the mystic may make a [Resolute] test to direct the swarm to a new target.",
+			"nom":"Insect Swarm"
 		}
 	},
 	{

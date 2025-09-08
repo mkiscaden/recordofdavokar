@@ -545,7 +545,7 @@
 			"nom":"Medicus"
 		},
 		"en_31":{
-			"novice":"Active. Pass a Cunning test to heal 1D4 of a patient's Toughness, or 2D4 when using a herbal cure. Can only be done once per patient and scene.",
+			"novice":"Active. Pass a Cunning test to heal 1D4 of a patient's Toughness, or 2D4 when using a herbal cure. Can only be done once per patient and scene. When dedicating the entire day to rest and recovery, the Medicus may make two attempts at healing.",
 			"adepte":"Active. Pass a Cunning test to heal 1D6, or 2D6 when using an herbal cure. Can only be done once per patient and scene.",
 			"maitre":"Active. Pass a Cunning test to heal 1D8, or 2D8 when using an herbal cure. A failed test still heals 1D4, or 2D4 when using a herbal cure. Can only be done once per patient and scene."
 		},
@@ -4780,6 +4780,7 @@
 		"es":{
 			"nom":"Robusto"
 		},
+
 		"en":{
 			"description":"The character belongs to a race of creatures that are naturally tall and often continue to grow their entire lives. But there are variations: some grow quickly, others more slowly while some hardly seems to grow at all.",
 			"novice":"Special. The character is close to seven feet tall and very strong. Such a towering body is easier to hit in combat, which is balanced by a greater natural toughness. The character's Defense is based on [Quick –2] and it can only use light armor, which must be custom-made and therefore costs twice the normal price. In return, the character naturally ignores 1D4 damage from each hit taken, in addition to any armor it wears. Furthermore, it can deal 1D4 extra damage with one melee attack each turn.",
@@ -8503,7 +8504,7 @@
 		"livre":"fanmade",
 		"en":{
 			"source":"<a href='http://www.recordofdavokar.com'>Record Of Davokar</a>",
-			"description":"All mystical traditions (Such as Wizardry, Witchcraft, etc) are an Incremental Ability. You do not buy the tradition directly with Experience. Instead, you advance the level of your Mystical Tradition ability by learning mystical powers of that tradition. Once characters have learned Novice level of a mystical tradition, they no longer gain permanent corruption for learning mystical powers of any skill level. Further, characters do not receive permanent corruption at character creation for learning two novice powers in order to qualify for Novice rank in that tradition. A power that is available to multiple traditions can only be applied to learning a single mystical tradition.",
+			"description":"All mystical traditions (Such as Wizardry, Witchcraft, etc) are an Incremental Ability. You do not buy the tradition directly with Experience. Instead, you advance the level of your Mystical Tradition ability by learning mystical powers of that tradition. Characters may choose to not gain Permanent Corruption from learning their first two Novice level powers or rituals.",
 			"novice":"Special. The character has learned two mystical powers at Novice level associated with the Mystical Tradition.",
 			"adepte":"Special. The character has learned two mystical powers at Adept level associated with the Mystical Tradition.",
 			"maitre":"Special. The character has learned two mystical powers at Master level associated with the Mystical Tradition.,",

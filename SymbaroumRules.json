@@ -2178,7 +2178,7 @@
 			"nom":"Aura sagrada"
 		},
 		"en_31":{
-			"novice":"Active. Pass a Resolute test to project a holy aura that deals 1D4 holy damage (ignoring Armor) to all Abominations and Undead within sight, no more than two Movement Actions away. The effect lasts until the mystic fails a Resolute test at the start of their turn or loses concentration. The mystic cannot exclude allied abominations or undead from the effect.",
+			"novice":"Active. Pass a Resolute test to project a holy aura that deals 1D4 holy damage (ignoring Armor) to all Abominations and Undead within sight, no more than one Movement Actions away. The effect lasts until the mystic fails a Resolute test at the start of their turn or loses concentration. The mystic cannot exclude allied abominations or undead from the effect.",
 			"adepte":"Active. Like Novice, but allied Cultural Beings and Beasts within the aura immediately heal 1D4 Toughness when the spell is cast. Further, all other forms of healing within the aura heal and additional 1d4 Toughness.",
 			"maitre":"Active. Like Novice, but the aura deals 1D6 holy damage (ignoring Armor) each turn, and allied cultural beings and beasts within range heal 1D6 Toughness at the moment the spell is cast and all other forms of healing within the aura heal an additional 1d6 Toughness."
 		},
@@ -2554,6 +2554,7 @@
 		"id":"#48",
 		"type":"pouvoir mystique",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Conjuration",
 			"nom":"Aura impie"

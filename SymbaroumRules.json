@@ -1985,7 +1985,7 @@
 			"nom":"Someter voluntad"
 		},
 		"en_31":{
-			"novice":"Active. The mystic can take partially control of a creature. The Mystic must give the creature a verbal command each turn or the target will not take any action. It can only be made to perform one Action each turn and may not use abilities or powers. The effect lasts until the mystic fails a [Resolute←Resolute] test at the beginning of the target's turn or the mystic breaks concentration. <br>Has no effect on Abominations. Cannot be used to force the target to cause harm to an ally or take an action that grossly violates their moral code. Cultured beings have a wide variety of ethical guidelines and the caster should take this into consideration.<br>If the player commands the target to break their moral code; the mystic has a second chance to fail all subsequent resolute checks to maintain control. If control is lost, the mystic cannot use Bend Will against the target again for the remainder of the scene.<br>The target recalls everything that happens while under the influence of the spell, but sees these events more as a surreal dream than an actual memory.",
+			"novice":"Active. The mystic can take partially control of a creature. The Mystic must give the creature a verbal command each turn or the target will not take any action. It can only be made to perform one Action each turn and may not use abilities or powers. The effect lasts until the mystic fails a [Resolute←Resolute] test at the beginning of the target's turn or the mystic breaks concentration. <br>Has no effect on Abominations and Undead.<br>Cannot be used to force the target to cause harm to an ally or take an action that grossly violates their moral code. Cultured beings have a wide variety of ethical guidelines and the caster should take this into consideration.<br>If the player commands the target to break their moral code; the mystic has a second chance to fail all subsequent resolute checks to maintain control. If control is lost, the mystic cannot use Bend Will against the target again for the remainder of the scene.<br>The target recalls everything that happens while under the influence of the spell, but sees these events more as a surreal dream than an actual memory.",
 			"adepte":"Active. Like Novice, but the target will continue performing the last command they were given; the effect lasts until the mystic fails a [Resolute←Resolute] test.",
 			"maitre":"Active. The creature can be made to perform its usual Actions and Reactions each turn (including Active ones). The effect lasts until the mystic fails a [Resolute←Resolute] test."
 		},
@@ -2342,7 +2342,7 @@
 			"nom":"Transformación regresiva"
 		},
 		"en_31":{
-			"novice":"Active. With a successful roll against [Resolute←Resolute], the mystic can partially turn a target into a weaker form, mammal or reptile the mystic decides which. The target stays in that form until the mystic breaks concentration or fails a [Resolute←Resolute] test, made each turn at the start of the target's turn. The target keeps the target's original Attributes but cannot use mystical powers and can neither use weapons or items.<br>Has no effect on Abominations. When a target makes their Resolute check to break the transformation, the difficulty is increased by the total corruption of the target. If the target takes HP damage during the scene, the mystic has a second chance to fail to maintain the transformation. Once a target has broken free of Maltransformation, the target has a second chance to succeed against all subsequent use of Maltransformation for the remainder of the scene.",
+			"novice":"Active. With a successful roll against [Resolute←Resolute], the mystic can partially turn a target into a weaker form, mammal or reptile the mystic decides which. The target stays in that form until the mystic breaks concentration or fails a [Resolute←Resolute] test, made each turn at the start of the target's turn. The target keeps the target's original Attributes but cannot use mystical powers and can neither use weapons or items.<br>Has no effect on Abominations or Undead.<br>When a target makes their Resolute check to break the transformation, the difficulty is increased by the total corruption of the target. If the target takes HP damage during the scene, the mystic has a second chance to fail to maintain the transformation. Once a target has broken free of Maltransformation, the target has a second chance to succeed against all subsequent use of Maltransformation for the remainder of the scene.",
 			"adepte":"Active. Like Novice, but no concentration is required.",
 			"maitre":"Active. Like Novice, but the mystic can transform a Chain of targets, one after the other, until an attempt fails. The effect is ongoing until the mystic fails a [Resolute←Resolute] test, made each turn for each target."
 		},
@@ -5091,7 +5091,7 @@
 			"novice":"The character may acquire and develop the following monstrous traits as though they were ordinary abilities: Natural Weapon, Armored, Terrify, Wings."
 		},
 		"en":{
-			"novice":"Dark blood flows through the character's veins, passed down from an ancestor, or as a result of being cursed. Maybe the player character was simply born in the wrong part of Davokar at the wrong time. The dark blood always comes with some form of physical stigma, represented by the burden Bestial. The character may acquire and develop the following monstrous traits as though they were ordinary abilities: Natural Weapon, Armored, Robust, Regeneration, Wings.",
+			"novice":"Dark blood flows through the character's veins, passed down from an ancestor, or as a result of being cursed. Maybe the player character was simply born in the wrong part of Davokar at the wrong time. The dark blood always comes with some form of physical stigma, represented by the burden Bestial. The character may acquire and develop the following monstrous traits as though they were ordinary abilities: Natural Weapon, Armored, Robust, Lesser Regeneration, Wings.",
 			"nom":"Dark Blood"
 		}
 	},
@@ -7674,6 +7674,7 @@
 		"id":"#237",
 		"type":"trait monstrueux",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"nom":"Régénération"
 		},
@@ -8697,6 +8698,18 @@
 		}
 	},
 	{
+		"id":"#915",
+		"type":"trait",
+		"livre":"fanmade",
+		"en":{
+			"description":"The creature spontaneously heals, without needing to spend either time or power to do so. However some damage sources prevent the creature's regenerative powers from taking effect. Damage from Fire, Acid, Magical Weapons, and Unholy damage must be healed normally (See Page 161 in the Player's Guide). If the creature drops to 0 Toughness during the scene, the creature does not die but falls unconscious until the end of the scene or receives healing.",
+			"novice":"Passive. Regenerates to full health at the end of the scene.",
+			"adepte":"Passive. Regenerates 1 Toughness per turn during the scene.",
+			"maitre":"Passive. Regenerates 2 Toughness per turn during the scene.",
+			"nom":"Lesser Regeneration"
+		}
+	},
+	{
 		"id": 1000,
 		"livre": "adv",
 		"type": "elixir",
@@ -9131,7 +9144,19 @@
 		"en": {
 			"tradition": "",
 			"nom": "Wrathbrew",
-			"maitre": "Vigilant, but also +2 to all Resolute tests made when trying to resist mental influence, fear, or pressure. Those who leave the guard before the elixir has taken effect will suffer no long-term damage. The rest are not so lucky. Nothing will happen as long as they keep drinking Wrathbrew, but if they stop, they must make a Strong test at the end of each year. Failing the test means that the elixir has taken its toll on their bodies, and their Strong value is reduced by –1. When the Strong value reaches 0, the person will die. Pure Wrathbrew is only made by the Huldra and her aides, and it is not for sale. However, since the recipe was first developed, a few people have managed to learn its secrets. In some corners of Thistle Hold and Yndaros, barbarian alchemists sometimes appear with small amounts of Blackbrew. One must have the Contacts boon (drug-makers or equivalent) and pass a Cunning test in order to find a seller, who will only sell a month’s consumption of Wrathbrew, at the staggering price of 1d6+5 thaler per daily dose. Furthermore, as this infusion is less pure than the Huldra’s, those who drink it will suffer 1d4 temporary corruption."
+			"maitre": "If one ingests it regularly, the elixir will take effect after a couple of months: +2 to Strong, –2 to Vigilant, but also +2 to all Resolute tests made when trying to resist mental influence, fear, or pressure. Those who leave the guard before the elixir has taken effect will suffer no long-term damage. The rest are not so lucky. Nothing will happen as long as they keep drinking Wrathbrew, but if they stop, they must make a Strong test at the end of each year. Failing the test means that the elixir has taken its toll on their bodies, and their Strong value is reduced by –1. When the Strong value reaches 0, the person will die. Pure Wrathbrew is only made by the Huldra and her aides, and it is not for sale. However, since the recipe was first developed, a few people have managed to learn its secrets. In some corners of Thistle Hold and Yndaros, barbarian alchemists sometimes appear with small amounts of Blackbrew. One must have the Contacts boon (drug-makers or equivalent) and pass a Cunning test in order to find a seller, who will only sell a month’s consumption of Wrathbrew, at the staggering price of 1d6+5 thaler per daily dose. Furthermore, as this infusion is less pure than the Huldra’s, those who drink it will suffer 1d4 temporary corruption."
+		}
+	},
+	{
+		"id": 1041,
+		"livre": "ldb",
+		"type": "elixir",
+		"justInTime": true,
+		"en": {
+			"tradition": "",
+			"nom": "Shadowcast Oil",
+			"adepte": "Used by the the Witch-Alchemists of the Sovereign Oath, When applied to the subject's skin, this oil will change color to reveal the shadow of the subject as if all who observe the oil have the Witchsight ability without incurring corruption on the subject or the viewer. The Shadow Tint elixir and Exchange Shadow ritual hide the subject's shadow as normal."
 		}
 	}
+
 ]

@@ -2113,6 +2113,7 @@
 		"id":"#54",
 		"type":"pouvoir mystique",
 		"livre":"ldb",
+		"houseRule": "Rule Change",
 		"fr":{
 			"tradition":"Sorcellerie",
 			"nom":"Enchevêtrement de vignes"
